@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="swingy:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/swingy_jar</output-path>
+    <root id="root">
+      <element id="archive" name="swingy.jar">
+        <element id="module-output" name="swingy" />
+      </element>
+    </root>
+  </artifact>
+</component>

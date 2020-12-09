@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff0d8962-85f8-44ab-960c-5066078ac44d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lQ73RjYBkOLKVCxqjnxB27xSQg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JAR Application.swingy-1.0-SNAPSHOT.jar">
+    <configuration name="Swingy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yvmartor.swingy.Swingy" />
+      <module name="swingy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yvmartor.swingy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="swingy-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.swingy-1.0-SNAPSHOT.jar" />
+        <item itemvalue="Application.Swingy" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff0d8962-85f8-44ab-960c-5066078ac44d" name="Default Changelist" comment="" />
+      <created>1607517261531</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607517261531</updated>
+      <workItem from="1607517264448" duration="5495000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="865" y="366" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607518046720">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="865" y="366" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1607518046720" />
+    <state x="1369" y="579" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607524151542">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1369" y="579" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1607524151542" />
+    <state width="1358" height="271" key="GridCell.Tab.0.bottom" timestamp="1607524652293">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652293" />
+    <state width="1358" height="271" key="GridCell.Tab.0.center" timestamp="1607524652292">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652292" />
+    <state width="1358" height="271" key="GridCell.Tab.0.left" timestamp="1607524652292">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652292" />
+    <state width="1358" height="271" key="GridCell.Tab.0.right" timestamp="1607524652292">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652292" />
+    <state x="918" y="392" key="SettingsEditor" timestamp="1607524165287">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="918" y="392" key="SettingsEditor/0.23.2560.1337@0.23.2560.1337" timestamp="1607524165287" />
+    <state x="1386" y="323" width="670" height="675" key="run.anything.popup" timestamp="1607524652311">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1386" y="323" width="670" height="675" key="run.anything.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652311" />
+  </component>
+</project>
