@@ -1,0 +1,14 @@
+com/yvmartor/swingy/models/hero/ChickenHeroBuilder.class
+com/yvmartor/swingy/views/frames/HeroCard.class
+com/yvmartor/swingy/artefacts/Armor.class
+com/yvmartor/swingy/models/hero/HeroBuilder.class
+com/yvmartor/swingy/artefacts/Helm.class
+com/yvmartor/swingy/models/hero/Hero.class
+com/yvmartor/swingy/views/frames/MainFrame$1.class
+com/yvmartor/swingy/artefacts/ArmorBuilder.class
+com/yvmartor/swingy/Swingy.class
+com/yvmartor/swingy/artefacts/HelmBuilder.class
+com/yvmartor/swingy/views/frames/MainFrame.class
+com/yvmartor/swingy/artefacts/WeaponBuilder.class
+com/yvmartor/swingy/artefacts/Weapon.class
+com/yvmartor/swingy/models/hero/HeroDirector.class
