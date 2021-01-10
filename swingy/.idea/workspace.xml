@@ -23,19 +23,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff0d8962-85f8-44ab-960c-5066078ac44d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/Swingy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/Swingy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/frames/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/frames/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/artefacts/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Armor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/artefacts/ArmorBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/ArmorBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/artefacts/Helm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Helm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/artefacts/HelmBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/HelmBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/artefacts/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/artefacts/WeaponBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/WeaponBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/BlackKnightBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/BlackKnightBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/DogHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/DogHandlerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/HeroDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/HeroDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MadKnightBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MadKnightBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MagicianBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MagicianBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/frames/HeroCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/HeroCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/frames/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/GUIGameOpeningView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/Swingy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/Swingy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/frames/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/frames/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/artefacts/Armor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/artefacts/ArmorBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/artefacts/Helm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/artefacts/HelmBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/artefacts/Weapon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/artefacts/WeaponBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/Hero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/frames/HeroCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/frames/MainFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/frames/MainFrame.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +73,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="vmOptionsForImporter" value="-Xmx768m" />
@@ -94,6 +108,10 @@
       <recent name="$PROJECT_DIR$/src/images" />
       <recent name="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy" />
       <recent name="$PROJECT_DIR$/src/main/resources/Drawables" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yvmartor.swingy.models.scenario.game_opening" />
+      <recent name="com.yvmartor.swingy.models" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -155,68 +173,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="865" y="366" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607518046720">
-      <screen x="0" y="23" width="2560" height="1337" />
-    </state>
-    <state x="865" y="366" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1607518046720" />
-    <state x="1133" y="339" key="#com.intellij.ide.util.MemberChooser" timestamp="1607943164773">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state x="1133" y="339" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1042@0.25.1792.1042" timestamp="1607943164773" />
-    <state x="1369" y="579" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607524151542">
-      <screen x="0" y="23" width="2560" height="1337" />
-    </state>
-    <state x="1369" y="579" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1607524151542" />
-    <state width="1602" height="332" key="GridCell.Tab.0.bottom" timestamp="1608018712512">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1358" height="271" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652293" />
-    <state width="1602" height="332" key="GridCell.Tab.0.bottom/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712512" />
-    <state width="1602" height="332" key="GridCell.Tab.0.center" timestamp="1608018712511">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1358" height="271" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652292" />
-    <state width="1602" height="332" key="GridCell.Tab.0.center/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712511" />
-    <state width="1602" height="332" key="GridCell.Tab.0.left" timestamp="1608018712511">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1358" height="271" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652292" />
-    <state width="1602" height="332" key="GridCell.Tab.0.left/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712511" />
-    <state width="1602" height="332" key="GridCell.Tab.0.right" timestamp="1608018712512">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1358" height="271" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652292" />
-    <state width="1602" height="332" key="GridCell.Tab.0.right/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712512" />
-    <state width="1602" height="332" key="GridCell.Tab.1.bottom" timestamp="1608018712512">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1602" height="332" key="GridCell.Tab.1.bottom/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712512" />
-    <state width="1602" height="332" key="GridCell.Tab.1.center" timestamp="1608018712512">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1602" height="332" key="GridCell.Tab.1.center/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712512" />
-    <state width="1602" height="332" key="GridCell.Tab.1.left" timestamp="1608018712512">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1602" height="332" key="GridCell.Tab.1.left/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712512" />
-    <state width="1602" height="332" key="GridCell.Tab.1.right" timestamp="1608018712512">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state width="1602" height="332" key="GridCell.Tab.1.right/0.25.1792.1042@0.25.1792.1042" timestamp="1608018712512" />
-    <state x="918" y="392" key="SettingsEditor" timestamp="1607524165287">
-      <screen x="0" y="23" width="2560" height="1337" />
-    </state>
-    <state x="918" y="392" key="SettingsEditor/0.23.2560.1337@0.23.2560.1337" timestamp="1607524165287" />
-    <state x="968" y="263" width="670" height="527" key="run.anything.popup" timestamp="1607965588899">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state x="1386" y="323" width="670" height="675" key="run.anything.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1607524652311" />
-    <state x="968" y="263" width="670" height="527" key="run.anything.popup/0.25.1792.1042@0.25.1792.1042" timestamp="1607965588899" />
-    <state x="985" y="350" width="670" height="676" key="search.everywhere.popup" timestamp="1607968154068">
-      <screen x="0" y="25" width="1792" height="1042" />
-    </state>
-    <state x="985" y="350" width="670" height="676" key="search.everywhere.popup/0.25.1792.1042@0.25.1792.1042" timestamp="1607968154068" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

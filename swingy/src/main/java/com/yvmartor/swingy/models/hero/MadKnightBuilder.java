@@ -1,6 +1,6 @@
 package com.yvmartor.swingy.models.hero;
 
-import com.yvmartor.swingy.artefacts.*;
+import com.yvmartor.swingy.models.artefacts.*;
 
 public class MadKnightBuilder extends HeroBuilder{
     @Override
