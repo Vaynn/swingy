@@ -15,86 +15,44 @@ import static java.awt.GridBagConstraints.*;
 public class HeroCard extends JPanel {
     private Hero hero;
     private JPanel container = new JPanel();
-    private JLabel classLabel = new JLabel();
-    private JLabel nameLabel = new JLabel();
-    private JLabel xpLabel = new JLabel();
-    private JLabel title = new JLabel();
+    private JPanel center = new JPanel();
+    private Font font = new Font("Courier", Font.ITALIC, 35);
 
     public HeroCard(Hero hero){
         this.hero = hero;
     }
 
-    public JPanel getHeroCard() throws IOException{
-        Font font = new Font("Courier", Font.ITALIC, 35);
-        JPanel mega = new JPanel();
-        mega.setLayout(new BorderLayout());
-        mega.setBackground(Color.BLACK);
-        title.setText("Select your Hero");
-        title.setForeground(Color.cyan);
-        title.setFont(font);
-        title.setHorizontalAlignment(JLabel.CENTER);
-        title.setVerticalAlignment(JLabel.CENTER);
-        title.setBorder(new EmptyBorder(20, 0, 0, 0));
-        mega.add(title, BorderLayout.NORTH);
-        container.setBackground(Color.BLACK);
-        container.setLayout(new FlowLayout(FlowLayout.CENTER));
-        InputStream resourceAsStream = Swingy.class.getResourceAsStream(hero.getImage());
-        try {
-            Image image = ImageIO.read(resourceAsStream);
-            JLabel label1 = new JLabel(new ImageIcon(image));
-            container.add(label1);
-        } catch (IOException e){
-            System.err.println(e);
-        }
-        BoxLayout stat = new BoxLayout(container, BoxLayout.X_AXIS);
-        classLabel.setText("CLASS: " + hero.getHeroClass());
-        classLabel.setForeground(Color.white);
-        classLabel.setFont(font);
-        stat.addLayoutComponent("class", classLabel);
-        mega.add(container, BorderLayout.CENTER);
-        /*container.setBackground(Color.BLACK);
-        container.setLayout(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.gridx = 2;
-        constraints.gridy = 2;
-        constraints.gridwidth = 3;
-        constraints.insets = new Insets(0, 0, 10, 0);
-        InputStream resourceAsStream = Swingy.class.getResourceAsStream(hero.getImage());
-        try {
-            Image image = ImageIO.read(resourceAsStream);
-            JLabel label1 = new JLabel(new ImageIcon(image));
-            container.add(label1, constraints);
-        } catch (IOException e){
-            System.err.println(e);
-        }
-        constraints.gridx = 6;
-        constraints.gridy = 1;
-        constraints.insets = new Insets(0, 10, 0, 0);
-        classLabel.setText("CLASS: " + hero.getHeroClass());
-        classLabel.setForeground(Color.white);
-        constraints.anchor = LINE_START;
-        classLabel.setFont(font);
-        classLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
-        container.add(classLabel, constraints);
-        constraints.gridx = 6;
-        constraints.gridy = 2;
-        nameLabel.setText("NAME: " + hero.getName());
-        nameLabel.setForeground(Color.white);
-        constraints.anchor = LINE_START;
-        nameLabel.setFont(font);
-        nameLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
-        container.add(nameLabel, constraints);
-        constraints.gridx = 6;
-        constraints.gridy = 3;
-        xpLabel.setText("XP: " + hero.getXp());
-        xpLabel.setForeground(Color.white);
-        xpLabel.setFont(font);
-        xpLabel.setBorder(new EmptyBorder(0, 10, 0, 0));
-        constraints.anchor = LINE_START;
-        container.add(xpLabel, constraints);
-        mega.add(container, BorderLayout.CENTER);
-         */
+    public void addStatLabel(JPanel container, String statName, String statValue){
+        JLabel label = new JLabel();
+        label.setText(statName + statValue);
+        label.setForeground(Color.white);
+        label.setFont(font);
+        label.setBorder(new EmptyBorder(0, 10, 0, 0));
+        container.add(label);
+    }
 
-        return mega;
+    public JPanel getHeroCard() throws IOException{
+        center.setLayout(new BoxLayout(center, BoxLayout.X_AXIS));
+        center.setBackground(Color.BLACK);
+        InputStream resourceAsStream = Swingy.class.getResourceAsStream(hero.getImage());
+        try {
+            Image image = ImageIO.read(resourceAsStream);
+            JLabel label1 = new JLabel(new ImageIcon(image));
+
+            center.add(label1);
+        } catch (IOException e){
+            System.err.println(e);
+        }
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.setBackground(Color.BLACK);
+        addStatLabel(container, "NAME: ",  hero.getName());
+        addStatLabel(container, "CLASS: ",  hero.getHeroClass());
+        addStatLabel(container, "LEVEL: ",  String.valueOf(hero.getLevel()));
+        addStatLabel(container, "XP: ",  String.valueOf(hero.getXp()));
+        addStatLabel(container, "ATTACK: ",  String.valueOf(hero.getAttak()));
+        addStatLabel(container, "DEFENSE: ",  String.valueOf(hero.getDefense()));
+        addStatLabel(container, "HP: ",  String.valueOf(hero.getHitPoints()));
+        center.add(container);
+        return center;
     }
 }

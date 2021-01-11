@@ -3,8 +3,8 @@ com/yvmartor/swingy/models/hero/SaboteurBuilder.class
 com/yvmartor/swingy/models/hero/DogHandlerBuilder.class
 com/yvmartor/swingy/models/hero/Hero.class
 com/yvmartor/swingy/views/console/ConsoleGameOpeningView.class
-com/yvmartor/swingy/models/scenario/game_opening/GameOpeningBuilder.class
 com/yvmartor/swingy/controller/GameOpeningController.class
+com/yvmartor/swingy/models/scenario/game_opening/GameOpeningBuilder.class
 com/yvmartor/swingy/models/scenario/game_opening/GameOpening.class
 com/yvmartor/swingy/models/scenario/select_hero/SelectHero.class
 com/yvmartor/swingy/Swingy.class
@@ -18,9 +18,9 @@ com/yvmartor/swingy/models/hero/WitchBuilder.class
 com/yvmartor/swingy/models/hero/ChickenHeroBuilder.class
 com/yvmartor/swingy/models/hero/HeroBuilder.class
 com/yvmartor/swingy/views/gui/GUIGameOpeningView.class
-com/yvmartor/swingy/models/artefacts/Weapon.class
-com/yvmartor/swingy/controller/SelectHeroController.class
 com/yvmartor/swingy/controller/GameOpeningController$1.class
+com/yvmartor/swingy/controller/SelectHeroController.class
+com/yvmartor/swingy/models/artefacts/Weapon.class
 com/yvmartor/swingy/views/console/ConsoleSelectHeroView.class
 com/yvmartor/swingy/views/gui/CreateMainFrame.class
 com/yvmartor/swingy/models/artefacts/WeaponBuilder.class

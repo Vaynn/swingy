@@ -29,5 +29,6 @@ public class SelectHeroController {
 
     public void updateGUIView() throws IOException {
         gUIView.printSelectHeroView(frame, model.getTitle(), model.getHeroesList());
+        gUIView.getSelection.add
     }
 }

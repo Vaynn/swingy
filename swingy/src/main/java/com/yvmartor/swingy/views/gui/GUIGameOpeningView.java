@@ -47,27 +47,7 @@ public class GUIGameOpeningView extends JFrame {
         constraints.gridx = 2;
         constraints.gridy = 5;
         constraints.gridwidth = 2;
-        /*newHero.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                HeroDirector director = new HeroDirector();
-                HeroBuilder chickenHeroBuilder = new ChickenHeroBuilder();
-                director.setHeroBuilder(chickenHeroBuilder);
-                director.constructHero();
-                Hero hero = director.getHero();
-                try {
-                    JPanel heroPanel = new HeroCard(hero).getHeroCard();
-                    JPanel contentPane = (JPanel) myFrame.getContentPane();
-                    contentPane.removeAll();
-                    contentPane.add(heroPanel);
-                    contentPane.revalidate();
-                    contentPane.repaint();
-                }
-                catch (IOException ex){
-                    System.err.println(ex);
-                }
-            }
-        });*/
+
         newHero = new JButton(options.get(0));
         container.add(newHero, constraints);
         constraints.gridx = 4;
