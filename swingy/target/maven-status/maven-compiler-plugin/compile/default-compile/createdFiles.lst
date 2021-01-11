@@ -10,6 +10,7 @@ com/yvmartor/swingy/models/scenario/select_hero/SelectHero.class
 com/yvmartor/swingy/Swingy.class
 com/yvmartor/swingy/models/hero/BlackKnightBuilder.class
 com/yvmartor/swingy/models/artefacts/ArmorBuilder.class
+com/yvmartor/swingy/controller/SelectHeroController$1.class
 com/yvmartor/swingy/models/hero/MadKnightBuilder.class
 com/yvmartor/swingy/views/gui/HeroCard.class
 com/yvmartor/swingy/views/gui/GUISelectHeroView.class

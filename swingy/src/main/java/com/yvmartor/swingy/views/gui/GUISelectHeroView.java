@@ -46,4 +46,8 @@ public class GUISelectHeroView extends JFrame {
     public JButton getSelection(){
         return this.selection;
     }
+
+    public JTabbedPane getHeroTab() {
+        return heroTab;
+    }
 }
