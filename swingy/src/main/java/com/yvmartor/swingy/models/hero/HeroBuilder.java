@@ -23,5 +23,9 @@ public abstract class HeroBuilder {
     public abstract void buildArmor();
     public abstract void buildHelm();
     public abstract void buildImage();
+    public abstract void buildCoordinates();
+    public abstract void buildWeaponName();
+    public abstract void buildArmorName();
+    public abstract void buildHelmName();
 
 }

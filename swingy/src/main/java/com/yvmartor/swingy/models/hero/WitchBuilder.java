@@ -41,9 +41,8 @@ public class WitchBuilder extends HeroBuilder{
     @Override
     public void buildWeapon() {
         Weapon weapon = new WeaponBuilder()
-                .name("Deadwood Wand")
-                .material("rusty")
-                .attak(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setWeapon(weapon);
     }
@@ -51,9 +50,8 @@ public class WitchBuilder extends HeroBuilder{
     @Override
     public void buildArmor() {
         Armor armor = new ArmorBuilder()
-                .name("Worn Gown")
-                .material("rusty")
-                .defense(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setArmor(armor);
     }
@@ -61,15 +59,38 @@ public class WitchBuilder extends HeroBuilder{
     @Override
     public void buildHelm() {
         Helm helm = new HelmBuilder()
-                .name("Rusty Helm")
-                .material("rusty")
-                .hitPoints(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setHelm(helm);
     }
 
     @Override
+    public void buildWeaponName() {
+        String[] tab = {"Deadwood Wand", "Saroumane's Grimoire", "Lightsaber"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildArmorName() {
+        String[] tab = {"Worn Gown", "Steel Gown", "Mithril Gown"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildHelmName() {
+        String[] tab = {"Rusty Helm", "Gold Helm", "Mithril Helm"};
+        hero.setHelmName(tab);
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/sorciere.jpg");
+    }
+
+    @Override
+    public void buildCoordinates() {
+        Coordinates coordinates = new Coordinates(0, 0);
+        hero.setCoordinates(coordinates);
     }
 }

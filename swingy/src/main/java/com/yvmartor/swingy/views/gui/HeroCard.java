@@ -32,7 +32,7 @@ public class HeroCard extends JPanel {
     }
 
     public JPanel getHeroCard() throws IOException{
-        center.setLayout(new BoxLayout(center, BoxLayout.X_AXIS));
+        center.setLayout(new BoxLayout(center, BoxLayout.LINE_AXIS));
         center.setBackground(Color.BLACK);
         InputStream resourceAsStream = Swingy.class.getResourceAsStream(hero.getImage());
         try {

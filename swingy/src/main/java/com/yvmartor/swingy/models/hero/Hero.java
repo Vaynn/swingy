@@ -1,6 +1,7 @@
 package com.yvmartor.swingy.models.hero;
 
 import com.yvmartor.swingy.models.artefacts.*;
+import com.yvmartor.swingy.models.map.WorldMap;
 
 public class Hero {
     private String heroClass = "";
@@ -12,23 +13,28 @@ public class Hero {
     private int hitPoints = 0;
     private Weapon weapon = new WeaponBuilder()
                                 .name("")
-                                .material("")
-                                .attak(0)
+                                .points(0)
                                 .build();
 
     private Armor armor = new ArmorBuilder()
                                 .name("")
-                                .material("")
-                                .defense(0)
+                                .points(0)
                                 .build();
 
     private Helm helm = new HelmBuilder()
                                 .name("")
-                                .material("")
-                                .hitPoints(0)
+                                .points(0)
                                 .build();
 
+    private String[] weaponName;
+    private String[] armorName;
+    private String[] helmName;
+
     private String image = "";
+
+    private Coordinates coordinates = new Coordinates(0, 0);
+
+    private WorldMap worldMap;
 
     public String getHeroClass() {
         return heroClass;
@@ -74,6 +80,22 @@ public class Hero {
         return image;
     }
 
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public String[] getWeaponName() {
+        return weaponName;
+    }
+
+    public String[] getArmorName() {
+        return armorName;
+    }
+
+    public String[] getHelmName() {
+        return helmName;
+    }
+
     public void setHeroClass(String heroClass) {
         this.heroClass = heroClass;
     }
@@ -103,24 +125,57 @@ public class Hero {
     }
 
     public void setWeapon(Weapon weapon) {
-        this.attak -= this.weapon.getAttak();
+        this.attak -= this.weapon.getPoints();
         this.weapon = weapon;
-        this.attak += weapon.getAttak();
+        this.attak += weapon.getPoints();
     }
 
     public void setArmor(Armor armor) {
-        this.defense -= this.armor.getDefense();
+        this.defense -= this.armor.getPoints();
         this.armor = armor;
-        this.defense += armor.getDefense();
+        this.defense += armor.getPoints();
     }
 
     public void setHelm(Helm helm) {
-        this.hitPoints -= this.helm.getHitPoints();
+        this.hitPoints -= this.helm.getPoints();
         this.helm = helm;
-        this.hitPoints += helm.getHitPoints();
+        this.hitPoints += helm.getPoints();
     }
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public void setWeaponName(String[] weaponName) {
+        this.weaponName = weaponName;
+    }
+
+    public void setArmorName(String[] armorName) {
+        this.armorName = armorName;
+    }
+
+    public void setHelmName(String[] helmName) {
+        this.helmName = helmName;
+    }
+
+    public void updateCoordinates(int userChoice) {
+        if (userChoice == 1)
+            this.coordinates.setY(this.coordinates.getY() - 1);
+        if (userChoice == 2)
+            this.coordinates.setX(this.coordinates.getX() + 1);
+        if (userChoice == 3)
+            this.coordinates.setY(this.coordinates.getY() + 1);
+        if (userChoice == 4)
+            this.coordinates.setX(this.coordinates.getX() - 1);
+    }
+
+    public void registerWorldMap(WorldMap worldMap){
+        worldMap.registerHero(this);
+        this.worldMap = worldMap;
+        System.out.println(this.getName());
     }
 }

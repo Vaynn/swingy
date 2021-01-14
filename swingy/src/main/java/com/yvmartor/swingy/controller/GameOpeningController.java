@@ -61,7 +61,11 @@ public class GameOpeningController {
                     .heroesList(heroList)
                     .build();
             ConsoleSelectHeroView consoleSelectHeroView = new ConsoleSelectHeroView();
-            SelectHeroController controller = new SelectHeroController(selectHeroModel, null, consoleSelectHeroView, null);
+            SelectHeroController controller = new SelectHeroController(
+                    selectHeroModel,
+                    null, consoleSelectHeroView,
+                    null
+            );
             controller.updateConsoleView();
         }
         else if (choice == 2)

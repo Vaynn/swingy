@@ -41,9 +41,8 @@ public class DogHandlerBuilder extends HeroBuilder {
     @Override
     public void buildWeapon() {
         Weapon weapon = new WeaponBuilder()
-                .name("Miniature Poodle")
-                .material("rusty")
-                .attak(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setWeapon(weapon);
     }
@@ -51,9 +50,8 @@ public class DogHandlerBuilder extends HeroBuilder {
     @Override
     public void buildArmor() {
         Armor armor = new ArmorBuilder()
-                .name("Rusty Armor")
-                .material("rusty")
-                .defense(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setArmor(armor);
     }
@@ -61,15 +59,38 @@ public class DogHandlerBuilder extends HeroBuilder {
     @Override
     public void buildHelm() {
         Helm helm = new HelmBuilder()
-                .name("Rusty Helm")
-                .material("rusty")
-                .hitPoints(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setHelm(helm);
     }
 
     @Override
+    public void buildWeaponName() {
+        String[] tab = {"Cute Puppy", "Fenrir", "Cerberus"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildArmorName() {
+        String[] tab = {"Rusty Armor", "Gold Armor", "Adamanthe Armor"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildHelmName() {
+        String[] tab = {"Rusty Helm", "Gold Helm", "Adamanthe Helm"};
+        hero.setHelmName(tab);
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/dog_handler.jpg");
+    }
+
+    @Override
+    public void buildCoordinates() {
+        Coordinates coordinates = new Coordinates(0, 0);
+        hero.setCoordinates(coordinates);
     }
 }

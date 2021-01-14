@@ -41,9 +41,8 @@ public class MadKnightBuilder extends HeroBuilder{
     @Override
     public void buildWeapon() {
         Weapon weapon = new WeaponBuilder()
-                .name("Rusty Spear")
-                .material("rusty")
-                .attak(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setWeapon(weapon);
     }
@@ -51,9 +50,8 @@ public class MadKnightBuilder extends HeroBuilder{
     @Override
     public void buildArmor() {
         Armor armor = new ArmorBuilder()
-                .name("Rusty Armor")
-                .material("rusty")
-                .defense(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setArmor(armor);
     }
@@ -61,15 +59,38 @@ public class MadKnightBuilder extends HeroBuilder{
     @Override
     public void buildHelm() {
         Helm helm = new HelmBuilder()
-                .name("Rusty Helm")
-                .material("rusty")
-                .hitPoints(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setHelm(helm);
     }
 
     @Override
+    public void buildWeaponName() {
+        String[] tab = {"Spear Tonbogiri", "Spear Otegine", "Spear Gungnir"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildArmorName() {
+        String[] tab = {"Rusty Armor", "Gold Armor", "Odin's Armor"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildHelmName() {
+        String[] tab = {"Rusty Helm", "Gold Helm", "Odin's Helm"};
+        hero.setHelmName(tab);
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/chevalier.jpg");
+    }
+
+    @Override
+    public void buildCoordinates() {
+        Coordinates coordinates = new Coordinates(0, 0);
+        hero.setCoordinates(coordinates);
     }
 }

@@ -41,9 +41,8 @@ public class BlackKnightBuilder extends HeroBuilder {
     @Override
     public void buildWeapon() {
         Weapon weapon = new WeaponBuilder()
-                .name("Rusty Sword")
-                .material("rusty")
-                .attak(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setWeapon(weapon);
     }
@@ -51,9 +50,8 @@ public class BlackKnightBuilder extends HeroBuilder {
     @Override
     public void buildArmor() {
         Armor armor = new ArmorBuilder()
-                .name("Rusty Armor")
-                .material("rusty")
-                .defense(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setArmor(armor);
     }
@@ -61,9 +59,8 @@ public class BlackKnightBuilder extends HeroBuilder {
     @Override
     public void buildHelm() {
         Helm helm = new HelmBuilder()
-                .name("Rusty Helm")
-                .material("rusty")
-                .hitPoints(1)
+                .name("None")
+                .points(0)
                 .build();
         hero.setHelm(helm);
     }
@@ -71,5 +68,29 @@ public class BlackKnightBuilder extends HeroBuilder {
     @Override
     public void buildImage() {
         hero.setImage("/images/black_knight.jpg");
+    }
+
+    @Override
+    public void buildCoordinates() {
+        Coordinates coordinates = new Coordinates(0, 0);
+        hero.setCoordinates(coordinates);
+    }
+
+    @Override
+    public void buildWeaponName() {
+        String[] tab = {"Sword Balisarde", "Sword Graban", "Sword Durendal"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildArmorName() {
+        String[] tab = {"Rusty Armor", "Gold Armor", "Adamanthe Armor"};
+        hero.setWeaponName(tab);
+    }
+
+    @Override
+    public void buildHelmName() {
+        String[] tab = {"Rusty Helm", "Gold Helm", "Adamanthe Helm"};
+        hero.setHelmName(tab);
     }
 }

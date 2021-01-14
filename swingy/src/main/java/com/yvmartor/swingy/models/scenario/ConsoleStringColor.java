@@ -17,7 +17,7 @@ public class ConsoleStringColor {
     }
     public static void error(String message) { System.err.println(ANSI_RED + message + ANSI_RESET);}
 
-    public static void hero(String message) { System.out.println(ANSI_YELLOW + message + ANSI_RESET);}
+    public static void action(String message) { System.out.println(ANSI_YELLOW + message + ANSI_RESET);}
 
 
 }

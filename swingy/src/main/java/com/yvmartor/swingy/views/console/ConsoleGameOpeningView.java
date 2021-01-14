@@ -8,7 +8,7 @@ public class ConsoleGameOpeningView {
     public void printGameOpening(String title, ArrayList<String> options){
         ConsoleStringColor.story(title);
         for (int i=0; i < options.size(); i++) {
-            System.out.println(options.get(i));
+            ConsoleStringColor.action(options.get(i));
         }
     }
 }

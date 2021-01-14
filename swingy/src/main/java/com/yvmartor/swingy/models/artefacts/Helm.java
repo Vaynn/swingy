@@ -1,25 +1,9 @@
 package com.yvmartor.swingy.models.artefacts;
 
-public class Helm {
-    private String name;
-    private String material;
-    private int hitPoints;
+public class Helm extends Artefact {
 
     Helm(HelmBuilder builder){
-        this.name = builder.name;
-        this.material = builder.material;
-        this.hitPoints = builder.hitPoints;
+        super(builder.name, builder.points);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public int getHitPoints() {
-        return hitPoints;
-    }
 }

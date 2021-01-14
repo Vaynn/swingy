@@ -23,14 +23,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff0d8962-85f8-44ab-960c-5066078ac44d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/GameOpeningController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/GameOpeningController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/SelectHeroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/SelectHeroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Armor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/ArmorBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/ArmorBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Helm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Helm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/HelmBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/HelmBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/WeaponBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/artefacts/WeaponBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/BlackKnightBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/BlackKnightBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/DogHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/DogHandlerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/HeroBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/HeroBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/HeroDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/HeroDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MadKnightBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MadKnightBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MagicianBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/MagicianBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/SaboteurBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/SaboteurBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/WitchBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/WitchBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/ConsoleStringColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/ConsoleStringColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/console/ConsoleGameOpeningView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/console/ConsoleGameOpeningView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/console/ConsoleSelectHeroView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/console/ConsoleSelectHeroView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/GUISelectHeroView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/GUISelectHeroView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/HeroCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/HeroCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/Swingy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/Swingy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/GameOpeningController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/GameOpeningController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/GameOpeningController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/GameOpeningController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/SelectHeroController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/SelectHeroController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/SelectHeroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/SelectHeroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/Armor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/Armor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/ArmorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/ArmorBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/Helm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/Helm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/HelmBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/HelmBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/WeaponBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/artefacts/WeaponBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/BlackKnightBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/BlackKnightBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/ChickenHeroBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/DogHandlerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/DogHandlerBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/Hero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/Hero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/HeroBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/HeroBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/HeroDirector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/HeroDirector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/HeroListBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/HeroListBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/MadKnightBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/MadKnightBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/MagicianBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/MagicianBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/SaboteurBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/SaboteurBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/WitchBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/hero/WitchBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/ConsoleStringColor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/ConsoleStringColor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/game_opening/GameOpening.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/game_opening/GameOpening.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/game_opening/GameOpeningBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/game_opening/GameOpeningBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/select_hero/SelectHero.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/select_hero/SelectHero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/select_hero/SelectHeroBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/select_hero/SelectHeroBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/console/ConsoleGameOpeningView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/console/ConsoleGameOpeningView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/console/ConsoleSelectHeroView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/console/ConsoleSelectHeroView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/CreateMainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/CreateMainFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/GUIGameOpeningView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/GUIGameOpeningView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/GUISelectHeroView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/GUISelectHeroView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/HeroCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/HeroCard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +98,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -73,7 +132,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -121,7 +180,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -145,34 +204,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1751" height="271" key="GridCell.Tab.0.bottom" timestamp="1610363889728">
-      <screen x="0" y="23" width="2880" height="1517" />
-    </state>
-    <state width="1751" height="271" key="GridCell.Tab.0.bottom/0.23.2880.1517@0.23.2880.1517" timestamp="1610363889728" />
-    <state width="1751" height="271" key="GridCell.Tab.0.center" timestamp="1610363889727">
-      <screen x="0" y="23" width="2880" height="1517" />
-    </state>
-    <state width="1751" height="271" key="GridCell.Tab.0.center/0.23.2880.1517@0.23.2880.1517" timestamp="1610363889727" />
-    <state width="1751" height="271" key="GridCell.Tab.0.left" timestamp="1610363889726">
-      <screen x="0" y="23" width="2880" height="1517" />
-    </state>
-    <state width="1751" height="271" key="GridCell.Tab.0.left/0.23.2880.1517@0.23.2880.1517" timestamp="1610363889726" />
-    <state width="1751" height="271" key="GridCell.Tab.0.right" timestamp="1610363889728">
-      <screen x="0" y="23" width="2880" height="1517" />
-    </state>
-    <state width="1751" height="271" key="GridCell.Tab.0.right/0.23.2880.1517@0.23.2880.1517" timestamp="1610363889727" />
-    <state x="999" y="281" width="670" height="675" key="run.anything.popup" timestamp="1610363889748">
-      <screen x="0" y="23" width="2880" height="1517" />
-    </state>
-    <state x="999" y="281" width="670" height="675" key="run.anything.popup/0.23.2880.1517@0.23.2880.1517" timestamp="1610363889748" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

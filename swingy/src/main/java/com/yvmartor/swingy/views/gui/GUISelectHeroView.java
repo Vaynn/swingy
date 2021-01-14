@@ -26,12 +26,14 @@ public class GUISelectHeroView extends JFrame {
         titleLabel.setVerticalAlignment(JLabel.CENTER);
         titleLabel.setBorder(new EmptyBorder(20, 0, 50, 0));
         container.add(titleLabel, BorderLayout.NORTH);
-        
+
+        heroTab.setBackground(Color.RED);
+        heroTab.setForeground(Color.cyan);
         for (int i=0; i < heroesList.size(); i++){
             Hero hero = heroesList.get(i);
-            heroTab.addTab(hero.getName(), new HeroCard(hero).getHeroCard());
+            JPanel heroPanel = new HeroCard(hero).getHeroCard();
+            heroTab.addTab(hero.getName(), heroPanel);
         }
-
         container.add(heroTab, BorderLayout.CENTER);
         selection.setText("SELECT");
         selection.setMargin(new Insets(10,5,10,5));
