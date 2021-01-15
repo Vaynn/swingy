@@ -15,8 +15,8 @@ public abstract class VilainBuilder {
 
     public abstract void buildName();
     public abstract void buildHero(Hero hero);
-    public abstract void buildAttak();
+    public abstract void buildAttak(int heroAttak);
     public abstract void buildImage();
     public abstract void buildCoordinates();
-    public abstract void buildArtefact();
+    public abstract void buildArtefact(Hero hero);
 }

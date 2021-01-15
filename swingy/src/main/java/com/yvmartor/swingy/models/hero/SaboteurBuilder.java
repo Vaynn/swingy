@@ -74,7 +74,7 @@ public class SaboteurBuilder extends HeroBuilder{
     @Override
     public void buildArmorName() {
         String[] tab = {"Rusty Chestplate", "Steel Chestplate", "BlackBeard ChestPlate"};
-        hero.setWeaponName(tab);
+        hero.setArmorName(tab);
     }
 
     @Override

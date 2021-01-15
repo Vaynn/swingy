@@ -3,6 +3,7 @@ package com.yvmartor.swingy.models.vilains;
 import com.yvmartor.swingy.models.artefacts.Artefact;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
+import com.yvmartor.swingy.models.map.WorldMap;
 
 public class Vilain {
     private String name = null;
@@ -11,6 +12,7 @@ public class Vilain {
     private Artefact artefact = null;
     private String image = null;
     private Hero hero;
+    private WorldMap worldMap;
 
     public String getName() {
         return name;
@@ -58,5 +60,10 @@ public class Vilain {
 
     public void setHero(Hero hero) {
         this.hero = hero;
+    }
+
+    public void registerWorldMap(WorldMap worldMap){
+        worldMap.registerVilain(this);
+        this.worldMap = worldMap;
     }
 }

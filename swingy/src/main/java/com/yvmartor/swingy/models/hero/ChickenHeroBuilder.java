@@ -74,7 +74,7 @@ public class ChickenHeroBuilder extends HeroBuilder {
     @Override
     public void buildArmorName() {
         String[] tab = {"Rusty Feathers", "Gold Feathers", "ThunderBird's Feathers"};
-        hero.setWeaponName(tab);
+        hero.setArmorName(tab);
     }
 
     @Override

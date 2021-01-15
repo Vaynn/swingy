@@ -74,7 +74,7 @@ public class MadKnightBuilder extends HeroBuilder{
     @Override
     public void buildArmorName() {
         String[] tab = {"Rusty Armor", "Gold Armor", "Odin's Armor"};
-        hero.setWeaponName(tab);
+        hero.setArmorName(tab);
     }
 
     @Override

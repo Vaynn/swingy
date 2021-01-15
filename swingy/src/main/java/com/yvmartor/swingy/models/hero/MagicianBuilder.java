@@ -74,7 +74,7 @@ public class MagicianBuilder extends HeroBuilder {
     @Override
     public void buildArmorName() {
         String[] tab = {"Worn Gown", "Steel Gown", "Mithril Gown"};
-        hero.setWeaponName(tab);
+        hero.setArmorName(tab);
     }
 
     @Override

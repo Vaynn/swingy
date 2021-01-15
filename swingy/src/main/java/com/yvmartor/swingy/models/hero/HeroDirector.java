@@ -25,6 +25,9 @@ public class HeroDirector {
         heroBuilder.buildHelm();
         heroBuilder.buildImage();
         heroBuilder.buildCoordinates();
+        heroBuilder.buildWeaponName();
+        heroBuilder.buildArmorName();
+        heroBuilder.buildHelmName();
     }
 
 }

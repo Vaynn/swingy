@@ -176,6 +176,5 @@ public class Hero {
     public void registerWorldMap(WorldMap worldMap){
         worldMap.registerHero(this);
         this.worldMap = worldMap;
-        System.out.println(this.getName());
     }
 }

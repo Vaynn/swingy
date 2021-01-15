@@ -28,39 +28,30 @@ public class ArtefactProvider {
 
             if (selectArtefact == 0) {
                 if (vilainsName.compareTo("Evil Cat") == 0) {
-                    Weapon weapon = new WeaponBuilder().name(heroArmorName[0]).points(5).build();
-                    return weapon;
+                    return new WeaponBuilder().name(heroWeaponName[0]).points(5).build();
                 } else if (vilainsName.compareTo("Mickachu") == 0) {
-                    Weapon weapon = new WeaponBuilder().name(heroArmorName[1]).points(10).build();
-                    return weapon;
-                } else {
-                    Weapon weapon = new WeaponBuilder().name(heroArmorName[2]).points(15).build();
-                    return weapon;
-                }
-            } else if (selectArtefact == 1) {
-                if (vilainsName.compareTo("Evil Cat") == 0) {
-                    Armor armor = new ArmorBuilder().name(heroArmorName[0]).points(5).build();
-                    return armor;
-                } else if (vilainsName.compareTo("Mickachu") == 0) {
-                    Armor armor = new ArmorBuilder().name(heroArmorName[1]).points(10).build();
-                    return armor;
-                } else {
-                    Armor armor = new ArmorBuilder().name(heroArmorName[2]).points(15).build();
-                    return armor;
-                }
-            } else if (selectArtefact == 2) {
-                if (vilainsName.compareTo("Evil Cat") == 0) {
-                    Helm helm = new HelmBuilder().name(heroArmorName[0]).points(5).build();
-                    return helm;
-                } else if (vilainsName.compareTo("Mickachu") == 0) {
-                    Helm helm = new HelmBuilder().name(heroArmorName[1]).points(10).build();
-                    return helm;
-                } else {
-                    Helm helm = new HelmBuilder().name(heroArmorName[2]).points(15).build();
-                    return helm;
+                    return new WeaponBuilder().name(heroWeaponName[1]).points(10).build();
+                } else if (vilainsName.compareTo("Badass Mickey") == 0) {
+                    return new WeaponBuilder().name(heroWeaponName[2]).points(15).build();
                 }
             }
-        }
-        return null;
+            else if (selectArtefact == 1) {
+                if (vilainsName.compareTo("Evil Cat") == 0)
+                    return new ArmorBuilder().name(heroArmorName[0]).points(5).build();
+                else if (vilainsName.compareTo("Mickachu") == 0)
+                    return new ArmorBuilder().name(heroArmorName[1]).points(10).build();
+                else if (vilainsName.compareTo("Badass Mickey") == 0)
+                    return new ArmorBuilder().name(heroArmorName[2]).points(15).build();
+                }
+            else if (selectArtefact == 2){
+                if (vilainsName.compareTo("Evil Cat") == 0)
+                    return new HelmBuilder().name(heroHelmName[0]).points(5).build();
+                else if (vilainsName.compareTo("Mickachu") == 0)
+                    return new HelmBuilder().name(heroHelmName[1]).points(10).build();
+                else
+                    return new HelmBuilder().name(heroHelmName[2]).points(15).build();
+                }
+            }
+        return new HelmBuilder().name("None").points(0).build();
     }
 }

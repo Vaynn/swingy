@@ -23,8 +23,8 @@ public class BadassMickey extends VilainBuilder{
     }
 
     @Override
-    public void buildAttak() {
-        vilains.setAttak(this.hero.getAttak() + 10);
+    public void buildAttak(int heroAttak) {
+        vilains.setAttak(heroAttak + 10);
     }
 
     @Override
@@ -34,11 +34,12 @@ public class BadassMickey extends VilainBuilder{
 
     @Override
     public void buildCoordinates() {
-        vilains.setCoordinates(this.hero.getCoordinates());
+        Coordinates coor = new Coordinates(0, 0);
+        vilains.setCoordinates(coor);
     }
 
     @Override
-    public void buildArtefact() {
+    public void buildArtefact(Hero hero) {
         vilains.setArtefact(new ArtefactProvider(hero, "Badass Mickey").RandomArtefactProvider());
     }
 }

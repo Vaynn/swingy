@@ -74,7 +74,7 @@ public class DogHandlerBuilder extends HeroBuilder {
     @Override
     public void buildArmorName() {
         String[] tab = {"Rusty Armor", "Gold Armor", "Adamanthe Armor"};
-        hero.setWeaponName(tab);
+        hero.setArmorName(tab);
     }
 
     @Override

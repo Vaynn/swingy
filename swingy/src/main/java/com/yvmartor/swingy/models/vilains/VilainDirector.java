@@ -6,20 +6,21 @@ public class VilainDirector {
 
     private VilainBuilder vilainsBuilder;
 
-    public void setVilainsBuilder(VilainBuilder vilainsBuilder) {
+    public void setVilainBuilder(VilainBuilder vilainsBuilder) {
         this.vilainsBuilder = vilainsBuilder;
     }
 
-    public Vilain getVilains(){
+    public Vilain getVilain(){
         return vilainsBuilder.getVilains();
     }
 
-    public void constructHero(Hero hero){
+    public void constructVilain(Hero hero){
         vilainsBuilder.createNewVilains(hero);
         vilainsBuilder.buildName();
         vilainsBuilder.buildHero(hero);
-        vilainsBuilder.buildAttak();
+        vilainsBuilder.buildAttak(hero.getAttak());
         vilainsBuilder.buildImage();
         vilainsBuilder.buildCoordinates();
+        vilainsBuilder.buildArtefact(hero);
     }
 }
