@@ -3,9 +3,14 @@ package com.yvmartor.swingy.controller;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.adventure.Adventure;
+import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRun;
+import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRunBuilder;
+import com.yvmartor.swingy.models.scenario.question.Question;
 import com.yvmartor.swingy.models.vilains.Vilain;
 import com.yvmartor.swingy.views.console.ConsoleAdventureView;
+import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AdventureController {
@@ -19,7 +24,7 @@ public class AdventureController {
         this.consoleView = consoleView;
     }
 
-    public void updateConsoleView(){
+    public void updateConsoleView() {
         Hero hero = model.getHero();
         WorldMap worldMap = model.getWorldMap();
 
@@ -29,10 +34,22 @@ public class AdventureController {
             choice = scanner.nextInt();
 
             worldMap.updateHeroCoordinates(choice);
+            //After the hero move , check if we meet an enemy
             Vilain enemy = worldMap.isHeroMeetVilain();
-            if (enemy != null)
-                System.out.println(enemy.getName());
+            if (enemy != null) {
+                ArrayList<String> options = new ArrayList<String>()
+                options.add("Fight");
+                options.add("Run");
+                String quest = "A " + enemy.getName() + "attacked you !\n What do you want to do ?";
+                Question question = new Question(quest, options);
+                FightOrRun fightOrRunModel = new FightOrRunBuilder()
+                        .hero(hero)
+                        .vilain(enemy)
+                        .question(question)
+                        .build();
+                ConsoleFightOrRunView fightOrRunView = new ConsoleFightOrRunView();
+                FightOrRunController controller = new FightOrRunController(fightOrRunModel, fightOrRunView);
+            }
         }
     }
-
 }
