@@ -12,8 +12,8 @@ public class ConsoleFightOrRunView {
     public void printFightOrRun(Hero hero, Vilain vilain, Question question){
         ConsoleStringColor.story(question.getQuestion() + "\n");
         ArrayList<String> options = question.getOptions();
-        for (int i = 1; i < options.size(); i++){
-            ConsoleStringColor.action("\t" + i + ") " + options.get(i) + "\n" );
+        for (int i = 0; i < options.size(); i++){
+            ConsoleStringColor.action("\t" + (i + 1) + ") " + options.get(i) + "\n" );
         }
 
     }

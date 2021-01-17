@@ -37,10 +37,10 @@ public class AdventureController {
             //After the hero move , check if we meet an enemy
             Vilain enemy = worldMap.isHeroMeetVilain();
             if (enemy != null) {
-                ArrayList<String> options = new ArrayList<String>()
+                ArrayList<String> options = new ArrayList<String>();
                 options.add("Fight");
                 options.add("Run");
-                String quest = "A " + enemy.getName() + "attacked you !\n What do you want to do ?";
+                String quest = "A " + enemy.getName() + " attacked you !\n What do you want to do ?";
                 Question question = new Question(quest, options);
                 FightOrRun fightOrRunModel = new FightOrRunBuilder()
                         .hero(hero)
@@ -49,6 +49,7 @@ public class AdventureController {
                         .build();
                 ConsoleFightOrRunView fightOrRunView = new ConsoleFightOrRunView();
                 FightOrRunController controller = new FightOrRunController(fightOrRunModel, fightOrRunView);
+                controller.updateConsoleView();
             }
         }
     }
