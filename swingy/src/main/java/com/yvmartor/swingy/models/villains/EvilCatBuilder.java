@@ -1,11 +1,11 @@
-package com.yvmartor.swingy.models.vilains;
+package com.yvmartor.swingy.models.villains;
 
 import com.yvmartor.swingy.models.artefacts.Artefact;
 import com.yvmartor.swingy.models.artefacts.ArtefactProvider;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
 
-public class MickachuBuilder extends VilainBuilder {
+public class EvilCatBuilder extends VillainBuilder {
     private String name;
     private int attak;
     private Coordinates coordinates;
@@ -14,7 +14,7 @@ public class MickachuBuilder extends VilainBuilder {
     private Hero hero;
 
     public void buildName() {
-        vilains.setName("Mickachu");
+        vilains.setName("Evil Cat");
     }
 
     @Override
@@ -24,24 +24,24 @@ public class MickachuBuilder extends VilainBuilder {
 
     @Override
     public void buildAttak(int heroAttak) {
-        vilains.setAttak(heroAttak + 5);
+        vilains.setAttak(heroAttak - 5);
+
     }
 
     @Override
     public void buildImage() {
-        vilains.setImage("/images/mickachu.jpg");
+        vilains.setImage("/images/evil_cat.jpg");
     }
 
     @Override
     public void buildCoordinates() {
         Coordinates coor = new Coordinates(0, 0);
         vilains.setCoordinates(coor);
+
     }
 
     @Override
     public void buildArtefact(Hero hero) {
-        vilains.setArtefact(new ArtefactProvider(hero, "Mickachu").RandomArtefactProvider());
+        vilains.setArtefact(new ArtefactProvider(hero, "Evil Cat").RandomArtefactProvider());
     }
-
-
 }

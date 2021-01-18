@@ -1,13 +1,12 @@
 package com.yvmartor.swingy.models.map;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
-import com.yvmartor.swingy.models.vilains.Vilain;
-import com.yvmartor.swingy.models.map.WorldMap;
+import com.yvmartor.swingy.models.villains.Villain;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.function.ToDoubleBiFunction;
 
 import static java.lang.Math.round;
 
@@ -15,9 +14,12 @@ public class WorldMap {
 
     private int dimension;
     private Hero hero;
-    private ArrayList<Vilain> vilainList = new ArrayList<Vilain>();
+    private ArrayList<Villain> villainList = new ArrayList<Villain>();
     private ArrayList<int[]> usedCoord = new ArrayList<int[]>();
+    private static final int VILLAIN = 666;
+    private static final int HERO = 665;
 
+    //register hero on the center of the map
     public void registerHero(Hero hero){
         this.hero = hero;
         mapDimensionProvider();
@@ -27,25 +29,27 @@ public class WorldMap {
         usedCoord.add(tab);
     }
 
-    public void registerVilain(Vilain vilain){
+    //register vilains on the map, checking if there is already someone on the current coordinates
+    public void registerVilain(Villain villain){
         int[] tab = generateCoordinates();
         while (isCoordAlreadyUsed(tab)){
             tab = generateCoordinates();
         }
         Coordinates coor = new Coordinates(tab[0], tab[1]);
-        vilain.setCoordinates(coor);
+        villain.setCoordinates(coor);
         usedCoord.add(tab);
-        vilainList.add(vilain);
+        villainList.add(villain);
     }
 
-    public void unregisterVilain(Vilain vilain){
-        vilainList.remove(vilain);
+    public void unregisterVilain(Villain villain){
+        villainList.remove(villain);
     }
 
     private void mapDimensionProvider(){
         this.dimension = (this.hero.getLevel() - 1) * 5 + 10 - 1;
     }
 
+    //generate a random int between min and max, usefull to create vilains coordinates
     private int generateRandomInt(int min, int max){
         Random rand = new Random();
         int nb;
@@ -77,15 +81,22 @@ public class WorldMap {
         this.hero.updateCoordinates(userChoice);
     }
 
-    public Vilain isHeroMeetVilain(){
+    //After hero move, check if there is a vilain on the current coordinates, if true return vilain Object
+    public Villain isHeroMeetVilain(){
         int[] coor = hero.getCoordinates().getCoordonates();
 
-        for (int i = 0; i < vilainList.size(); i++){
-            int[] vilCoor = vilainList.get(i).getCoordinates().getCoordonates();
+        for (int i = 0; i < villainList.size(); i++){
+            int[] vilCoor = villainList.get(i).getCoordinates().getCoordonates();
             if (Arrays.equals(coor, vilCoor)){
-                return vilainList.get(i);
+                return villainList.get(i);
             }
         }
         return null;
     }
+
+    public void fight(Villain villain){
+        int beginner = generateRandomInt(665, 666);
+        //TODO add hp and defense to vilains + simulate the fight with the random begginer.
+    }
+    
 }

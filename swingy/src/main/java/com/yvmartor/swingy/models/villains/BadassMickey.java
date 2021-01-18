@@ -1,11 +1,11 @@
-package com.yvmartor.swingy.models.vilains;
+package com.yvmartor.swingy.models.villains;
 
 import com.yvmartor.swingy.models.artefacts.Artefact;
 import com.yvmartor.swingy.models.artefacts.ArtefactProvider;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
 
-public class BadassMickey extends VilainBuilder{
+public class BadassMickey extends VillainBuilder {
     private String name;
     private int attak;
     private Coordinates coordinates;

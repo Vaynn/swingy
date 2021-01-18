@@ -1,21 +1,17 @@
 package com.yvmartor.swingy.models.scenario.fight_or_run;
 
 import com.yvmartor.swingy.models.hero.Hero;
-import com.yvmartor.swingy.models.map.WorldMap;
-import com.yvmartor.swingy.models.scenario.adventure.AdventureBuilder;
 import com.yvmartor.swingy.models.scenario.question.Question;
-import com.yvmartor.swingy.models.vilains.Vilain;
-
-import java.util.ArrayList;
+import com.yvmartor.swingy.models.villains.Villain;
 
 public class FightOrRun {
     private Hero hero;
-    private Vilain vilain;
+    private Villain villain;
     private Question question;
 
     public FightOrRun(FightOrRunBuilder builder){
         this.hero = builder.hero;
-        this.vilain = builder.vilain;
+        this.villain = builder.villain;
         this.question = builder.question;
     }
 
@@ -23,8 +19,8 @@ public class FightOrRun {
         return hero;
     }
 
-    public Vilain getVilain() {
-        return vilain;
+    public Villain getVilain() {
+        return villain;
     }
 
     public Question getQuestion() {
@@ -35,8 +31,8 @@ public class FightOrRun {
         this.hero = hero;
     }
 
-    public void setVilain(Vilain vilain) {
-        this.vilain = vilain;
+    public void setVilain(Villain villain) {
+        this.villain = villain;
     }
 
     public void setQuestion(Question question) {

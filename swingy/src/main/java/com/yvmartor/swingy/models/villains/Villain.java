@@ -1,11 +1,11 @@
-package com.yvmartor.swingy.models.vilains;
+package com.yvmartor.swingy.models.villains;
 
 import com.yvmartor.swingy.models.artefacts.Artefact;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 
-public class Vilain {
+public class Villain {
     private String name = null;
     private int attak = 0;
     private Coordinates coordinates = null;

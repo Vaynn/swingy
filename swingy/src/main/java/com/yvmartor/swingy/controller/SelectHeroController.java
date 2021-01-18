@@ -2,15 +2,14 @@ package com.yvmartor.swingy.controller;
 
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
-import com.yvmartor.swingy.models.vilains.VilainDirector;
-import com.yvmartor.swingy.models.vilains.Vilain;
-import com.yvmartor.swingy.models.vilains.VilainBuilder;
-import com.yvmartor.swingy.models.vilains.EvilCatBuilder;
-import com.yvmartor.swingy.models.vilains.MickachuBuilder;
-import com.yvmartor.swingy.models.vilains.BadassMickey;
+import com.yvmartor.swingy.models.villains.VillainDirector;
+import com.yvmartor.swingy.models.villains.Villain;
+import com.yvmartor.swingy.models.villains.VillainBuilder;
+import com.yvmartor.swingy.models.villains.EvilCatBuilder;
+import com.yvmartor.swingy.models.villains.MickachuBuilder;
+import com.yvmartor.swingy.models.villains.BadassMickey;
 import com.yvmartor.swingy.models.scenario.adventure.Adventure;
 import com.yvmartor.swingy.models.scenario.adventure.AdventureBuilder;
-import com.yvmartor.swingy.models.scenario.game_opening.GameOpening;
 import com.yvmartor.swingy.models.scenario.select_hero.SelectHero;
 import com.yvmartor.swingy.views.console.ConsoleAdventureView;
 import com.yvmartor.swingy.views.console.ConsoleSelectHeroView;
@@ -30,7 +29,7 @@ public class SelectHeroController {
     private Scanner userChoice;
     private int choice;
     private JFrame frame;
-    private VilainBuilder[] vilainTab = {
+    private VillainBuilder[] vilainTab = {
             new EvilCatBuilder(), new MickachuBuilder(), new BadassMickey()
     };
 
@@ -54,14 +53,14 @@ public class SelectHeroController {
         //register vilains on the map , I decide to give 40% of the map to the vilains
         //vilains are randomly chosen between 3 classes of different strenght
         int totalVilains = worldmap.vilainProportionCalculator();
-        VilainDirector director = new VilainDirector();
+        VillainDirector director = new VillainDirector();
         Random rand = new Random();
         for (int i = 0; i < totalVilains; i++){
             int randy = rand.nextInt(3);
             director.setVilainBuilder(vilainTab[randy]);
             director.constructVilain(hero);
-            Vilain vilain = director.getVilain();
-            vilain.registerWorldMap(worldmap);
+            Villain villain = director.getVilain();
+            villain.registerWorldMap(worldmap);
         }
 
         String[] options = {

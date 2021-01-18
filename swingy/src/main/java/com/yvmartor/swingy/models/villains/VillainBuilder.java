@@ -1,16 +1,16 @@
-package com.yvmartor.swingy.models.vilains;
+package com.yvmartor.swingy.models.villains;
 
 import com.yvmartor.swingy.models.hero.Hero;
 
-public abstract class VilainBuilder {
-    protected Vilain vilains;
+public abstract class VillainBuilder {
+    protected Villain vilains;
 
-    public Vilain getVilains(){
+    public Villain getVilains(){
         return vilains;
     }
 
     public void createNewVilains(Hero hero){
-        vilains = new Vilain();
+        vilains = new Villain();
     }
 
     public abstract void buildName();

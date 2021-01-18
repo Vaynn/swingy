@@ -6,7 +6,7 @@ import com.yvmartor.swingy.models.scenario.adventure.Adventure;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRun;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRunBuilder;
 import com.yvmartor.swingy.models.scenario.question.Question;
-import com.yvmartor.swingy.models.vilains.Vilain;
+import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleAdventureView;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 
@@ -35,7 +35,7 @@ public class AdventureController {
 
             worldMap.updateHeroCoordinates(choice);
             //After the hero move , check if we meet an enemy
-            Vilain enemy = worldMap.isHeroMeetVilain();
+            Villain enemy = worldMap.isHeroMeetVilain();
             if (enemy != null) {
                 ArrayList<String> options = new ArrayList<String>();
                 options.add("Fight");

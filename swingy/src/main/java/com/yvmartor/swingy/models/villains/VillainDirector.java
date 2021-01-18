@@ -1,16 +1,16 @@
-package com.yvmartor.swingy.models.vilains;
+package com.yvmartor.swingy.models.villains;
 
 import com.yvmartor.swingy.models.hero.Hero;
 
-public class VilainDirector {
+public class VillainDirector {
 
-    private VilainBuilder vilainsBuilder;
+    private VillainBuilder vilainsBuilder;
 
-    public void setVilainBuilder(VilainBuilder vilainsBuilder) {
+    public void setVilainBuilder(VillainBuilder vilainsBuilder) {
         this.vilainsBuilder = vilainsBuilder;
     }
 
-    public Vilain getVilain(){
+    public Villain getVilain(){
         return vilainsBuilder.getVilains();
     }
 
