@@ -24,24 +24,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ff0d8962-85f8-44ab-960c-5066078ac44d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/AdventureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/AdventureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/FightOrRunController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/FightOrRunController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/SelectHeroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/controller/SelectHeroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/hero/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/map/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/map/WorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/fight_or_run/FightOrRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/fight_or_run/FightOrRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/fight_or_run/FightOrRunBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/fight_or_run/FightOrRunBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/scenario/question/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/vilains/BadassMickey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/BadassMickey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/vilains/EvilCatBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/EvilCatBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/vilains/MickachuBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/MickachuBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/vilains/Vilain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/Villain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/vilains/VilainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/VillainBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/vilains/VilainDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/VillainDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/console/ConsoleFightOrRunView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/console/ConsoleFightOrRunView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/AdventureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/AdventureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/FightOrRunController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/controller/FightOrRunController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/question/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/models/scenario/question/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/BadassMickey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/BadassMickey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/EvilCatBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/EvilCatBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/MickachuBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/MickachuBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/Villain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/Villain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/VillainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/VillainBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/VillainDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/models/villains/VillainDirector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +129,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,6 +145,7 @@
       <workItem from="1610688486643" duration="822000" />
       <workItem from="1610692636486" duration="13292000" />
       <workItem from="1610708559574" duration="11429000" />
+      <workItem from="1611034014885" duration="17994000" />
     </task>
     <servers />
   </component>
@@ -166,11 +157,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="989" y="472" key="#com.intellij.ide.util.MemberChooser" timestamp="1611037853541">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="989" y="472" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1611037853541" />
+    <state x="841" y="423" width="670" height="676" key="search.everywhere.popup" timestamp="1611053870731">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="841" y="423" width="670" height="676" key="search.everywhere.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1611053870731" />
   </component>
 </project>

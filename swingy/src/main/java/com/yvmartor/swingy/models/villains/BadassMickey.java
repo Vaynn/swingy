@@ -4,6 +4,8 @@ import com.yvmartor.swingy.models.artefacts.Artefact;
 import com.yvmartor.swingy.models.artefacts.ArtefactProvider;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
+import com.yvmartor.swingy.models.tools.Tools;
+
 
 public class BadassMickey extends VillainBuilder {
     private String name;
@@ -12,6 +14,7 @@ public class BadassMickey extends VillainBuilder {
     private Artefact artefact;
     private String image;
     private Hero hero;
+
 
     public void buildName() {
         vilains.setName("Badass Mickey");
@@ -24,7 +27,53 @@ public class BadassMickey extends VillainBuilder {
 
     @Override
     public void buildAttak(int heroAttak) {
-        vilains.setAttak(heroAttak + 10);
+        //random int define if we add or sub attack points
+        int op = Tools.generateRandomInt(Tools.SUB, Tools.ADD);
+
+        if (op == Tools.SUB) {
+            //random int define how much points to add or sub
+            int idx = Tools.generateRandomInt(0, 1);
+            vilains.setAttak(heroAttak - idx);
+        }
+        else if (op == Tools.ADD) {
+            //random int define how much points to add or sub
+            int idx = Tools.generateRandomInt(10, 15);
+            vilains.setAttak(heroAttak + idx);
+        }
+    }
+
+    @Override
+    public void buildDefense(int heroDefense) {
+        //random int define if we add or sub attack points
+        int op = Tools.generateRandomInt(Tools.SUB, Tools.ADD);
+
+        if (op == Tools.SUB) {
+            //random int define how much points to add or sub
+            int idx = Tools.generateRandomInt(0, 1);
+            vilains.setDefense(heroDefense - idx);
+        }
+        else if (op == Tools.ADD) {
+            //random int define how much points to add or sub
+            int idx = Tools.generateRandomInt(10, 15);
+            vilains.setDefense(heroDefense + idx);
+        }
+    }
+
+    @Override
+    public void buildHitPoints(int heroHitPoints) {
+        //random int define if we add or sub attack points
+        int op = Tools.generateRandomInt(Tools.SUB, Tools.ADD);
+
+        if (op == Tools.SUB) {
+            //random int define how much points to add or sub
+            int idx = Tools.generateRandomInt(0, 1);
+            vilains.setHp(heroHitPoints - idx);
+        }
+        else if (op == Tools.ADD) {
+            //random int define how much points to add or sub
+            int idx = Tools.generateRandomInt(10, 15);
+            vilains.setHp(heroHitPoints + idx);
+        }
     }
 
     @Override
@@ -42,4 +91,6 @@ public class BadassMickey extends VillainBuilder {
     public void buildArtefact(Hero hero) {
         vilains.setArtefact(new ArtefactProvider(hero, "Badass Mickey").RandomArtefactProvider());
     }
+
+
 }

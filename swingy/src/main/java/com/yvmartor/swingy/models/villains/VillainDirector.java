@@ -19,6 +19,8 @@ public class VillainDirector {
         vilainsBuilder.buildName();
         vilainsBuilder.buildHero(hero);
         vilainsBuilder.buildAttak(hero.getAttak());
+        vilainsBuilder.buildDefense(hero.getDefense());
+        vilainsBuilder.buildHitPoints(hero.getHitPoints());
         vilainsBuilder.buildImage();
         vilainsBuilder.buildCoordinates();
         vilainsBuilder.buildArtefact(hero);

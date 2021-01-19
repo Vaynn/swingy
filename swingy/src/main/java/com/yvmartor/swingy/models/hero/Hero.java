@@ -2,6 +2,10 @@ package com.yvmartor.swingy.models.hero;
 
 import com.yvmartor.swingy.models.artefacts.*;
 import com.yvmartor.swingy.models.map.WorldMap;
+import com.yvmartor.swingy.models.villains.Villain;
+
+import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
+import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
 
 public class Hero {
     private String heroClass = "";
@@ -176,5 +180,19 @@ public class Hero {
     public void registerWorldMap(WorldMap worldMap){
         worldMap.registerHero(this);
         this.worldMap = worldMap;
+    }
+
+    public int underAttack(Villain villain, int myHP){
+        int villainAttack = villain.getAttak();
+        int myDefense = getDefense();
+        if (myDefense >= villainAttack)
+            return VILLAIN_DEATH;
+        else{
+            myHP -= villainAttack - myDefense;
+            if (myHP <= 0)
+                myHP = HERO_DEATH;
+            return myHP;
+        }
+
     }
 }

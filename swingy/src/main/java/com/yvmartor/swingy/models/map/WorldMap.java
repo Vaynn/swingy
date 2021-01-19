@@ -1,6 +1,7 @@
 package com.yvmartor.swingy.models.map;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
+import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.function.ToDoubleBiFunction;
 
+import static com.yvmartor.swingy.models.tools.Tools.*;
 import static java.lang.Math.round;
 
 public class WorldMap {
@@ -16,6 +18,7 @@ public class WorldMap {
     private Hero hero;
     private ArrayList<Villain> villainList = new ArrayList<Villain>();
     private ArrayList<int[]> usedCoord = new ArrayList<int[]>();
+    private String fightTelling = "";
     private static final int VILLAIN = 666;
     private static final int HERO = 665;
 
@@ -41,6 +44,10 @@ public class WorldMap {
         villainList.add(villain);
     }
 
+    public void setFightTelling(String fightTelling) {
+        this.fightTelling = fightTelling;
+    }
+
     public void unregisterVilain(Villain villain){
         villainList.remove(villain);
     }
@@ -50,16 +57,11 @@ public class WorldMap {
     }
 
     //generate a random int between min and max, usefull to create vilains coordinates
-    private int generateRandomInt(int min, int max){
-        Random rand = new Random();
-        int nb;
-        nb = min + rand.nextInt(max-min);
-        return nb;
-    }
+
 
     private int[] generateCoordinates(){
-        int x = generateRandomInt(1, dimension - 1);
-        int y = generateRandomInt(1, dimension - 1);
+        int x = Tools.generateRandomInt(1, dimension - 1);
+        int y = Tools.generateRandomInt(1, dimension - 1);
         int[] tab = {x, y};
         return tab;
     }
@@ -94,9 +96,80 @@ public class WorldMap {
         return null;
     }
 
-    public void fight(Villain villain){
-        int beginner = generateRandomInt(665, 666);
-        //TODO add hp and defense to vilains + simulate the fight with the random begginer.
+    public int fightHeroTurn(Villain villain, int villainHP){
+        int villain_dodge = Tools.generateRandomInt(770, 780); //Randomly select if the villain dodge the attack (1/10)
+        if (villain_dodge != LUCK){
+            int tempHP = villain.underAttack(villainHP);
+            if (tempHP == VILLAIN_DEATH || tempHP == HERO_DEATH)
+                return tempHP;
+            fightTelling += "\tYou attack the " + villain.getName() + ".  He has " + tempHP + " HP left.\n";
+            int doubleShot = Tools.generateRandomInt(770, 780); //Randomly select if the hero attack a second time. (1/10)
+            if (doubleShot == LUCK){
+                fightTelling += "\t You are on fire, you launch a second attack.\n";
+                tempHP = villain.underAttack(villainHP);
+                if (tempHP == VILLAIN_DEATH || tempHP == HERO_DEATH)
+                    return tempHP;
+                fightTelling += "\tYou attack the " + villain.getName() + ".  He has " + tempHP + " HP left.\n";
+            }
+            return tempHP;
+        } else {
+            fightTelling += "\tCrap! You're attack was too slow, the ennemy dodged.\n";
+        }
+        return villainHP;
+    }
+
+    public int fightVillainTurn(Villain villain, int myHP){
+        int hero_dodge = Tools.generateRandomInt(770, 780); //Randomly select if the hero dodge the attack (1/10)
+        if (hero_dodge != LUCK){
+            int tempHP = hero.underAttack(villain, myHP);
+            if (tempHP == VILLAIN_DEATH || tempHP == HERO_DEATH)
+                return tempHP;
+            fightTelling += "\tThe " + villain.getName() + " attack you.  You have  " + tempHP + " HP left.\n";
+            return tempHP;
+        }
+        else {
+            fightTelling += "\tThanks to your agility, you dodged the attack. You receive no damage for this turn \n";
+        }
+        return myHP;
+    }
+
+    public Object[] fight(Villain villain){
+        int beginner = Tools.generateRandomInt(HERO, VILLAIN); //Randomly select who begin to attack (50% of chance)
+        int villainHP = villain.getHp();
+        int heroHP = hero.getHitPoints();
+        int tmpHP;
+        fightTelling = "\tLet's the fight begin !\n";
+        if (beginner == HERO){
+            while (villainHP > VILLAIN_DEATH || heroHP > HERO_DEATH) {
+                tmpHP = fightHeroTurn(villain, villainHP);
+                if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
+                    villainHP = tmpHP;
+                else
+                    return new Object[]{fightTelling, tmpHP};
+                tmpHP = fightVillainTurn(villain, heroHP);
+                if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
+                    heroHP = tmpHP;
+                else
+                    return new Object[]{fightTelling, tmpHP};
+            }
+
+        }
+        else if (beginner == VILLAIN){
+            while (villainHP > VILLAIN_DEATH || heroHP > HERO_DEATH) {
+                tmpHP = fightVillainTurn(villain, heroHP);
+                if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
+                    heroHP = tmpHP;
+                else
+                    return new Object[]{fightTelling, tmpHP};
+                tmpHP = fightVillainTurn(villain, heroHP);
+                if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
+                    heroHP = tmpHP;
+                else
+                    return new Object[]{fightTelling, tmpHP};
+            }
+        }
+
+        return null;
     }
     
 }

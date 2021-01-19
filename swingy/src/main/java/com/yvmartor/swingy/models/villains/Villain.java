@@ -5,9 +5,14 @@ import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 
+import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
+import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
+
 public class Villain {
     private String name = null;
     private int attak = 0;
+    private int defense = 0;
+    private int hp = 0;
     private Coordinates coordinates = null;
     private Artefact artefact = null;
     private String image = null;
@@ -20,6 +25,14 @@ public class Villain {
 
     public int getAttak() {
         return attak;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getHp() {
+        return hp;
     }
 
     public Coordinates getCoordinates() {
@@ -46,6 +59,14 @@ public class Villain {
         this.attak = attak;
     }
 
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
@@ -65,5 +86,20 @@ public class Villain {
     public void registerWorldMap(WorldMap worldMap){
         worldMap.registerVilain(this);
         this.worldMap = worldMap;
+    }
+
+    //Fight one round with the Villain, return the remains HP of the villain
+    public int underAttack(int myHP){
+        int heroAttack = hero.getAttak();
+        int myDefense = getDefense();
+        if (myDefense >= heroAttack)
+            return HERO_DEATH;
+        else{
+            myHP -= heroAttack - myDefense;
+            if (myHP <= 0)
+                myHP = VILLAIN_DEATH;
+            return myHP;
+        }
+
     }
 }

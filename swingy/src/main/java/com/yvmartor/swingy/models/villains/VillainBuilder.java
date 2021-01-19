@@ -19,4 +19,6 @@ public abstract class VillainBuilder {
     public abstract void buildImage();
     public abstract void buildCoordinates();
     public abstract void buildArtefact(Hero hero);
+    public abstract void buildDefense(int heroDefense);
+    public abstract void buildHitPoints(int heroHitPoints);
 }
