@@ -100,6 +100,10 @@ public class Hero {
         return helmName;
     }
 
+    public WorldMap getWorldMap() {
+        return worldMap;
+    }
+
     public void setHeroClass(String heroClass) {
         this.heroClass = heroClass;
     }
@@ -186,13 +190,13 @@ public class Hero {
         int villainAttack = villain.getAttak();
         int myDefense = getDefense();
         if (myDefense >= villainAttack)
-            return VILLAIN_DEATH;
+            myHP -= 1;
         else{
             myHP -= villainAttack - myDefense;
-            if (myHP <= 0)
-                myHP = HERO_DEATH;
-            return myHP;
         }
+        if (myHP <= 0)
+            myHP = HERO_DEATH;
+        return myHP;
 
     }
 }

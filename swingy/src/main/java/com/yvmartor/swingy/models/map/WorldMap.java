@@ -1,6 +1,7 @@
 package com.yvmartor.swingy.models.map;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 
@@ -105,8 +106,8 @@ public class WorldMap {
             fightTelling += "\tYou attack the " + villain.getName() + ".  He has " + tempHP + " HP left.\n";
             int doubleShot = Tools.generateRandomInt(770, 780); //Randomly select if the hero attack a second time. (1/10)
             if (doubleShot == LUCK){
-                fightTelling += "\t You are on fire, you launch a second attack.\n";
-                tempHP = villain.underAttack(villainHP);
+                fightTelling += "\tYou are on fire, you launch a second attack.\n";
+                tempHP = villain.underAttack(tempHP);
                 if (tempHP == VILLAIN_DEATH || tempHP == HERO_DEATH)
                     return tempHP;
                 fightTelling += "\tYou attack the " + villain.getName() + ".  He has " + tempHP + " HP left.\n";
@@ -140,6 +141,7 @@ public class WorldMap {
         int tmpHP;
         fightTelling = "\tLet's the fight begin !\n";
         if (beginner == HERO){
+            fightTelling += "\tYou attack first\n";
             while (villainHP > VILLAIN_DEATH || heroHP > HERO_DEATH) {
                 tmpHP = fightHeroTurn(villain, villainHP);
                 if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
@@ -155,15 +157,16 @@ public class WorldMap {
 
         }
         else if (beginner == VILLAIN){
+            fightTelling += "\tThe enemy attack first";
             while (villainHP > VILLAIN_DEATH || heroHP > HERO_DEATH) {
                 tmpHP = fightVillainTurn(villain, heroHP);
                 if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
                     heroHP = tmpHP;
                 else
                     return new Object[]{fightTelling, tmpHP};
-                tmpHP = fightVillainTurn(villain, heroHP);
+                tmpHP = fightHeroTurn(villain, villainHP);
                 if (tmpHP != HERO_DEATH && tmpHP != VILLAIN_DEATH)
-                    heroHP = tmpHP;
+                    villainHP = tmpHP;
                 else
                     return new Object[]{fightTelling, tmpHP};
             }

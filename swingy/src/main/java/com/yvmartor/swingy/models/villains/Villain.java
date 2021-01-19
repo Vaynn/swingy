@@ -10,6 +10,7 @@ import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
 
 public class Villain {
     private String name = null;
+    private int idx = 0;
     private int attak = 0;
     private int defense = 0;
     private int hp = 0;
@@ -51,6 +52,10 @@ public class Villain {
         return hero;
     }
 
+    public int getIdx() {
+        return idx;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -83,6 +88,10 @@ public class Villain {
         this.hero = hero;
     }
 
+    public void setIdx(int idx) {
+        this.idx = idx;
+    }
+
     public void registerWorldMap(WorldMap worldMap){
         worldMap.registerVilain(this);
         this.worldMap = worldMap;
@@ -93,13 +102,12 @@ public class Villain {
         int heroAttack = hero.getAttak();
         int myDefense = getDefense();
         if (myDefense >= heroAttack)
-            return HERO_DEATH;
+            myHP -= 1;
         else{
             myHP -= heroAttack - myDefense;
-            if (myHP <= 0)
-                myHP = VILLAIN_DEATH;
-            return myHP;
         }
-
+        if (myHP <= 0)
+            myHP = VILLAIN_DEATH;
+        return myHP;
     }
 }

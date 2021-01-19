@@ -21,7 +21,7 @@ public class ArtefactProvider {
 
     public Artefact RandomArtefactProvider() {
         Random rand = new Random();
-        int chance = rand.nextInt(11);
+        int chance = rand.nextInt(11); //randomly select if a villain have hold an artefact;
 
         if (chance % 2 == 0) {
             int selectArtefact = rand.nextInt(3);

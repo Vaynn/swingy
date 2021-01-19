@@ -16,7 +16,7 @@ public class ConsoleStringColor {
         System.out.println(ANSI_GREEN + message + ANSI_RESET);
     }
     public static void error(String message) { System.err.println(ANSI_RED + message + ANSI_RESET);}
-
+    public static void fightTelling(String message) { System.out.println(ANSI_PURPLE + message + ANSI_RESET);}
     public static void action(String message) { System.out.println(ANSI_YELLOW + message + ANSI_RESET);}
 
 

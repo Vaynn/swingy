@@ -60,6 +60,7 @@ public class SelectHeroController {
             director.setVilainBuilder(vilainTab[randy]);
             director.constructVilain(hero);
             Villain villain = director.getVilain();
+            villain.setIdx(i);
             villain.registerWorldMap(worldmap);
         }
 
