@@ -15,12 +15,12 @@ public class SaboteurBuilder extends HeroBuilder{
 
     @Override
     public void buildXp() {
-        hero.setXp(1000);
+        hero.setXp(0);
     }
 
     @Override
     public void buildLevel() {
-        hero.setLevel(1);
+        hero.setLevel(0);
     }
 
     @Override

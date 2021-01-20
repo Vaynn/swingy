@@ -21,35 +21,35 @@ public class ArtefactProvider {
 
     public Artefact RandomArtefactProvider() {
         Random rand = new Random();
-        int chance = rand.nextInt(11); //randomly select if a villain have hold an artefact;
+        int chance = rand.nextInt(11); //randomly select if a villain hold an artefact;
 
         if (chance % 2 == 0) {
             int selectArtefact = rand.nextInt(3);
 
             if (selectArtefact == 0) {
                 if (vilainsName.compareTo("Evil Cat") == 0) {
-                    return new WeaponBuilder().name(heroWeaponName[0]).points(5).build();
+                    return new WeaponBuilder().name(heroWeaponName[0]).points(5).increasedStat().build();
                 } else if (vilainsName.compareTo("Mickachu") == 0) {
-                    return new WeaponBuilder().name(heroWeaponName[1]).points(10).build();
+                    return new WeaponBuilder().name(heroWeaponName[1]).points(10).increasedStat().build();
                 } else if (vilainsName.compareTo("Badass Mickey") == 0) {
-                    return new WeaponBuilder().name(heroWeaponName[2]).points(15).build();
+                    return new WeaponBuilder().name(heroWeaponName[2]).points(15).increasedStat().build();
                 }
             }
             else if (selectArtefact == 1) {
                 if (vilainsName.compareTo("Evil Cat") == 0)
-                    return new ArmorBuilder().name(heroArmorName[0]).points(5).build();
+                    return new ArmorBuilder().name(heroArmorName[0]).points(5).increasedStat().build();
                 else if (vilainsName.compareTo("Mickachu") == 0)
-                    return new ArmorBuilder().name(heroArmorName[1]).points(10).build();
+                    return new ArmorBuilder().name(heroArmorName[1]).points(10).increasedStat().build();
                 else if (vilainsName.compareTo("Badass Mickey") == 0)
-                    return new ArmorBuilder().name(heroArmorName[2]).points(15).build();
+                    return new ArmorBuilder().name(heroArmorName[2]).points(15).increasedStat().build();
                 }
             else if (selectArtefact == 2){
                 if (vilainsName.compareTo("Evil Cat") == 0)
-                    return new HelmBuilder().name(heroHelmName[0]).points(5).build();
+                    return new HelmBuilder().name(heroHelmName[0]).points(5).increasedStat().build();
                 else if (vilainsName.compareTo("Mickachu") == 0)
-                    return new HelmBuilder().name(heroHelmName[1]).points(10).build();
+                    return new HelmBuilder().name(heroHelmName[1]).points(10).increasedStat().build();
                 else
-                    return new HelmBuilder().name(heroHelmName[2]).points(15).build();
+                    return new HelmBuilder().name(heroHelmName[2]).points(15).increasedStat().build();
                 }
             }
         return new HelmBuilder().name("None").points(0).build();

@@ -14,6 +14,7 @@ public class Villain {
     private int attak = 0;
     private int defense = 0;
     private int hp = 0;
+    private int winXp = 0;
     private Coordinates coordinates = null;
     private Artefact artefact = null;
     private String image = null;
@@ -56,6 +57,10 @@ public class Villain {
         return idx;
     }
 
+    public int getWinXp() {
+        return winXp;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -90,6 +95,10 @@ public class Villain {
 
     public void setIdx(int idx) {
         this.idx = idx;
+    }
+
+    public void setWinXp(int winXp) {
+        this.winXp = winXp;
     }
 
     public void registerWorldMap(WorldMap worldMap){

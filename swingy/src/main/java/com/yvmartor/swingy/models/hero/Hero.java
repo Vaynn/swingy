@@ -10,7 +10,7 @@ import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
 public class Hero {
     private String heroClass = "";
     private String name = "";
-    private long xp = 0;
+    private double xp = 0;
     private int level = 0;
     private int attak = 0;
     private int defense = 0;
@@ -48,7 +48,7 @@ public class Hero {
         return name;
     }
 
-    public long getXp() {
+    public double getXp() {
         return xp;
     }
 
@@ -112,7 +112,7 @@ public class Hero {
         this.name = name;
     }
 
-    public void setXp(long xp) {
+    public void setXp(double xp) {
         this.xp = xp;
     }
 
@@ -186,6 +186,15 @@ public class Hero {
         this.worldMap = worldMap;
     }
 
+    public void updateArtefact(Artefact artefact){
+        if (artefact instanceof Armor)
+            setArmor((Armor)artefact);
+        else if (artefact instanceof Helm)
+            setHelm((Helm)artefact);
+        else if (artefact instanceof Weapon)
+            setWeapon((Weapon)artefact);
+    }
+
     public int underAttack(Villain villain, int myHP){
         int villainAttack = villain.getAttak();
         int myDefense = getDefense();
@@ -198,5 +207,17 @@ public class Hero {
             myHP = HERO_DEATH;
         return myHP;
 
+    }
+
+    public boolean updateXP(int xp) {
+        double nextLevel = getLevel() + 1;
+        double nextXP = nextLevel * 1000 + Math.pow(nextLevel - 1, 2) * 450;
+        double newXP = getXp() + xp;
+        setXp(newXP);
+        if (newXP >= nextXP) {
+            setLevel(getLevel() + 1);
+            return true;
+        }
+        return false;
     }
 }

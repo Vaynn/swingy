@@ -76,6 +76,11 @@ public class EvilCatBuilder extends VillainBuilder {
     }
 
     @Override
+    public void buildWinXp() {
+        vilains.setWinXp(100);
+    }
+
+    @Override
     public void buildImage() {
         vilains.setImage("/images/evil_cat.jpg");
     }

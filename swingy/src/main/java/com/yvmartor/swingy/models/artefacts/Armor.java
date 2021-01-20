@@ -5,5 +5,6 @@ public class Armor extends Artefact{
 
     Armor(ArmorBuilder builder){
         super(builder.name, builder.points);
+        setIncreasedStat(builder.increasedStat);
     }
 }

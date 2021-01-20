@@ -42,6 +42,7 @@ public class SelectHeroController {
 
     public void updateConsoleView(){
         consoleView.printSelectHeroView(model.getTitle(), model.getHeroesList());
+        //TODO Check user input
         userChoice = new Scanner(System.in);
         choice = userChoice.nextInt();
 

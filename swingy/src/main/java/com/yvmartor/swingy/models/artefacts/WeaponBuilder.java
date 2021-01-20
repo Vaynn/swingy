@@ -3,6 +3,7 @@ package com.yvmartor.swingy.models.artefacts;
 public class WeaponBuilder {
     String name;
     int points;
+    String increasedStat;
 
     public WeaponBuilder name(String name){
         this.name = name;
@@ -11,6 +12,11 @@ public class WeaponBuilder {
 
     public WeaponBuilder points(int points){
         this.points = points;
+        return this;
+    }
+
+    public WeaponBuilder increasedStat(){
+        this.increasedStat = "attack";
         return this;
     }
 

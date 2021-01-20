@@ -30,17 +30,17 @@ public class AdventureController {
 
         while (true) {
             consoleView.printGameAdventure(hero, model.getOptions());
+            //TODO Check user input
             scanner = new Scanner(System.in);
             choice = scanner.nextInt();
 
             worldMap.updateHeroCoordinates(choice);
-            //After the hero move , check if we meet an enemy
-            Villain enemy = worldMap.isHeroMeetVilain();
+            Villain enemy = worldMap.isHeroMeetVilain(); //After the hero move , check if we meet an enemy
             if (enemy != null) {
                 ArrayList<String> options = new ArrayList<String>();
                 options.add("Fight");
                 options.add("Run");
-                String quest = "A " + enemy.getName() + " attacked you !\n What do you want to do ?";
+                String quest = "A " + enemy.getName() + " attacked you !\nWhat do you want to do ?";
                 Question question = new Question(quest, options);
                 FightOrRun fightOrRunModel = new FightOrRunBuilder()
                         .hero(hero)

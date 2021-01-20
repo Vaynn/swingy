@@ -1,4 +1,5 @@
 package com.yvmartor.swingy.models.map;
+import com.yvmartor.swingy.models.artefacts.Artefact;
 import com.yvmartor.swingy.models.hero.Coordinates;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
@@ -45,12 +46,17 @@ public class WorldMap {
         villainList.add(villain);
     }
 
+    public Hero getHero() {
+        return hero;
+    }
+
     public void setFightTelling(String fightTelling) {
         this.fightTelling = fightTelling;
     }
 
     public void unregisterVilain(Villain villain){
         villainList.remove(villain);
+        System.out.println(villainList.size());
     }
 
     private void mapDimensionProvider(){
@@ -82,6 +88,14 @@ public class WorldMap {
 
     public void updateHeroCoordinates(int userChoice){
         this.hero.updateCoordinates(userChoice);
+    }
+
+    public void updateArtefact(Artefact artefact) {this.hero.updateArtefact(artefact);}
+
+    public boolean updateXP(int xp){
+        boolean levelUp;
+        levelUp = this.hero.updateXP(xp);
+        return levelUp;
     }
 
     //After hero move, check if there is a vilain on the current coordinates, if true return vilain Object

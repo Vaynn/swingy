@@ -52,6 +52,7 @@ public class GameOpeningController {
 
     public void updateConsoleView(){
         consoleView.printGameOpening(model.getTitle(), model.getOptions());
+        //TODO Check user input
         userChoice = new Scanner(System.in);
         choice = userChoice.nextInt();
         if (choice == 1) {

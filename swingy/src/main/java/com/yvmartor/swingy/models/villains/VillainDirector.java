@@ -24,5 +24,6 @@ public class VillainDirector {
         vilainsBuilder.buildImage();
         vilainsBuilder.buildCoordinates();
         vilainsBuilder.buildArtefact(hero);
+        vilainsBuilder.buildWinXp();
     }
 }

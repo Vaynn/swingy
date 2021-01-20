@@ -77,6 +77,11 @@ public class BadassMickey extends VillainBuilder {
     }
 
     @Override
+    public void buildWinXp() {
+        vilains.setWinXp(500);
+    }
+
+    @Override
     public void buildImage() {
         vilains.setImage("/images/big_boss_mickey.jpg");
     }

@@ -64,6 +64,11 @@ public class MickachuBuilder extends VillainBuilder {
     }
 
     @Override
+    public void buildWinXp() {
+        vilains.setWinXp(250);
+    }
+
+    @Override
     public void buildImage() {
         vilains.setImage("/images/mickachu.jpg");
     }

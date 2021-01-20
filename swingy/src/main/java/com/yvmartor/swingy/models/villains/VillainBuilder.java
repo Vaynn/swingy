@@ -21,4 +21,5 @@ public abstract class VillainBuilder {
     public abstract void buildArtefact(Hero hero);
     public abstract void buildDefense(int heroDefense);
     public abstract void buildHitPoints(int heroHitPoints);
+    public abstract void buildWinXp();
 }
