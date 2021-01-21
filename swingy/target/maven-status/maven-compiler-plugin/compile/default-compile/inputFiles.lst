@@ -16,6 +16,7 @@
 /sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/models/hero/HeroDirector.java
 /sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/models/villains/VillainBuilder.java
 /sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/models/scenario/fight_or_run/FightOrRun.java
+/sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/views/gui/GUIAdventureView.java
 /sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/models/scenario/game_opening/GameOpeningBuilder.java
 /sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/models/scenario/adventure/AdventureBuilder.java
 /sgoinfre/Perso/yvmartor/swingy/swingy/src/main/java/com/yvmartor/swingy/models/hero/HeroListBuilder.java
