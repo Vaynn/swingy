@@ -48,7 +48,7 @@ public class HeroCard extends JPanel {
         addStatLabel(container, "NAME: ",  hero.getName());
         addStatLabel(container, "CLASS: ",  hero.getHeroClass());
         addStatLabel(container, "LEVEL: ",  String.valueOf(hero.getLevel()));
-        addStatLabel(container, "XP: ",  String.valueOf(hero.getXp()));
+        addStatLabel(container, "XP: ",  String.valueOf((int)hero.getXp()));
         addStatLabel(container, "ATTACK: ",  String.valueOf(hero.getAttak()));
         addStatLabel(container, "DEFENSE: ",  String.valueOf(hero.getDefense()));
         addStatLabel(container, "HP: ",  String.valueOf(hero.getHitPoints()));

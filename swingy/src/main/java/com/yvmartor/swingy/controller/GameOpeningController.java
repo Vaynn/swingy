@@ -14,7 +14,6 @@ import com.yvmartor.swingy.views.gui.GUISelectHeroView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -57,10 +56,7 @@ public class GameOpeningController {
         choice = userChoice.nextInt();
         if (choice == 1) {
             ArrayList<Hero> heroList = new HeroListBuilder().heroListBuilder();
-            SelectHero selectHeroModel = new SelectHeroBuilder()
-                    .title("\nSelect your Hero\n")
-                    .heroesList(heroList)
-                    .build();
+            SelectHero selectHeroModel = getSelectHeroModel(heroList);
             ConsoleSelectHeroView consoleSelectHeroView = new ConsoleSelectHeroView();
             SelectHeroController controller = new SelectHeroController(
                     selectHeroModel,
@@ -83,10 +79,7 @@ public class GameOpeningController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<Hero> heroList = new HeroListBuilder().heroListBuilder();
-                SelectHero selectHeroModel = new SelectHeroBuilder()
-                        .title("\nSelect your Hero\n")
-                        .heroesList(heroList)
-                        .build();
+                SelectHero selectHeroModel = getSelectHeroModel(heroList);
                 GUISelectHeroView guiSelectHeroView = new GUISelectHeroView();
                 SelectHeroController controller = new SelectHeroController(selectHeroModel, myFrame, null, guiSelectHeroView);
                 try {
@@ -103,6 +96,14 @@ public class GameOpeningController {
             updateGUIView();
         else if (this.consoleView != null && this.gUIView == null)
             updateConsoleView();
+    }
+
+    private SelectHero getSelectHeroModel(ArrayList<Hero> heroList){
+        SelectHero selectHeroModel = new SelectHeroBuilder()
+                .title("\nSelect your Hero\n")
+                .heroesList(heroList)
+                .build();
+        return selectHeroModel;
     }
 
 }

@@ -9,6 +9,8 @@ import com.yvmartor.swingy.models.scenario.question.Question;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleAdventureView;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
+import com.yvmartor.swingy.views.gui.GUIAdventureView;
+import com.yvmartor.swingy.views.gui.GUIGameOpeningView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -19,17 +21,22 @@ import static com.yvmartor.swingy.models.tools.Tools.VICTORY;
 public class AdventureController {
     private Adventure model;
     private ConsoleAdventureView consoleView;
+    private GUIAdventureView gUIView;
     private Scanner scanner;
     private int choice;
+    private Hero hero;
+    private WorldMap worldMap;
 
-    public AdventureController(Adventure model, ConsoleAdventureView consoleView){
+    public AdventureController(Adventure model, ConsoleAdventureView consoleView, GUIAdventureView gUIView){
         this.model = model;
         this.consoleView = consoleView;
+        this.gUIView = gUIView;
+        this.hero = model.getHero();
+        this.worldMap = model.getWorldMap();
     }
 
     public void updateConsoleView() {
-        Hero hero = model.getHero();
-        WorldMap worldMap = model.getWorldMap();
+
         int destiny;
 
         while (true) {
@@ -72,5 +79,11 @@ public class AdventureController {
             //TODO DB SAVE + ASK CONTINUE OR NOT.
             System.out.println("VICTORY");
         }
+    }
+
+    public void updateGUIView(){
+
+        int destiny;
+        gUIView.printGUIAdventureView(worldMap, model.getOptions());
     }
 }

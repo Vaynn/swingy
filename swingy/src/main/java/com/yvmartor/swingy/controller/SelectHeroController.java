@@ -13,6 +13,7 @@ import com.yvmartor.swingy.models.scenario.adventure.AdventureBuilder;
 import com.yvmartor.swingy.models.scenario.select_hero.SelectHero;
 import com.yvmartor.swingy.views.console.ConsoleAdventureView;
 import com.yvmartor.swingy.views.console.ConsoleSelectHeroView;
+import com.yvmartor.swingy.views.gui.GUIAdventureView;
 import com.yvmartor.swingy.views.gui.GUISelectHeroView;
 
 import javax.swing.*;
@@ -23,6 +24,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class SelectHeroController {
+
     private SelectHero model;
     private ConsoleSelectHeroView consoleView;
     private GUISelectHeroView gUIView;
@@ -31,6 +33,12 @@ public class SelectHeroController {
     private JFrame frame;
     private VillainBuilder[] vilainTab = {
             new EvilCatBuilder(), new MickachuBuilder(), new BadassMickey()
+    };
+    private final String[] options = {
+                "Go to the north.",
+                "Go to the east.",
+                "Go to the south.",
+                "Go to the west."
     };
 
     public SelectHeroController(SelectHero model, JFrame frame, ConsoleSelectHeroView consoleView, GUISelectHeroView gUIView){
@@ -53,29 +61,11 @@ public class SelectHeroController {
 
         //register vilains on the map , I decide to give 40% of the map to the vilains
         //vilains are randomly chosen between 3 classes of different strenght
-        int totalVilains = worldmap.vilainProportionCalculator();
-        System.out.println("total villains " + totalVilains + "\n");
-        VillainDirector director = new VillainDirector();
-        Random rand = new Random();
-        for (int i = 0; i < totalVilains; i++){
-            int randy = rand.nextInt(3);
-            director.setVilainBuilder(vilainTab[randy]);
-            director.constructVilain(hero);
-            Villain villain = director.getVilain();
-            villain.setIdx(i);
-            villain.registerWorldMap(worldmap);
-            System.out.println("x=" + villain.getCoordinates().getX() + "y=" + villain.getCoordinates().getY()+"\n" );
-        }
+        createAndRegisterVillains(worldmap);
 
-        String[] options = {
-                "Go to the north.",
-                "Go to the east.",
-                "Go to the south.",
-                "Go to the west."
-        };
         Adventure model = new AdventureBuilder().hero(hero).options(options).worldMap(worldmap).build();
         ConsoleAdventureView view = new ConsoleAdventureView();
-        AdventureController controller = new AdventureController(model, view);
+        AdventureController controller = new AdventureController(model, view, null);
         controller.updateConsoleView();
 
     }
@@ -86,8 +76,30 @@ public class SelectHeroController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int heroIdx = gUIView.getHeroTab().getSelectedIndex();
+                WorldMap worldMap= new WorldMap();
+                Hero hero = model.getHeroesList().get(heroIdx);
+                hero.registerWorldMap(worldMap);
+                createAndRegisterVillains(worldMap);
+                Adventure model = new AdventureBuilder().hero(hero).options(options).worldMap(worldMap).build();
+                GUIAdventureView view = new GUIAdventureView(frame);
+                AdventureController controller = new AdventureController(model, null, view);
+                controller.updateGUIView();
 
             }
         });
+    }
+
+    private void createAndRegisterVillains(WorldMap worldmap){
+        int totalVilains = worldmap.vilainProportionCalculator();
+        VillainDirector director = new VillainDirector();
+        Random rand = new Random();
+        for (int i = 0; i < totalVilains; i++){
+            int randy = rand.nextInt(3);
+            director.setVilainBuilder(vilainTab[randy]);
+            director.constructVilain(worldmap.getHero());
+            Villain villain = director.getVilain();
+            villain.setIdx(i);
+            villain.registerWorldMap(worldmap);
+        }
     }
 }

@@ -41,6 +41,7 @@ com/yvmartor/swingy/models/hero/WitchBuilder.class
 com/yvmartor/swingy/models/hero/Coordinates.class
 com/yvmartor/swingy/models/scenario/adventure/AdventureBuilder.class
 com/yvmartor/swingy/models/map/WorldMap.class
+com/yvmartor/swingy/views/gui/GUIAdventureView.class
 com/yvmartor/swingy/models/villains/VillainBuilder.class
 com/yvmartor/swingy/models/villains/EvilCatBuilder.class
 com/yvmartor/swingy/models/villains/Villain.class

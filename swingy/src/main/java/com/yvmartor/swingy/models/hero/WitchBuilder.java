@@ -15,12 +15,12 @@ public class WitchBuilder extends HeroBuilder{
 
     @Override
     public void buildXp() {
-        hero.setXp(0);
+        hero.setXp(1000);
     }
 
     @Override
     public void buildLevel() {
-        hero.setLevel(0);
+        hero.setLevel(1);
     }
 
     @Override

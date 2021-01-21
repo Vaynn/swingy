@@ -36,7 +36,6 @@ public class WorldMap {
 
     //register vilains on the map, checking if there is already someone on the current coordinates
     public void registerVilain(Villain villain){
-        System.out.println("usedcoord = " + this.usedCoord.get(0)[0] + "\n");
         int[] tab = generateCoordinates();
         while (isCoordAlreadyUsed(tab) != false){
             tab = generateCoordinates();
@@ -61,7 +60,6 @@ public class WorldMap {
 
     public void unregisterVilain(Villain villain){
         villainList.remove(villain);
-        System.out.println(villainList.size());
     }
 
     private void mapDimensionProvider(){
@@ -81,11 +79,9 @@ public class WorldMap {
         for (int i =0; i < usedCoord.size(); i++) {
             int[] tmp = usedCoord.get(i);
             if (tmp[0] == tab[0] && tmp[1] == tab[1]) {
-                System.out.println("True used " + tab[0] + " " + tab[1] + "\n");
                 return true;
             }
         }
-        System.out.println("False used "+ tab[0] + " " + tab[1] + "\n");
         return false;
     }
 
@@ -153,6 +149,7 @@ public class WorldMap {
 
     public int fightVillainTurn(Villain villain, int myHP){
         int fatal_attak = Tools.generateRandomInt(770, 790);//Randomly select if the villain make a fatal attack(1/20)
+        System.out.println(fatal_attak);
         if (fatal_attak == LUCK){
             fightTelling += "\tThe " + villain.getName() + " multiply his strength. He turns you into powder.\n";
             return HERO_DEATH;

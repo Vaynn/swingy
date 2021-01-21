@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
 
-public class GUISelectHeroView extends JFrame {
+public class GUISelectHeroView {
 
     private JLabel titleLabel = new JLabel();
     private JButton selection = new JButton();
