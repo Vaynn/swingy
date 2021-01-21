@@ -7,6 +7,7 @@ import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.scenario.question.Question;
 import com.yvmartor.swingy.models.villains.Villain;
 
+import java.io.Console;
 import java.util.ArrayList;
 
 public class ConsoleFightOrRunView {
@@ -32,7 +33,7 @@ public class ConsoleFightOrRunView {
         if (heroArtefact.getName().compareTo("None") != 0) {
             ConsoleStringColor.story("For now you are wearing a "
                     + heroArtefact.getName()
-                    + "with an increase of "
+                    + " with an increase of "
                     + heroArtefact.getPoints()
                     + ".\n");
         }
@@ -53,6 +54,15 @@ public class ConsoleFightOrRunView {
         ConsoleStringColor.story("You won " + villainXp + "XP you now have " + (int)hero.getXp() + " XP.\n");
         if (levelUp == true){
             ConsoleStringColor.story("You're level goes up to level " + hero.getLevel() + ". \u2B06\n");
+        }
+    }
+
+    public void printCanIRun(boolean b) {
+        if (b){
+            ConsoleStringColor.story("You managed to escape.\n");
+        }
+        else {
+            ConsoleStringColor.story("You stumbled, you will have to fight.\n");
         }
     }
 }

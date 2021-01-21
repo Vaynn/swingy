@@ -36,8 +36,9 @@ public class WorldMap {
 
     //register vilains on the map, checking if there is already someone on the current coordinates
     public void registerVilain(Villain villain){
+        System.out.println("usedcoord = " + this.usedCoord.get(0)[0] + "\n");
         int[] tab = generateCoordinates();
-        while (isCoordAlreadyUsed(tab)){
+        while (isCoordAlreadyUsed(tab) != false){
             tab = generateCoordinates();
         }
         Coordinates coor = new Coordinates(tab[0], tab[1]);
@@ -48,6 +49,10 @@ public class WorldMap {
 
     public Hero getHero() {
         return hero;
+    }
+
+    public int getDimension() {
+        return dimension;
     }
 
     public void setFightTelling(String fightTelling) {
@@ -64,8 +69,6 @@ public class WorldMap {
     }
 
     //generate a random int between min and max, usefull to create vilains coordinates
-
-
     private int[] generateCoordinates(){
         int x = Tools.generateRandomInt(1, dimension - 1);
         int y = Tools.generateRandomInt(1, dimension - 1);
@@ -75,21 +78,29 @@ public class WorldMap {
 
     //check if there is not a vilains in this case yet
     private boolean isCoordAlreadyUsed(int[] tab){
-        if (this.usedCoord.contains(tab))
+        for (int i =0; i < usedCoord.size(); i++) {
+            int[] tmp = usedCoord.get(i);
+            if (tmp[0] == tab[0] && tmp[1] == tab[1]) {
+                System.out.println("True used " + tab[0] + " " + tab[1] + "\n");
                 return true;
+            }
+        }
+        System.out.println("False used "+ tab[0] + " " + tab[1] + "\n");
         return false;
     }
 
     //calculate the number of vilains to register on the map (40%)
     public int vilainProportionCalculator(){
-        int totalCase = dimension * dimension;
+        int totalCase = dimension * dimension - ((dimension * 2) - 1);
         return (totalCase * 40) / 100;
     }
 
+    //update hero coordinates after a move
     public void updateHeroCoordinates(int userChoice){
         this.hero.updateCoordinates(userChoice);
     }
 
+    //update hero Artefact when he won it.
     public void updateArtefact(Artefact artefact) {this.hero.updateArtefact(artefact);}
 
     public boolean updateXP(int xp){
@@ -100,15 +111,22 @@ public class WorldMap {
 
     //After hero move, check if there is a vilain on the current coordinates, if true return vilain Object
     public Villain isHeroMeetVilain(){
-        int[] coor = hero.getCoordinates().getCoordonates();
+        int[] coor = hero.getCoordinates().getCoordinates();
 
         for (int i = 0; i < villainList.size(); i++){
-            int[] vilCoor = villainList.get(i).getCoordinates().getCoordonates();
+            int[] vilCoor = villainList.get(i).getCoordinates().getCoordinates();
             if (Arrays.equals(coor, vilCoor)){
                 return villainList.get(i);
             }
         }
         return null;
+    }
+
+    public boolean isHeroReachTheEdge(){
+        int[] coor = hero.getCoordinates().getCoordinates();
+        if (coor[0] == 0 || coor[1] == 0 || coor[0] == dimension - 1 || coor[1] == dimension - 1)
+            return true;
+        return false;
     }
 
     public int fightHeroTurn(Villain villain, int villainHP){
@@ -134,6 +152,11 @@ public class WorldMap {
     }
 
     public int fightVillainTurn(Villain villain, int myHP){
+        int fatal_attak = Tools.generateRandomInt(770, 790);//Randomly select if the villain make a fatal attack(1/20)
+        if (fatal_attak == LUCK){
+            fightTelling += "\tThe " + villain.getName() + " multiply his strength. He turns you into powder.\n";
+            return HERO_DEATH;
+        }
         int hero_dodge = Tools.generateRandomInt(770, 780); //Randomly select if the hero dodge the attack (1/10)
         if (hero_dodge != LUCK){
             int tempHP = hero.underAttack(villain, myHP);

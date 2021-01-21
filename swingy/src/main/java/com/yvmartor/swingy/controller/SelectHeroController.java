@@ -54,6 +54,7 @@ public class SelectHeroController {
         //register vilains on the map , I decide to give 40% of the map to the vilains
         //vilains are randomly chosen between 3 classes of different strenght
         int totalVilains = worldmap.vilainProportionCalculator();
+        System.out.println("total villains " + totalVilains + "\n");
         VillainDirector director = new VillainDirector();
         Random rand = new Random();
         for (int i = 0; i < totalVilains; i++){
@@ -63,6 +64,7 @@ public class SelectHeroController {
             Villain villain = director.getVilain();
             villain.setIdx(i);
             villain.registerWorldMap(worldmap);
+            System.out.println("x=" + villain.getCoordinates().getX() + "y=" + villain.getCoordinates().getY()+"\n" );
         }
 
         String[] options = {

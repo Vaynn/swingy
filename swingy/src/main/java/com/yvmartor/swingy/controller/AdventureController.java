@@ -13,6 +13,9 @@ import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
+import static com.yvmartor.swingy.models.tools.Tools.VICTORY;
+
 public class AdventureController {
     private Adventure model;
     private ConsoleAdventureView consoleView;
@@ -27,6 +30,7 @@ public class AdventureController {
     public void updateConsoleView() {
         Hero hero = model.getHero();
         WorldMap worldMap = model.getWorldMap();
+        int destiny;
 
         while (true) {
             consoleView.printGameAdventure(hero, model.getOptions());
@@ -49,8 +53,24 @@ public class AdventureController {
                         .build();
                 ConsoleFightOrRunView fightOrRunView = new ConsoleFightOrRunView();
                 FightOrRunController controller = new FightOrRunController(fightOrRunModel, fightOrRunView);
-                controller.updateConsoleView();
+                destiny = controller.updateConsoleView();
+                if (destiny == HERO_DEATH){
+                    break;
+                }
             }
+            if (worldMap.isHeroReachTheEdge() == true){
+                destiny = VICTORY;
+                break;
+            }
+
+        }
+        if (destiny == HERO_DEATH){
+            //TODO GAME OVER VIEW
+            System.out.println("GAME OVER");
+        }
+        if (destiny == VICTORY){
+            //TODO DB SAVE + ASK CONTINUE OR NOT.
+            System.out.println("VICTORY");
         }
     }
 }

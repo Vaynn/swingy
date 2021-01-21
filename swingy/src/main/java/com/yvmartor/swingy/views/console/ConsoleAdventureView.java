@@ -9,6 +9,15 @@ public class ConsoleAdventureView {
 
     public void printGameAdventure(Hero hero, String[] options){
         ConsoleStringColor.story(hero.getName() + " walks through the labyrinth.\n");
+        ConsoleStringColor.story(
+                        "Location: [x= "
+                        + hero.getCoordinates().getX()
+                        + " , y= " + hero.getCoordinates().getY()
+                        + "] Map: "
+                        + hero.getWorldMap().getDimension()
+                        + "x"
+                        + hero.getWorldMap().getDimension()
+                        +"\n");
         ConsoleStringColor.story("What do you want to do ?\n");
         for (int i = 0; i < options.length; i++) {
             int indice = i + 1;

@@ -17,7 +17,7 @@ public class Coordinates {
         return y;
     }
 
-    public int[] getCoordonates(){
+    public int[] getCoordinates(){
         int[] coordinates = {this.getX(), this.getY()};
         return coordinates;
     }
