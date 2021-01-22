@@ -75,6 +75,7 @@ public class GameOpeningController {
         CreateMainFrame frame = new CreateMainFrame();
         JFrame myFrame = frame.getMyFrame();
         gUIView.printGameOpening(myFrame, model.getTitle(), model.getOptions(), model.getImage());
+        myFrame.setVisible(true);
         gUIView.getNewHero().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

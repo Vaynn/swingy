@@ -71,6 +71,11 @@ public class BlackKnightBuilder extends HeroBuilder {
     }
 
     @Override
+    public void buildGif() {
+        hero.setGif("/images/black_knight.gif");
+    }
+
+    @Override
     public void buildCoordinates() {
         Coordinates coordinates = new Coordinates(0, 0);
         hero.setCoordinates(coordinates);

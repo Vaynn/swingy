@@ -89,6 +89,11 @@ public class WitchBuilder extends HeroBuilder{
     }
 
     @Override
+    public void buildGif() {
+        hero.setGif("/images/witch.gif");
+    }
+
+    @Override
     public void buildCoordinates() {
         Coordinates coordinates = new Coordinates(0, 0);
         hero.setCoordinates(coordinates);

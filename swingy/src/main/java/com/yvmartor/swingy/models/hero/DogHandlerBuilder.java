@@ -89,6 +89,11 @@ public class DogHandlerBuilder extends HeroBuilder {
     }
 
     @Override
+    public void buildGif() {
+        hero.setGif("/images/dog_handler.gif");
+    }
+
+    @Override
     public void buildCoordinates() {
         Coordinates coordinates = new Coordinates(0, 0);
         hero.setCoordinates(coordinates);

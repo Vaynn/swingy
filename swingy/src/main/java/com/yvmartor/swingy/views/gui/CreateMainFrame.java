@@ -14,7 +14,7 @@ public class CreateMainFrame {
         this.myFrame.setTitle("Swingy");
         this.myFrame.setLocationRelativeTo(null);
         this.myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.myFrame.setVisible(true);
+        this.myFrame.setVisible(false);
     }
 
     public JFrame getMyFrame() {

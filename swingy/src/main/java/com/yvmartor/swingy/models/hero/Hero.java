@@ -36,6 +36,8 @@ public class Hero {
 
     private String image = "";
 
+    private String gif = "";
+
     private Coordinates coordinates = new Coordinates(0, 0);
 
     private WorldMap worldMap;
@@ -82,6 +84,10 @@ public class Hero {
 
     public String getImage() {
         return image;
+    }
+
+    public String getGif() {
+        return gif;
     }
 
     public Coordinates getCoordinates() {
@@ -152,6 +158,10 @@ public class Hero {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void setGif(String gif) {
+        this.gif = gif;
     }
 
     public void setCoordinates(Coordinates coordinates) {

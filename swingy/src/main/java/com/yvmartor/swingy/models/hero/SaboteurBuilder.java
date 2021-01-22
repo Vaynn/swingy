@@ -89,6 +89,11 @@ public class SaboteurBuilder extends HeroBuilder{
     }
 
     @Override
+    public void buildGif() {
+        hero.setGif("/images/saboteur.gif");
+    }
+
+    @Override
     public void buildCoordinates() {
         Coordinates coordinates = new Coordinates(0, 0);
         hero.setCoordinates(coordinates);

@@ -88,6 +88,11 @@ public class ChickenHeroBuilder extends HeroBuilder {
     }
 
     @Override
+    public void buildGif() {
+        hero.setGif("/images/chicken.gif");
+    }
+
+    @Override
     public void buildCoordinates() {
         Coordinates coordinates = new Coordinates(0, 0);
         hero.setCoordinates(coordinates);
