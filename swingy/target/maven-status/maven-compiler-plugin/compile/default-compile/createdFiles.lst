@@ -3,6 +3,7 @@ com/yvmartor/swingy/models/hero/SaboteurBuilder.class
 com/yvmartor/swingy/models/artefacts/Artefact.class
 com/yvmartor/swingy/views/console/ConsoleGameOpeningView.class
 com/yvmartor/swingy/models/scenario/select_hero/SelectHero.class
+com/yvmartor/swingy/controller/AdventureController$1.class
 com/yvmartor/swingy/models/hero/BlackKnightBuilder.class
 com/yvmartor/swingy/models/artefacts/ArmorBuilder.class
 com/yvmartor/swingy/models/villains/BadassMickey.class

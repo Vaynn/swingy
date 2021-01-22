@@ -102,13 +102,14 @@ public class GUIAdventureView {
     }
 
     public void displayMapFrame(Hero hero){
-        int middle = ((int)round((double)dimension) * (int)round((double)dimension))/2;
+        int[] current_coordinates = hero.getCoordinates().getCoordinates();
+        int location = (current_coordinates[0] - 1) * dimension + (current_coordinates[1] - 1);
         JPanel panel = new JPanel(new GridLayout(dimension, dimension, 1, 1));
         panel.setSize(100, 100);
         panel.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
         for (int i = 0; i < dimension * dimension; i++){
             JLabel map = new JLabel();
-            if (i == middle) {
+            if (i == location){
                 InputStream resourceAsStream = Swingy.class.getResourceAsStream(hero.getGif());
                 try {
                     Image image = ImageIO.read(resourceAsStream);

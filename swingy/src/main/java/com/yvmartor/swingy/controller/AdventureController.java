@@ -12,6 +12,9 @@ import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 import com.yvmartor.swingy.views.gui.GUIAdventureView;
 import com.yvmartor.swingy.views.gui.GUIGameOpeningView;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -85,5 +88,14 @@ public class AdventureController {
 
         int destiny;
         gUIView.printGUIAdventureView(worldMap, model.getOptions());
+
+            ArrayList<JButton> moves = gUIView.getMoves();
+            moves.get(0).addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    worldMap.updateHeroCoordinates(1);
+                    gUIView.displayMapFrame(worldMap.getHero());
+                }
+            });
     }
 }
