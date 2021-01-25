@@ -71,19 +71,19 @@ public class HeroCard extends JPanel {
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
-        addStatLabel(container, fontmini, "NAME: ",  hero.getName());
-        addStatLabel(container, fontmini, "LEVEL: ",  String.valueOf(hero.getLevel()));
-        addStatLabel(container, fontmini, "WEAPON: ",
+        addStatLabel(container, fontmini, hero.getHeroClass() + " ",  hero.getName());
+        addStatLabel(container, fontmini, "LEVEL ",  String.valueOf(hero.getLevel()));
+        addStatLabel(container, fontmini, "WEAPON ",
                 hero.getWeapon().getName()
                         + " +"
                         + hero.getWeapon().getPoints()
                         + " ATK");
-        addStatLabel(container, fontmini, "ARMOR: ",
+        addStatLabel(container, fontmini, "ARMOR ",
                 hero.getArmor().getName()
                         + " +"
                         + hero.getArmor().getPoints()
                         + " DEF");
-        addStatLabel(container, fontmini, "HELM: ",
+        addStatLabel(container, fontmini, "HELM ",
                 hero.getHelm().getName()
                         + " +"
                         + hero.getHelm().getPoints()

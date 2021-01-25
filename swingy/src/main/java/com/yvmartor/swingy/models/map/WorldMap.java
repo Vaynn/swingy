@@ -208,5 +208,9 @@ public class WorldMap {
 
         return null;
     }
-    
+
+    public String getFightTelling() {
+        return fightTelling;
+    }
+
 }

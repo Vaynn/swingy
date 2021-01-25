@@ -18,8 +18,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
-import static com.yvmartor.swingy.models.tools.Tools.VICTORY;
+import static com.yvmartor.swingy.models.tools.Tools.*;
 
 public class AdventureController {
     private Adventure model;
@@ -29,6 +28,7 @@ public class AdventureController {
     private int choice;
     private Hero hero;
     private WorldMap worldMap;
+    ArrayList<String> options = new ArrayList<String>();
 
     public AdventureController(Adventure model, ConsoleAdventureView consoleView, GUIAdventureView gUIView){
         this.model = model;
@@ -36,6 +36,8 @@ public class AdventureController {
         this.gUIView = gUIView;
         this.hero = model.getHero();
         this.worldMap = model.getWorldMap();
+        this.options.add("Fight");
+        this.options.add("Run");
     }
 
     public void updateConsoleView() {
@@ -51,9 +53,6 @@ public class AdventureController {
             worldMap.updateHeroCoordinates(choice);
             Villain enemy = worldMap.isHeroMeetVilain(); //After the hero move , check if we meet an enemy
             if (enemy != null) {
-                ArrayList<String> options = new ArrayList<String>();
-                options.add("Fight");
-                options.add("Run");
                 String quest = "A " + enemy.getName() + " attacked you !\nWhat do you want to do ?";
                 Question question = new Question(quest, options);
                 FightOrRun fightOrRunModel = new FightOrRunBuilder()
@@ -62,7 +61,7 @@ public class AdventureController {
                         .question(question)
                         .build();
                 ConsoleFightOrRunView fightOrRunView = new ConsoleFightOrRunView();
-                FightOrRunController controller = new FightOrRunController(fightOrRunModel, fightOrRunView);
+                FightOrRunController controller = new FightOrRunController(fightOrRunModel, fightOrRunView, null);
                 destiny = controller.updateConsoleView();
                 if (destiny == HERO_DEATH){
                     break;
@@ -87,15 +86,76 @@ public class AdventureController {
     public void updateGUIView(){
 
         int destiny;
-        gUIView.printGUIAdventureView(worldMap, model.getOptions());
+        gUIView.printGUIAdventureView(worldMap, model.getOptions(), null, MOVE_MODE);
 
             ArrayList<JButton> moves = gUIView.getMoves();
             moves.get(0).addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     worldMap.updateHeroCoordinates(1);
-                    gUIView.displayMapFrame(worldMap.getHero());
+                    Villain enemy = worldMap.isHeroMeetVilain();
+                    if (enemy != null){
+                        gUIView.printGUIAdventureView(worldMap, model.getOptions(), enemy, FIGHT_MODE);
+                        addFightActionListener(enemy);
+                    }
+                    gUIView.displayMapFrame(worldMap.getHero(), MOVE_MODE);
                 }
             });
+
+            moves.get(1).addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    worldMap.updateHeroCoordinates(2);
+                    Villain enemy = worldMap.isHeroMeetVilain();
+                    if (enemy != null){
+                        gUIView.printGUIAdventureView(worldMap, model.getOptions(), enemy, FIGHT_MODE);
+                        addFightActionListener(enemy);
+                    }
+                    gUIView.displayMapFrame(worldMap.getHero(), MOVE_MODE);
+                }
+            });
+
+            moves.get(2).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                worldMap.updateHeroCoordinates(3);
+                Villain enemy = worldMap.isHeroMeetVilain();
+                if (enemy != null){
+                    gUIView.printGUIAdventureView(worldMap, model.getOptions(), enemy, FIGHT_MODE);
+                    addFightActionListener(enemy);
+                }
+                gUIView.displayMapFrame(worldMap.getHero(), MOVE_MODE);
+                }
+            });
+
+            moves.get(3).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                worldMap.updateHeroCoordinates(4);
+                Villain enemy = worldMap.isHeroMeetVilain();
+                if (enemy != null){
+                    gUIView.printGUIAdventureView(worldMap, model.getOptions(), enemy, FIGHT_MODE);
+                    addFightActionListener(enemy);
+                }
+                gUIView.displayMapFrame(worldMap.getHero(), MOVE_MODE);
+                }
+            });
+    }
+
+    private void addFightActionListener(Villain villain){
+        ArrayList<JButton> fight_actions = gUIView.getFight_actions();
+
+        //FIGHT
+        fight_actions.get(0).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FightOrRun fightOrRunModel = new FightOrRunBuilder()
+                        .hero(hero)
+                        .vilain(villain)
+                        .build();
+                FightOrRunController controller = new FightOrRunController(fightOrRunModel, null, gUIView);
+                controller.updateGUIView();
+            }
+        });
     }
 }

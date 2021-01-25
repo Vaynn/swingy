@@ -7,10 +7,12 @@ import com.yvmartor.swingy.models.artefacts.Weapon;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
+import com.yvmartor.swingy.models.scenario.adventure.Adventure;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRun;
 import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
+import com.yvmartor.swingy.views.gui.GUIAdventureView;
 
 import java.util.Scanner;
 
@@ -19,14 +21,17 @@ import static com.yvmartor.swingy.models.tools.Tools.*;
 public class FightOrRunController{
     private FightOrRun model;
     private ConsoleFightOrRunView consoleView;
+    private GUIAdventureView gUIView;
     private Scanner fight_choice;
     private Scanner artefact_choice;
     private static final int FIGHT = 1;
     private static final int RUN = 2;
 
-    public FightOrRunController(FightOrRun model, ConsoleFightOrRunView consoleView){
+    public FightOrRunController(FightOrRun model, ConsoleFightOrRunView consoleView, GUIAdventureView guiAdventureView){
         this.model = model;
         this.consoleView = consoleView;
+        this.gUIView = guiAdventureView;
+
     }
 
     public int updateConsoleView(){
@@ -48,6 +53,27 @@ public class FightOrRunController{
         return ERROR;
     }
 
+    public void updateGUIView(){
+        Hero hero = model.getHero();
+        Villain villain = model.getVilain();
+        WorldMap worldMap = model.getHero().getWorldMap();
+
+        worldMap.setFightTelling("");
+        Object[] fight =  worldMap.fight(villain); //Simulation of the fight. It returns the fight telling and the winner
+        if ((int)fight[1] == VILLAIN_DEATH){
+            Artefact villainArtefact = villain.getArtefact();
+            if (villainArtefact.getName().compareTo("None") != 0) {
+                Artefact heroArtefact = getHeroArtefact(villainArtefact, hero);
+                gUIView.printKeepArtefactAsk(villain, heroArtefact, worldMap);
+                String[] options = {"YES", "NO"};
+                gUIView.printGUIAdventureView(worldMap, options, villain, FIGHT_TELLING_MODE);
+            } else {
+                gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
+            }
+        } else if ((int)fight[1] == HERO_DEATH){
+            System.out.println("HERO is dead");
+        }
+    }
 
     //Fight simulation: manage victory or defeat + artefact win and xp increase
     private int fight(WorldMap worldMap, Villain villain, Hero hero){
@@ -60,14 +86,7 @@ public class FightOrRunController{
             //check if the villain hold an artefact and propose it to the player
             Artefact villainArtefact = villain.getArtefact();
             if (villainArtefact.getName().compareTo("None") != 0) {
-                Artefact heroArtefact = null;
-                heroArtefact = villainArtefact.getIncreasedStat().compareTo("defense") == 0
-                        ? hero.getArmor()
-                        : villainArtefact.getIncreasedStat().compareTo("attack") == 0
-                        ? hero.getWeapon()
-                        : villainArtefact.getIncreasedStat().compareTo("hit points") == 0
-                        ? hero.getHelm()
-                        : heroArtefact;
+                Artefact heroArtefact = getHeroArtefact(villainArtefact, hero);
                 consoleView.printKeepArtefactAsk(villain, heroArtefact);
                 //TODO Check user input
                 artefact_choice = new Scanner(System.in);
@@ -101,4 +120,18 @@ public class FightOrRunController{
             return fight(worldMap, villain, hero);
         }
     }
+
+    public Artefact getHeroArtefact(Artefact villainArtefact, Hero hero){
+
+        Artefact heroArtefact = null;
+        heroArtefact = villainArtefact.getIncreasedStat().compareTo("defense") == 0
+                ? hero.getArmor()
+                : villainArtefact.getIncreasedStat().compareTo("attack") == 0
+                ? hero.getWeapon()
+                : villainArtefact.getIncreasedStat().compareTo("hit points") == 0
+                ? hero.getHelm()
+                : heroArtefact;
+        return heroArtefact;
+    }
+
 }

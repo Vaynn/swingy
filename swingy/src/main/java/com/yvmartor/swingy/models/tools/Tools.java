@@ -10,6 +10,10 @@ public class Tools {
     public static final int ADD = 14;
     public static final int LUCK = 777;
     public static final int VICTORY = 7777;
+    public static final int MOVE_MODE = 15;
+    public static final int FIGHT_MODE = 16;
+    public static final int FIGHT_TELLING_MODE = 17;
+    public static final int BOOLEAN_MODE = 2;
 
     public static int generateRandomInt(int min, int max){
         Random rand = new Random();
