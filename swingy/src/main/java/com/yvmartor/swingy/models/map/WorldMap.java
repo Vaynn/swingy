@@ -148,7 +148,7 @@ public class WorldMap {
     }
 
     public int fightVillainTurn(Villain villain, int myHP){
-        int fatal_attak = Tools.generateRandomInt(770, 790);//Randomly select if the villain make a fatal attack(1/20)
+        int fatal_attak = Tools.generateRandomInt(770, 870);//Randomly select if the villain make a fatal attack(1/100)
         System.out.println(fatal_attak);
         if (fatal_attak == LUCK){
             fightTelling += "\tThe " + villain.getName() + " multiply his strength. He turns you into powder.\n";

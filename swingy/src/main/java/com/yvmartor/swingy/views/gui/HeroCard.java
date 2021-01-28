@@ -91,4 +91,5 @@ public class HeroCard extends JPanel {
         center.add(container);
         return center;
     }
+
 }

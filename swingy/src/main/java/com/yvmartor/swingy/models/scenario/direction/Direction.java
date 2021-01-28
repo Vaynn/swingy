@@ -1,16 +1,14 @@
-package com.yvmartor.swingy.models.scenario.adventure;
+package com.yvmartor.swingy.models.scenario.direction;
 
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 
-import java.util.ArrayList;
-
-public class Adventure {
+public class Direction {
     private Hero hero;
     private WorldMap worldMap;
     private String[] options;
 
-    public Adventure(AdventureBuilder builder){
+    public Direction(DirectionBuilder builder){
         this.hero = builder.hero;
         this.options = builder.options;
         this.worldMap = builder.worldMap;

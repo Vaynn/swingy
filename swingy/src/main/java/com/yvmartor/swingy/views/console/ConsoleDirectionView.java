@@ -5,7 +5,7 @@ import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 
 import java.util.ArrayList;
 
-public class ConsoleAdventureView {
+public class ConsoleDirectionView {
 
     public void printGameAdventure(Hero hero, String[] options){
         ConsoleStringColor.story(hero.getName() + " walks through the labyrinth.\n");

@@ -8,12 +8,12 @@ import com.yvmartor.swingy.models.villains.VillainBuilder;
 import com.yvmartor.swingy.models.villains.EvilCatBuilder;
 import com.yvmartor.swingy.models.villains.MickachuBuilder;
 import com.yvmartor.swingy.models.villains.BadassMickey;
-import com.yvmartor.swingy.models.scenario.adventure.Adventure;
-import com.yvmartor.swingy.models.scenario.adventure.AdventureBuilder;
+import com.yvmartor.swingy.models.scenario.direction.Direction;
+import com.yvmartor.swingy.models.scenario.direction.DirectionBuilder;
 import com.yvmartor.swingy.models.scenario.select_hero.SelectHero;
-import com.yvmartor.swingy.views.console.ConsoleAdventureView;
+import com.yvmartor.swingy.views.console.ConsoleDirectionView;
 import com.yvmartor.swingy.views.console.ConsoleSelectHeroView;
-import com.yvmartor.swingy.views.gui.GUIAdventureView;
+import com.yvmartor.swingy.views.gui.GUIDirectionView;
 import com.yvmartor.swingy.views.gui.GUISelectHeroView;
 
 import javax.swing.*;
@@ -22,6 +22,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Random;
+
+import static com.yvmartor.swingy.models.tools.Tools.DIRECTIONS_TAB;
 
 public class SelectHeroController {
 
@@ -34,12 +36,7 @@ public class SelectHeroController {
     private VillainBuilder[] vilainTab = {
             new EvilCatBuilder(), new MickachuBuilder(), new BadassMickey()
     };
-    private final String[] options = {
-                "Go to the north.",
-                "Go to the east.",
-                "Go to the south.",
-                "Go to the west."
-    };
+
 
     public SelectHeroController(SelectHero model, JFrame frame, ConsoleSelectHeroView consoleView, GUISelectHeroView gUIView){
         this.model = model;
@@ -63,9 +60,9 @@ public class SelectHeroController {
         //vilains are randomly chosen between 3 classes of different strenght
         createAndRegisterVillains(worldmap);
 
-        Adventure model = new AdventureBuilder().hero(hero).options(options).worldMap(worldmap).build();
-        ConsoleAdventureView view = new ConsoleAdventureView();
-        AdventureController controller = new AdventureController(model, view, null);
+        Direction model = new DirectionBuilder().hero(hero).options(DIRECTIONS_TAB).worldMap(worldmap).build();
+        ConsoleDirectionView view = new ConsoleDirectionView();
+        DirectionController controller = new DirectionController(model, null, view, null);
         controller.updateConsoleView();
 
     }
@@ -80,9 +77,9 @@ public class SelectHeroController {
                 Hero hero = model.getHeroesList().get(heroIdx);
                 hero.registerWorldMap(worldMap);
                 createAndRegisterVillains(worldMap);
-                Adventure model = new AdventureBuilder().hero(hero).options(options).worldMap(worldMap).build();
-                GUIAdventureView view = new GUIAdventureView(frame);
-                AdventureController controller = new AdventureController(model, null, view);
+                Direction model = new DirectionBuilder().hero(hero).options(DIRECTIONS_TAB).worldMap(worldMap).build();
+                GUIDirectionView view = new GUIDirectionView(frame);
+                DirectionController controller = new DirectionController(model, frame, null, view);
                 controller.updateGUIView();
 
             }

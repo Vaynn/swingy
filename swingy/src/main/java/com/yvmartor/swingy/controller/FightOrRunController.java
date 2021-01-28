@@ -1,19 +1,18 @@
 package com.yvmartor.swingy.controller;
 
-import com.yvmartor.swingy.models.artefacts.Armor;
 import com.yvmartor.swingy.models.artefacts.Artefact;
-import com.yvmartor.swingy.models.artefacts.Helm;
-import com.yvmartor.swingy.models.artefacts.Weapon;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
-import com.yvmartor.swingy.models.scenario.adventure.Adventure;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRun;
 import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
-import com.yvmartor.swingy.views.gui.GUIAdventureView;
+import com.yvmartor.swingy.views.gui.GUIFightOrRunView;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 import static com.yvmartor.swingy.models.tools.Tools.*;
@@ -21,17 +20,16 @@ import static com.yvmartor.swingy.models.tools.Tools.*;
 public class FightOrRunController{
     private FightOrRun model;
     private ConsoleFightOrRunView consoleView;
-    private GUIAdventureView gUIView;
+    private GUIFightOrRunView GUIView;
     private Scanner fight_choice;
     private Scanner artefact_choice;
     private static final int FIGHT = 1;
     private static final int RUN = 2;
 
-    public FightOrRunController(FightOrRun model, ConsoleFightOrRunView consoleView, GUIAdventureView guiAdventureView){
+    public FightOrRunController(FightOrRun model, ConsoleFightOrRunView consoleView, GUIFightOrRunView GUIView){
         this.model = model;
         this.consoleView = consoleView;
-        this.gUIView = guiAdventureView;
-
+        this.GUIView = GUIView;
     }
 
     public int updateConsoleView(){
@@ -60,19 +58,52 @@ public class FightOrRunController{
 
         worldMap.setFightTelling("");
         Object[] fight =  worldMap.fight(villain); //Simulation of the fight. It returns the fight telling and the winner
-        if ((int)fight[1] == VILLAIN_DEATH){
+        GUIView.printGUIFightOrRun(worldMap, villain);
+       /* if ((int)fight[1] == VILLAIN_DEATH){
+            //increase user xp and level up if he reaches the next level
+            boolean levelUp = worldMap.updateXP(villain.getWinXp());
+            gUIView.printWinXP(levelUp, villain.getWinXp(), worldMap);
+            continue_button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
+                }
+            });
             Artefact villainArtefact = villain.getArtefact();
-            if (villainArtefact.getName().compareTo("None") != 0) {
+            if (villainArtefact.getName().compareTo("None") != 0) { //check if villain hold an artefact
                 Artefact heroArtefact = getHeroArtefact(villainArtefact, hero);
                 gUIView.printKeepArtefactAsk(villain, heroArtefact, worldMap);
                 String[] options = {"YES", "NO"};
                 gUIView.printGUIAdventureView(worldMap, options, villain, FIGHT_TELLING_MODE);
-            } else {
-                gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
+                ArrayList <JButton> artefact = gUIView.getBoolean_actions();
+                System.out.println(artefact.size());
+
+                //YES
+                artefact.get(0).addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        worldMap.updateArtefact(villainArtefact);
+                        gUIView.printKeepArtefactChoice(true, worldMap);
+                        gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
+
+                    }
+                });
+
+                //NO
+                artefact.get(1).addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        gUIView.printKeepArtefactChoice(false, worldMap);
+                        gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
+                    }
+                });
             }
+
+            worldMap.unregisterVilain(villain);
+            displayWithTimer(worldMap, DIRECTIONS_TAB, null, MOVE_MODE);
         } else if ((int)fight[1] == HERO_DEATH){
             System.out.println("HERO is dead");
-        }
+        }*/
     }
 
     //Fight simulation: manage victory or defeat + artefact win and xp increase
@@ -132,6 +163,18 @@ public class FightOrRunController{
                 ? hero.getHelm()
                 : heroArtefact;
         return heroArtefact;
+    }
+
+    private void displayWithTimer(WorldMap worldMap, String[] options, Villain villain, int mode){
+        Timer timer = new Timer(3000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                System.out.println("timer");
+
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
 
 }
