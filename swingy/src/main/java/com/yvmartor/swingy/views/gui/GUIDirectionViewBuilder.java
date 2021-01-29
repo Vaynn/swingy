@@ -65,11 +65,14 @@ public class GUIDirectionViewBuilder extends AdventureViewBuilder {
     @Override
     public void buildAsk(String ask) {
         adventureView.getAsk().setText(ask);
-        adventureView.getAsk().setBorder(new EmptyBorder(200,280,0,0));
         adventureView.getAsk().setForeground(Color.green);
         adventureView.getAsk().setHorizontalAlignment(JLabel.CENTER);
         adventureView.getAsk().setVerticalAlignment(JLabel.CENTER);
-        adventureView.add(adventureView.getAsk(), BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(adventureView.getAsk());
+        scrollPane.getViewport().setBackground(Color.DARK_GRAY);
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        adventureView.add(scrollPane, BorderLayout.CENTER);
 
     }
 
@@ -88,5 +91,12 @@ public class GUIDirectionViewBuilder extends AdventureViewBuilder {
     @Override
     public void buildImage() {
 
+    }
+
+    @Override
+    public void buildLambdaCard() {
+        adventureView.setLambda_card(LambdaCard.getLambdaCard("/images/labyrinth.jpg", "Walk through ", "labyrinth"));
+        adventureView.getLambda_card().setSize(100, 200);
+        adventureView.add(adventureView.getLambda_card(), BorderLayout.WEST);
     }
 }

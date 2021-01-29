@@ -43,7 +43,7 @@ public class GUIFightOrRunViewBuilder extends AdventureViewBuilder {
 
     @Override
     public void buildTitle() {
-        adventureView.getTitle().setText("Try to get out the labyrinth.");
+        adventureView.getTitle().setText("Time to Fight.");
         adventureView.getTitle().setForeground(Color.cyan);
         adventureView.getTitle().setFont(font);
         adventureView.getTitle().setHorizontalAlignment(JLabel.CENTER);
@@ -55,11 +55,14 @@ public class GUIFightOrRunViewBuilder extends AdventureViewBuilder {
     @Override
     public void buildAsk(String ask) {
         adventureView.getAsk().setText(ask);
-        adventureView.getAsk().setBorder(new EmptyBorder(200,280,0,0));
         adventureView.getAsk().setForeground(Color.green);
         adventureView.getAsk().setHorizontalAlignment(JLabel.CENTER);
         adventureView.getAsk().setVerticalAlignment(JLabel.CENTER);
-        adventureView.add(adventureView.getAsk(), BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(adventureView.getAsk());
+        scrollPane.getViewport().setBackground(Color.DARK_GRAY);
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        adventureView.add(scrollPane, BorderLayout.CENTER);
     }
 
     @Override
@@ -71,13 +74,18 @@ public class GUIFightOrRunViewBuilder extends AdventureViewBuilder {
 
     @Override
     public void buildVillainMiniCard(Villain villain) {
-        adventureView.setVillain_mini_card(new VillainCard(villain));
+        adventureView.setVillain_mini_card(new VillainCard(villain).getVillainMiniCard());
         adventureView.getVillain_mini_card().setSize(100, 200);
         adventureView.add(adventureView.getVillain_mini_card(), BorderLayout.WEST);
     }
 
     @Override
     public void buildImage() {
+
+    }
+
+    @Override
+    public void buildLambdaCard() {
 
     }
 }

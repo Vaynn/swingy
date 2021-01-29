@@ -9,6 +9,7 @@ public class AdventureView extends JPanel{
     private JLabel ask = new JLabel();
     private JPanel hero_mini_card = new JPanel();
     private JPanel villain_mini_card = new JPanel();
+    private JPanel lambda_card = new JPanel();
     private JLabel image = new JLabel();
 
 
@@ -36,6 +37,10 @@ public class AdventureView extends JPanel{
         return villain_mini_card;
     }
 
+    public JPanel getLambda_card() {
+        return lambda_card;
+    }
+
     public void setAction_buttons(ArrayList<JButton> action_buttons) {
         this.action_buttons = action_buttons;
     }
@@ -58,5 +63,9 @@ public class AdventureView extends JPanel{
 
     public void setVillain_mini_card(JPanel villain_mini_card) {
         this.villain_mini_card = villain_mini_card;
+    }
+
+    public void setLambda_card(JPanel lambda_card) {
+        this.lambda_card = lambda_card;
     }
 }

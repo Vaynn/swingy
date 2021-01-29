@@ -25,7 +25,7 @@ public class AdventureViewDirector {
         adventureViewBuilder.buildAsk(ask);
         adventureViewBuilder.buildHeroMiniCard(worldmap);
         adventureViewBuilder.buildVillainMiniCard(villain);
+        adventureViewBuilder.buildLambdaCard();
         adventureViewBuilder.buildImage();
-
     }
 }

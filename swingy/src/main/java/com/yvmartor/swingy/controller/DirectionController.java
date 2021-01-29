@@ -63,7 +63,7 @@ public class DirectionController {
                         .question(question)
                         .build();
                 ConsoleFightOrRunView fightOrRunView = new ConsoleFightOrRunView();
-                FightOrRunController controller = new FightOrRunController(fightOrRunModel, fightOrRunView, null);
+                FightOrRunController controller = new FightOrRunController(fightOrRunModel, null, fightOrRunView, null);
                 destiny = controller.updateConsoleView();
                 if (destiny == HERO_DEATH){
                     break;
@@ -147,7 +147,7 @@ public class DirectionController {
                 .question(question)
                 .build();
         GUIFightOrRunView fightOrRunView = new GUIFightOrRunView(frame);
-        FightOrRunController controller = new FightOrRunController(fightOrRunModel, null, fightOrRunView);
+        FightOrRunController controller = new FightOrRunController(fightOrRunModel, frame, null, fightOrRunView);
         controller.updateGUIView();
     }
 }

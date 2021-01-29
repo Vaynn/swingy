@@ -29,7 +29,7 @@ public class VillainCard extends JPanel {
         container.add(label);
     }
 
-    public JPanel getHeroMiniCard(){
+    public JPanel getVillainMiniCard(){
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBackground(Color.BLACK);
         InputStream resourceAsStream = Swingy.class.getResourceAsStream(villain.getImage());
@@ -43,12 +43,51 @@ public class VillainCard extends JPanel {
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
-        addStatLabel(container, fontmini, "VILLAIN",  villain.getName());
+        addStatLabel(container, fontmini, "VILLAIN ",  villain.getName());
         addStatLabel(container, fontmini, "HP ",  String.valueOf(villain.getHp()));
         addStatLabel(container, fontmini, "ATK ",
                 String.valueOf(villain.getAttak()));
         addStatLabel(container, fontmini, "DEF ",
                 String.valueOf(villain.getDefense()));
+        this.add(container);
+        return this;
+    }
+
+    public JPanel getGameOverMiniCard(){
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBackground(Color.BLACK);
+        InputStream resourceAsStream = Swingy.class.getResourceAsStream("/images/game_over_skull.jpg");
+        try {
+            Image image = ImageIO.read(resourceAsStream);
+            JLabel label1 = new JLabel(new ImageIcon(image));
+
+            this.add(label1);
+        } catch (IOException e){
+            System.err.println(e);
+        }
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.setBackground(Color.BLACK);
+        addStatLabel(container, fontmini, "WINNER ",  villain.getName());
+        addStatLabel(container, fontmini, "LOOSER ", "you");
+        this.add(container);
+        return this;
+    }
+
+    public JPanel getWinTheFightMiniCard(){
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBackground(Color.BLACK);
+        InputStream resourceAsStream = Swingy.class.getResourceAsStream("/images/win_the_fight.jpg");
+        try {
+            Image image = ImageIO.read(resourceAsStream);
+            JLabel label1 = new JLabel(new ImageIcon(image));
+
+            this.add(label1);
+        } catch (IOException e){
+            System.err.println(e);
+        }
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.setBackground(Color.BLACK);
+        addStatLabel(container, fontmini, "YOU WIN ",  "THE FIGHT !");
         this.add(container);
         return this;
     }

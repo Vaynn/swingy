@@ -5,14 +5,17 @@ import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRun;
+import com.yvmartor.swingy.models.scenario.gui_fight_telling.GuiFightTelling;
 import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 import com.yvmartor.swingy.views.gui.GUIFightOrRunView;
+import com.yvmartor.swingy.views.gui.GUIFightTellingView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static com.yvmartor.swingy.models.tools.Tools.*;
@@ -25,11 +28,13 @@ public class FightOrRunController{
     private Scanner artefact_choice;
     private static final int FIGHT = 1;
     private static final int RUN = 2;
+    private JFrame mainFrame;
 
-    public FightOrRunController(FightOrRun model, ConsoleFightOrRunView consoleView, GUIFightOrRunView GUIView){
+    public FightOrRunController(FightOrRun model, JFrame frame, ConsoleFightOrRunView consoleView, GUIFightOrRunView GUIView){
         this.model = model;
         this.consoleView = consoleView;
         this.GUIView = GUIView;
+        this.mainFrame = frame;
     }
 
     public int updateConsoleView(){
@@ -56,9 +61,23 @@ public class FightOrRunController{
         Villain villain = model.getVilain();
         WorldMap worldMap = model.getHero().getWorldMap();
 
-        worldMap.setFightTelling("");
-        Object[] fight =  worldMap.fight(villain); //Simulation of the fight. It returns the fight telling and the winner
         GUIView.printGUIFightOrRun(worldMap, villain);
+        ArrayList<JButton> fight_choice = GUIView.getDual_choice();
+
+        //FIGHT
+        fight_choice.get(0).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Simulation of the fight. It returns the fight telling and the winner
+                worldMap.setFightTelling("");
+
+                Object[] fight =  worldMap.fight(villain);
+                GUIFightTellingView view = new GUIFightTellingView(mainFrame);
+                GuiFightTelling model = new GuiFightTelling(worldMap, villain);
+                GUIFightTellingController controller = new GUIFightTellingController(model, view, (int)fight[1]);
+                controller.updateView();
+            }
+        });
        /* if ((int)fight[1] == VILLAIN_DEATH){
             //increase user xp and level up if he reaches the next level
             boolean levelUp = worldMap.updateXP(villain.getWinXp());

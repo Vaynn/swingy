@@ -22,4 +22,5 @@ public abstract class AdventureViewBuilder {
     public abstract void buildHeroMiniCard(WorldMap worldMap);
     public abstract void buildVillainMiniCard(Villain villain);
     public abstract void buildImage();
+    public abstract void buildLambdaCard();
 }
