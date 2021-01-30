@@ -95,7 +95,7 @@ public class GUIDirectionViewBuilder extends AdventureViewBuilder {
 
     @Override
     public void buildLambdaCard() {
-        adventureView.setLambda_card(LambdaCard.getLambdaCard("/images/labyrinth.jpg", "Walk through ", "labyrinth"));
+        adventureView.setLambda_card(new LambdaCard().getLambdaCard("/images/labyrinth.jpg", "Walk through ", "labyrinth"));
         adventureView.getLambda_card().setSize(100, 200);
         adventureView.add(adventureView.getLambda_card(), BorderLayout.WEST);
     }

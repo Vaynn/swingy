@@ -91,4 +91,23 @@ public class VillainCard extends JPanel {
         this.add(container);
         return this;
     }
+
+    public JPanel getArtefactMiniCard(){
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBackground(Color.BLACK);
+        InputStream resourceAsStream = Swingy.class.getResourceAsStream(villain.getArtefact().getImage());
+        try {
+            Image image = ImageIO.read(resourceAsStream);
+            JLabel label1 = new JLabel(new ImageIcon(image));
+
+            this.add(label1);
+        } catch (IOException e){
+            System.err.println(e);
+        }
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+        container.setBackground(Color.BLACK);
+        addStatLabel(container, fontmini, "<html>New " + villain.getArtefact().getClass().getSimpleName() + " Available:<br>",  villain.getArtefact().getName() + "</html>");
+        this.add(container);
+        return this;
+    }
 }

@@ -5,6 +5,7 @@ public class Helm extends Artefact {
     Helm(HelmBuilder builder){
         super(builder.name, builder.points);
         setIncreasedStat(builder.increasedStat);
+        setImage(builder.image);
     }
 
 }

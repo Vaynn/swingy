@@ -101,5 +101,6 @@ public class GUIFightTellingViewBuilder extends AdventureViewBuilder
 
     @Override
     public void buildLambdaCard() {
+
     }
 }

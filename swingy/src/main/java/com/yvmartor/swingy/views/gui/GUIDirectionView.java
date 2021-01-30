@@ -35,8 +35,12 @@ public class GUIDirectionView {
 
         //Display Map frame with hero location
         CreateMapFrame frame = new CreateMapFrame();
-        if (mapFrame == null)
+        if (worldMap.getMapFrame() == null) {
             mapFrame = frame.getMapFrame();
+            worldMap.setMapFrame(mapFrame);
+        }
+        else
+            mapFrame = worldMap.getMapFrame();
         displayMapFrame(worldMap.getHero());
 
         //Create Direction View with Adventure Panel Builder

@@ -6,6 +6,7 @@ import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -20,9 +21,9 @@ public class WorldMap {
     private Hero hero;
     private ArrayList<Villain> villainList = new ArrayList<Villain>();
     private ArrayList<int[]> usedCoord = new ArrayList<int[]>();
+    private JFrame mapFrame = null;
     private String fightTelling = "";
-    private static final int VILLAIN = 666;
-    private static final int HERO = 665;
+
 
     //register hero on the center of the map
     public void registerHero(Hero hero){
@@ -99,13 +100,14 @@ public class WorldMap {
     //update hero Artefact when he won it.
     public void updateArtefact(Artefact artefact) {this.hero.updateArtefact(artefact);}
 
+    //update hero XP return true if level up
     public boolean updateXP(int xp){
         boolean levelUp;
         levelUp = this.hero.updateXP(xp);
         return levelUp;
     }
 
-    //After hero move, check if there is a vilain on the current coordinates, if true return vilain Object
+    //After hero move, check if there is a villain on the current coordinates, if true return vilain Object
     public Villain isHeroMeetVilain(){
         int[] coor = hero.getCoordinates().getCoordinates();
 
@@ -148,7 +150,7 @@ public class WorldMap {
     }
 
     public int fightVillainTurn(Villain villain, int myHP){
-        int fatal_attak = Tools.generateRandomInt(770, 870);//Randomly select if the villain make a fatal attack(1/100)
+        int fatal_attak = Tools.generateRandomInt(770, 1070);//Randomly select if the villain make a fatal attack(1/300)
         System.out.println(fatal_attak);
         if (fatal_attak == LUCK){
             fightTelling += "\tThe " + villain.getName() + " multiply his strength. He turns you into powder.\n";
@@ -209,8 +211,28 @@ public class WorldMap {
         return null;
     }
 
+    public Artefact getHeroArtefact(Artefact villainArtefact, Hero hero){
+
+        Artefact heroArtefact = null;
+        heroArtefact = villainArtefact.getIncreasedStat().compareTo("defense") == 0
+                ? heroArtefact = hero.getArmor()
+                : villainArtefact.getIncreasedStat().compareTo("attack") == 0
+                ? heroArtefact = hero.getWeapon()
+                : villainArtefact.getIncreasedStat().compareTo("hit points") == 0
+                ? heroArtefact = hero.getHelm()
+                : heroArtefact;
+        return heroArtefact;
+    }
+
     public String getFightTelling() {
         return fightTelling;
     }
 
+    public JFrame getMapFrame() {
+        return mapFrame;
+    }
+
+    public void setMapFrame(JFrame mapFrame) {
+        this.mapFrame = mapFrame;
+    }
 }

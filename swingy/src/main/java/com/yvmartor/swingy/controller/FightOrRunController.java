@@ -72,57 +72,12 @@ public class FightOrRunController{
                 worldMap.setFightTelling("");
 
                 Object[] fight =  worldMap.fight(villain);
-                GUIFightTellingView view = new GUIFightTellingView(mainFrame);
-                GuiFightTelling model = new GuiFightTelling(worldMap, villain);
+                GUIFightTellingView view = new GUIFightTellingView();
+                GuiFightTelling model = new GuiFightTelling(worldMap, villain, mainFrame);
                 GUIFightTellingController controller = new GUIFightTellingController(model, view, (int)fight[1]);
                 controller.updateView();
             }
         });
-       /* if ((int)fight[1] == VILLAIN_DEATH){
-            //increase user xp and level up if he reaches the next level
-            boolean levelUp = worldMap.updateXP(villain.getWinXp());
-            gUIView.printWinXP(levelUp, villain.getWinXp(), worldMap);
-            continue_button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
-                }
-            });
-            Artefact villainArtefact = villain.getArtefact();
-            if (villainArtefact.getName().compareTo("None") != 0) { //check if villain hold an artefact
-                Artefact heroArtefact = getHeroArtefact(villainArtefact, hero);
-                gUIView.printKeepArtefactAsk(villain, heroArtefact, worldMap);
-                String[] options = {"YES", "NO"};
-                gUIView.printGUIAdventureView(worldMap, options, villain, FIGHT_TELLING_MODE);
-                ArrayList <JButton> artefact = gUIView.getBoolean_actions();
-                System.out.println(artefact.size());
-
-                //YES
-                artefact.get(0).addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        worldMap.updateArtefact(villainArtefact);
-                        gUIView.printKeepArtefactChoice(true, worldMap);
-                        gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
-
-                    }
-                });
-
-                //NO
-                artefact.get(1).addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        gUIView.printKeepArtefactChoice(false, worldMap);
-                        gUIView.printGUIAdventureView(worldMap, null, villain, FIGHT_TELLING_MODE);
-                    }
-                });
-            }
-
-            worldMap.unregisterVilain(villain);
-            displayWithTimer(worldMap, DIRECTIONS_TAB, null, MOVE_MODE);
-        } else if ((int)fight[1] == HERO_DEATH){
-            System.out.println("HERO is dead");
-        }*/
     }
 
     //Fight simulation: manage victory or defeat + artefact win and xp increase
@@ -136,7 +91,7 @@ public class FightOrRunController{
             //check if the villain hold an artefact and propose it to the player
             Artefact villainArtefact = villain.getArtefact();
             if (villainArtefact.getName().compareTo("None") != 0) {
-                Artefact heroArtefact = getHeroArtefact(villainArtefact, hero);
+                Artefact heroArtefact = worldMap.getHeroArtefact(villainArtefact, hero);
                 consoleView.printKeepArtefactAsk(villain, heroArtefact);
                 //TODO Check user input
                 artefact_choice = new Scanner(System.in);
@@ -171,29 +126,5 @@ public class FightOrRunController{
         }
     }
 
-    public Artefact getHeroArtefact(Artefact villainArtefact, Hero hero){
-
-        Artefact heroArtefact = null;
-        heroArtefact = villainArtefact.getIncreasedStat().compareTo("defense") == 0
-                ? hero.getArmor()
-                : villainArtefact.getIncreasedStat().compareTo("attack") == 0
-                ? hero.getWeapon()
-                : villainArtefact.getIncreasedStat().compareTo("hit points") == 0
-                ? hero.getHelm()
-                : heroArtefact;
-        return heroArtefact;
-    }
-
-    private void displayWithTimer(WorldMap worldMap, String[] options, Villain villain, int mode){
-        Timer timer = new Timer(3000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("timer");
-
-            }
-        });
-        timer.setRepeats(false);
-        timer.start();
-    }
 
 }

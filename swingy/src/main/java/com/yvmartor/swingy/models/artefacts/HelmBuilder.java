@@ -1,6 +1,7 @@
 package com.yvmartor.swingy.models.artefacts;
 
 public class HelmBuilder {
+    public String image;
     String name;
     int points;
     String increasedStat;
@@ -17,6 +18,11 @@ public class HelmBuilder {
 
     public HelmBuilder increasedStat(){
         this.increasedStat = "hit points";
+        return this;
+    }
+
+    public HelmBuilder image(){
+        this.image = "/images/helm.jpg";
         return this;
     }
 

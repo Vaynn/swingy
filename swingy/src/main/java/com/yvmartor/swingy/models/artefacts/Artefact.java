@@ -3,6 +3,7 @@ package com.yvmartor.swingy.models.artefacts;
 public abstract class Artefact {
     private String name;
     private int points;
+    private String image = "";
     private String increasedStat = "";
 
     public Artefact(String name, int points){
@@ -18,6 +19,10 @@ public abstract class Artefact {
         return points;
     }
 
+    public String getImage() {
+        return image;
+    }
+
     public String getIncreasedStat() {
         return increasedStat;
     }
@@ -28,6 +33,10 @@ public abstract class Artefact {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setIncreasedStat(String increasedStat) {

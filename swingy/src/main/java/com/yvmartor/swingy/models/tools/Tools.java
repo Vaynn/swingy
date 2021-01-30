@@ -6,6 +6,8 @@ public class Tools {
     public static final int ERROR = -3;
     public static final int VILLAIN_DEATH = -6;
     public static final int HERO_DEATH = -1;
+    public static final int VILLAIN = 666;
+    public static final int HERO = 665;
     public static final int SUB = 13;
     public static final int ADD = 14;
     public static final int LUCK = 777;

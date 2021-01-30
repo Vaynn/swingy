@@ -7,14 +7,10 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class GUIFightTellingView {
-    private JFrame mainFrame;
     private ArrayList<JButton> continue_button;
 
-    public GUIFightTellingView(JFrame mainFrame) {
-        this.mainFrame = mainFrame;
-    }
 
-    public void printFightTelling(WorldMap worldMap, Villain villain, int winner){
+    public void printFightTelling(WorldMap worldMap, Villain villain, int winner, JFrame mainFrame){
         String ask = "<html>" + worldMap.getFightTelling().replace("\n", "<br>") + "<html>";
         worldMap.setFightTelling("");
         AdventureViewDirector director = new AdventureViewDirector();

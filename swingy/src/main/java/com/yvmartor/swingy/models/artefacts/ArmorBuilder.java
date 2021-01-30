@@ -4,6 +4,7 @@ public class ArmorBuilder {
     String name;
     int points;
     String increasedStat;
+    String image;
 
     public ArmorBuilder name(String name){
         this.name = name;
@@ -17,6 +18,11 @@ public class ArmorBuilder {
 
     public ArmorBuilder increasedStat(){
         this.increasedStat = "defense";
+        return this;
+    }
+
+    public ArmorBuilder image(){
+        this.image = "/images/armor.png";
         return this;
     }
 

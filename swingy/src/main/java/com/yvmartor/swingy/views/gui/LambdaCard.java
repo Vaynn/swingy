@@ -11,12 +11,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class LambdaCard extends JPanel{
-    public static JPanel container = new JPanel();
-    public static JPanel card = new JPanel();
-    public static  Font fontmini = new Font("Courier", Font.PLAIN, 15);
+    public  JPanel container = new JPanel();
+    public  Font fontmini = new Font("Courier", Font.PLAIN, 15);
 
 
-    public static void addStatLabel(JPanel container, Font font, String statName, String statValue){
+    public void addStatLabel(JPanel container, Font font, String statName, String statValue){
         JLabel label = new JLabel();
         label.setText(statName + statValue);
         label.setForeground(Color.white);
@@ -25,23 +24,23 @@ public class LambdaCard extends JPanel{
         container.add(label);
     }
 
-    public static JPanel getLambdaCard(String pics, String a, String b){
-        card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
-        card.setBackground(Color.BLACK);
+    public JPanel getLambdaCard(String pics, String a, String b){
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBackground(Color.BLACK);
         InputStream resourceAsStream = Swingy.class.getResourceAsStream(pics);
         try {
             Image image = ImageIO.read(resourceAsStream);
             JLabel label1 = new JLabel(new ImageIcon(image));
 
-            card.add(label1);
+            this.add(label1);
         } catch (IOException e){
             System.err.println(e);
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
         addStatLabel(container, fontmini, a,  b);
-        card.add(container);
-        return card;
+        this.add(container);
+        return this;
     }
 
 }
