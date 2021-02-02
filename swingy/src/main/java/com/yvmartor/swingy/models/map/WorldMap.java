@@ -19,6 +19,7 @@ public class WorldMap {
 
     private int dimension;
     private Hero hero;
+    private Hero retryHero;
     private ArrayList<Villain> villainList = new ArrayList<Villain>();
     private ArrayList<int[]> usedCoord = new ArrayList<int[]>();
     private JFrame mapFrame = null;
@@ -28,6 +29,7 @@ public class WorldMap {
     //register hero on the center of the map
     public void registerHero(Hero hero){
         this.hero = hero;
+        this.retryHero = hero;
         mapDimensionProvider();
         this.hero.getCoordinates().setX((int)round((double)dimension/2));
         this.hero.getCoordinates().setY((int)round((double)dimension/2));
@@ -234,5 +236,9 @@ public class WorldMap {
 
     public void setMapFrame(JFrame mapFrame) {
         this.mapFrame = mapFrame;
+    }
+
+    public Hero getRetryHero() {
+        return retryHero;
     }
 }

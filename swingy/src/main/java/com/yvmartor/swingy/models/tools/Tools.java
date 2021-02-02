@@ -14,10 +14,16 @@ public class Tools {
     public static final int VICTORY = 7777;
 
     public static final String[] DIRECTIONS_TAB = {
-            "Go to the north.",
-            "Go to the east.",
-            "Go to the south.",
-            "Go to the west."
+            "Go to the NORTH",
+            "Go to the EAST",
+            "Go to the SOUTH",
+            "Go to the WEST"
+    };
+
+    public static final String[] GAME_OVER_TAB = {
+            "RETRY",
+            "SELECT A NEW HERO",
+            "QUIT"
     };
 
     public static int generateRandomInt(int min, int max){

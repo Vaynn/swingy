@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Swingy {
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         if (args.length == 1){
             String mode = args[0];
             if (mode.compareTo("console") == 0 || mode.compareTo("gui") == 0) {
@@ -33,7 +33,14 @@ public class Swingy {
                             gameOpeningModel,
                             consoleGameOpeningView,
                             null);
-                    controller.updateView();
+                    try {
+                        controller.updateView();
+                    } catch (IOException e) {
+                        ConsoleStringColor.error(
+                                "AN ERROR OCCURED, GAME OPENING VIEW CAN'T BE DISPLAY. " +
+                                        "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                        System.exit(-1);
+                    }
                 }
                 else if (mode.compareTo("gui") == 0) {
                     GUIGameOpeningView guiGameOpeningView = new GUIGameOpeningView();
@@ -41,7 +48,14 @@ public class Swingy {
                             gameOpeningModel,
                             null,
                             guiGameOpeningView);
-                    controller.updateView();
+                    try {
+                        controller.updateView();
+                    } catch (IOException e) {
+                        ConsoleStringColor.error(
+                                "AN ERROR OCCURED, GAME OPENING VIEW CAN'T BE DISPLAY. " +
+                                        "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                        System.exit(-1);
+                    }
                 }
                 else
                     ConsoleStringColor.error("To play, you must choose between two mode : \n\tconsole \n\tgui");

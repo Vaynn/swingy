@@ -2,6 +2,7 @@ package com.yvmartor.swingy.controller;
 
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.villains.VillainDirector;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.models.villains.VillainBuilder;
@@ -33,7 +34,7 @@ public class SelectHeroController {
     private Scanner userChoice;
     private int choice;
     private JFrame frame;
-    private VillainBuilder[] vilainTab = {
+    private static VillainBuilder[] vilainTab = {
             new EvilCatBuilder(), new MickachuBuilder(), new BadassMickey()
     };
 
@@ -47,10 +48,12 @@ public class SelectHeroController {
 
     public void updateConsoleView(){
         consoleView.printSelectHeroView(model.getTitle(), model.getHeroesList());
-        //TODO Check user input
         userChoice = new Scanner(System.in);
+        while (!userChoice.hasNext("[1-7]")) {
+            ConsoleStringColor.error("You must choice a number between 1-7.");
+            userChoice = new Scanner(System.in);
+        }
         choice = userChoice.nextInt();
-
         //create map, register the hero on it and place him on the center of the map
         WorldMap worldmap = new WorldMap();
         Hero hero = model.getHeroesList().get(choice - 1);
@@ -86,7 +89,7 @@ public class SelectHeroController {
         });
     }
 
-    private void createAndRegisterVillains(WorldMap worldmap){
+    public static void createAndRegisterVillains(WorldMap worldmap){
         int totalVilains = worldmap.vilainProportionCalculator();
         VillainDirector director = new VillainDirector();
         Random rand = new Random();

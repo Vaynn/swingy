@@ -9,6 +9,8 @@ import com.yvmartor.swingy.models.scenario.gui_fight_telling.GuiFightTelling;
 import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
+import com.yvmartor.swingy.views.gui.GUIDidIRunView;
+import com.yvmartor.swingy.views.gui.GUIDidIRunViewBuilder;
 import com.yvmartor.swingy.views.gui.GUIFightOrRunView;
 import com.yvmartor.swingy.views.gui.GUIFightTellingView;
 
@@ -75,6 +77,17 @@ public class FightOrRunController{
                 GUIFightTellingView view = new GUIFightTellingView();
                 GuiFightTelling model = new GuiFightTelling(worldMap, villain, mainFrame);
                 GUIFightTellingController controller = new GUIFightTellingController(model, view, (int)fight[1]);
+                controller.updateView();
+            }
+        });
+
+        //RUN
+        fight_choice.get(1).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiFightTelling model = new GuiFightTelling(worldMap, villain, mainFrame);
+                GUIDidIRunView view = new GUIDidIRunView();
+                GUIDidIRunController controller = new GUIDidIRunController(model, view);
                 controller.updateView();
             }
         });

@@ -2,6 +2,7 @@ package com.yvmartor.swingy.controller;
 
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.hero.HeroListBuilder;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.scenario.game_opening.GameOpening;
 import com.yvmartor.swingy.models.scenario.select_hero.SelectHero;
 import com.yvmartor.swingy.models.scenario.select_hero.SelectHeroBuilder;
@@ -71,10 +72,16 @@ public class GameOpeningController {
             System.out.println("Errror");
     }
 
-    public void updateGUIView() throws IOException {
+    public void updateGUIView(){
         CreateMainFrame frame = new CreateMainFrame();
         JFrame myFrame = frame.getMyFrame();
-        gUIView.printGameOpening(myFrame, model.getTitle(), model.getOptions(), model.getImage());
+        try {
+            gUIView.printGameOpening(myFrame, model.getTitle(), model.getOptions(), model.getImage());
+        } catch (IOException e) {
+            ConsoleStringColor.error(
+                    "AN ERROR OCCURED,GAME OPENING VIEW CAN'T BE DISPLAY. FORGIVENESS FOR THE DESAGREMENT GENERATED");
+            System.exit(-1);
+        }
         myFrame.setVisible(true);
         gUIView.getNewHero().addActionListener(new ActionListener() {
             @Override

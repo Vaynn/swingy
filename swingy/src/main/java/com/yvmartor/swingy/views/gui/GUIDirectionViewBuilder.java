@@ -7,10 +7,12 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
+import static com.yvmartor.swingy.models.tools.Tools.DIRECTIONS_TAB;
+
 public class GUIDirectionViewBuilder extends AdventureViewBuilder {
 
     private Font font = new Font("Courier", Font.ITALIC, 20);
-    private String[] direction = {"Go to the North", "Go to the East", "Go to the South", "Go to the West"};
+    private String[] direction = DIRECTIONS_TAB;
 
     @Override
     public void buildContainer() {

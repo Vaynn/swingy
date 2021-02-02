@@ -2,19 +2,23 @@ package com.yvmartor.swingy.controller;
 
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.scenario.direction.Direction;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRun;
 import com.yvmartor.swingy.models.scenario.fight_or_run.FightOrRunBuilder;
+import com.yvmartor.swingy.models.scenario.game_over.GameOver;
 import com.yvmartor.swingy.models.scenario.question.Question;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleDirectionView;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
+import com.yvmartor.swingy.views.console.ConsoleGameOverView;
 import com.yvmartor.swingy.views.gui.GUIDirectionView;
 import com.yvmartor.swingy.views.gui.GUIFightOrRunView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,7 +46,7 @@ public class DirectionController {
         this.options.add("Run");
     }
 
-    public void updateConsoleView() {
+    public void updateConsoleView(){
 
         int destiny;
 
@@ -75,10 +79,15 @@ public class DirectionController {
             }
 
         }
+        //GAME OVER
         if (destiny == HERO_DEATH){
-            //TODO GAME OVER VIEW
-            System.out.println("GAME OVER");
+            GameOver model = new GameOver(worldMap);
+            ConsoleGameOverView view = new ConsoleGameOverView();
+            GameOverController controller = new GameOverController(model, null, view, null);
+            controller.updateConsoleView();
         }
+
+        //VICTORY
         if (destiny == VICTORY){
             //TODO DB SAVE + ASK CONTINUE OR NOT.
             System.out.println("VICTORY");
