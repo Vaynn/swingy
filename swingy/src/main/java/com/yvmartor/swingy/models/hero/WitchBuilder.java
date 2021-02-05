@@ -89,6 +89,11 @@ public class WitchBuilder extends HeroBuilder{
     }
 
     @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83D\uDD2E");
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/sorciere.jpg");
     }

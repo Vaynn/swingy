@@ -7,7 +7,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-import static com.yvmartor.swingy.models.tools.Tools.GAME_OVER_TAB;
 import static com.yvmartor.swingy.models.tools.Tools.WINNER_TAB;
 
 public class GUIWinnerViewBuilder extends AdventureViewBuilder{

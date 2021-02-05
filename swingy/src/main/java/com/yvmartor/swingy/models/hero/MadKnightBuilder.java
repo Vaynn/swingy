@@ -89,6 +89,11 @@ public class MadKnightBuilder extends HeroBuilder{
     }
 
     @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83D\uDDE1");
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/chevalier.jpg");
     }

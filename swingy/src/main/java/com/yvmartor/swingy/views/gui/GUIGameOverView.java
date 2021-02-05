@@ -1,7 +1,6 @@
 package com.yvmartor.swingy.views.gui;
 
 import com.yvmartor.swingy.models.map.WorldMap;
-import com.yvmartor.swingy.models.villains.Villain;
 
 import javax.swing.*;
 import java.util.ArrayList;

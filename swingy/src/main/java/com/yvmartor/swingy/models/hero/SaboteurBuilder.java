@@ -89,6 +89,11 @@ public class SaboteurBuilder extends HeroBuilder{
     }
 
     @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83D\uDCA3");
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/saboteur.jpg");
     }

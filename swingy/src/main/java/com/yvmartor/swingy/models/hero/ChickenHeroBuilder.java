@@ -87,6 +87,12 @@ public class ChickenHeroBuilder extends HeroBuilder {
         String[] tab = {"Rusty Helm", "Gold Helm", "Horus's Helm"};
         hero.setHelmName(tab);
     }
+
+    @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83D\uDC14");
+    }
+
     @Override
     public void buildImage() {
         hero.setImage("/images/chicken.jpg");

@@ -5,7 +5,6 @@ import com.yvmartor.swingy.models.scenario.direction.Direction;
 import com.yvmartor.swingy.models.scenario.direction.DirectionBuilder;
 import com.yvmartor.swingy.models.scenario.gui_fight_telling.GuiFightTelling;
 import com.yvmartor.swingy.models.villains.Villain;
-import com.yvmartor.swingy.views.gui.GUIArtefactChoiceView;
 import com.yvmartor.swingy.views.gui.GUIArtefactResultView;
 import com.yvmartor.swingy.views.gui.GUIDirectionView;
 

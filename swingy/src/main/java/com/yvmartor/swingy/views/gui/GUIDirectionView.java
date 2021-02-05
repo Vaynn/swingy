@@ -6,19 +6,14 @@ import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.villains.Villain;
-import jakarta.validation.constraints.AssertTrue;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import static com.yvmartor.swingy.models.tools.Tools.*;
-import static java.lang.Math.round;
 
 public class GUIDirectionView {
     private JFrame mainFrame;
@@ -74,7 +69,7 @@ public class GUIDirectionView {
                     map = new JLabel(new ImageIcon(image));
 
                 } catch (IOException e){
-                    System.err.println(e);
+                    ConsoleStringColor.error("IMPOSSIBLE TO FIND THE PICTURE");
                 }
                 map.setBorder(BorderFactory.createLineBorder(Color.RED));
                 map.setBackground(Color.BLACK);
@@ -88,6 +83,7 @@ public class GUIDirectionView {
             panel.add(map);
         }
         JPanel contentPane = (JPanel) mapFrame.getContentPane();
+        mapFrame.setLocation(mainFrame.getX() + mainFrame.getWidth(), mainFrame.getY());
         mapFrame.setVisible(true);
         contentPane.removeAll();
         contentPane.add(panel);

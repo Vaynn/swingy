@@ -1,8 +1,6 @@
 package com.yvmartor.swingy.models.scenario.select_hero;
 
 import com.yvmartor.swingy.models.hero.Hero;
-import com.yvmartor.swingy.models.scenario.game_opening.GameOpening;
-import com.yvmartor.swingy.models.scenario.game_opening.GameOpeningBuilder;
 
 import java.util.ArrayList;
 

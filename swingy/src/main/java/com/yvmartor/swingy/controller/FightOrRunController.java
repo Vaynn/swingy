@@ -10,7 +10,6 @@ import com.yvmartor.swingy.models.tools.Tools;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 import com.yvmartor.swingy.views.gui.GUIDidIRunView;
-import com.yvmartor.swingy.views.gui.GUIDidIRunViewBuilder;
 import com.yvmartor.swingy.views.gui.GUIFightOrRunView;
 import com.yvmartor.swingy.views.gui.GUIFightTellingView;
 

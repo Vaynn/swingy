@@ -7,7 +7,6 @@ import com.yvmartor.swingy.models.scenario.gui_fight_telling.GuiFightTelling;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.gui.GUIArtefactChoiceView;
 import com.yvmartor.swingy.views.gui.GUIDirectionView;
-import com.yvmartor.swingy.views.gui.GUIFightTellingView;
 import com.yvmartor.swingy.views.gui.GUIWinXpView;
 
 import javax.swing.*;

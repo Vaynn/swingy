@@ -2,6 +2,7 @@ package com.yvmartor.swingy.views.gui;
 
 import com.yvmartor.swingy.Swingy;
 import com.yvmartor.swingy.models.hero.Hero;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -9,8 +10,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
-
-import static java.awt.GridBagConstraints.*;
 
 public class HeroCard extends JPanel {
     private Hero hero;
@@ -42,17 +41,17 @@ public class HeroCard extends JPanel {
 
             center.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("HERO CARD: IMPOSSIBLE TO FIND THE PICTURE");
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
-        addStatLabel(container, font, "NAME: ",  hero.getName());
-        addStatLabel(container, font, "CLASS: ",  hero.getHeroClass());
-        addStatLabel(container, font, "LEVEL: ",  String.valueOf(hero.getLevel()));
-        addStatLabel(container, font, "XP: ",  String.valueOf((int)hero.getXp()));
-        addStatLabel(container, font, "ATTACK: ",  String.valueOf(hero.getAttak()));
+        addStatLabel(container, font, "NAME:    ",  hero.getName());
+        addStatLabel(container, font, "CLASS:   ",  hero.getHeroClass());
+        addStatLabel(container, font, "LEVEL:   ",  String.valueOf(hero.getLevel()));
+        addStatLabel(container, font, "XP:      ",  String.valueOf((int)hero.getXp()));
+        addStatLabel(container, font, "ATTACK:  ",  String.valueOf(hero.getAttak()));
         addStatLabel(container, font, "DEFENSE: ",  String.valueOf(hero.getDefense()));
-        addStatLabel(container, font, "HP: ",  String.valueOf(hero.getHitPoints()));
+        addStatLabel(container, font, "HP:      ",  String.valueOf(hero.getHitPoints()));
         center.add(container);
         return center;
     }
@@ -67,23 +66,25 @@ public class HeroCard extends JPanel {
 
             center.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("HERO MINI CARD: IMPOSSIBLE TO FIND THE PICTURE");
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
-        addStatLabel(container, fontmini, hero.getHeroClass() + " ",  hero.getName());
-        addStatLabel(container, fontmini, "LEVEL ",  String.valueOf(hero.getLevel()));
+        addStatLabel(container, fontmini, hero.getName(), "");
+        addStatLabel(container, fontmini, "LEVEL  ",  String.valueOf(hero.getLevel()));
+        addStatLabel(container, fontmini, "HP     ",  String.valueOf(hero.getHitPoints()));
+        addStatLabel(container, fontmini, "XP     ",  String.valueOf((int)hero.getXp()));
         addStatLabel(container, fontmini, "WEAPON ",
                 hero.getWeapon().getName()
                         + " +"
                         + hero.getWeapon().getPoints()
                         + " ATK");
-        addStatLabel(container, fontmini, "ARMOR ",
+        addStatLabel(container, fontmini, "ARMOR  ",
                 hero.getArmor().getName()
                         + " +"
                         + hero.getArmor().getPoints()
                         + " DEF");
-        addStatLabel(container, fontmini, "HELM ",
+        addStatLabel(container, fontmini, "HELM   ",
                 hero.getHelm().getName()
                         + " +"
                         + hero.getHelm().getPoints()

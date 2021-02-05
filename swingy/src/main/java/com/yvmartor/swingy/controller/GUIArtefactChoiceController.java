@@ -5,14 +5,11 @@ import com.yvmartor.swingy.models.scenario.gui_fight_telling.GuiFightTelling;
 import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.gui.GUIArtefactChoiceView;
 import com.yvmartor.swingy.views.gui.GUIArtefactResultView;
-import com.yvmartor.swingy.views.gui.GUIWinXpView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
 
 public class GUIArtefactChoiceController {
 

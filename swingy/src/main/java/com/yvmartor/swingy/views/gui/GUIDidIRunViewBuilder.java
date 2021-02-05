@@ -7,9 +7,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
-import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
-
 public class GUIDidIRunViewBuilder extends AdventureViewBuilder
 {
     private Font font = new Font("Courier", Font.ITALIC, 20);

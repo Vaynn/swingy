@@ -11,10 +11,10 @@ public class ConsoleSelectHeroView {
         for (int i = 0; i < heroesList.size(); i++){
             Hero hero = heroesList.get(i);
             int id = i + 1;
-            ConsoleStringColor.action(id + ") " + hero.getName() + "\n");
+            ConsoleStringColor.action(id + ") " + hero.getName() + "  " + hero.getUnicode() + "\n");
             ConsoleStringColor.action("\t" + "Classe : " + hero.getHeroClass());
             ConsoleStringColor.action("\t" + "Level : " + hero.getLevel());
-            ConsoleStringColor.action("\t" + "XP : " + hero.getXp());
+            ConsoleStringColor.action("\t" + "XP : " + (int)hero.getXp());
             ConsoleStringColor.action("\t" + "Attak : " + hero.getAttak());
             ConsoleStringColor.action("\t" + "Defense : " + hero.getDefense());
             ConsoleStringColor.action("\t" + "HP : " + hero.getHitPoints() + "\n");

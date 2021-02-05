@@ -1,7 +1,7 @@
 package com.yvmartor.swingy.views.gui;
 
 import com.yvmartor.swingy.Swingy;
-import com.yvmartor.swingy.models.villains.Villain;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -34,7 +34,7 @@ public class LambdaCard extends JPanel{
 
             this.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("LAMBDA CARD: IMPOSSIBLE TO FIND THE PICTURE");
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);

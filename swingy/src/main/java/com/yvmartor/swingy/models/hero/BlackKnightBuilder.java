@@ -103,4 +103,9 @@ public class BlackKnightBuilder extends HeroBuilder {
         String[] tab = {"Rusty Helm", "Gold Helm", "Adamanthe Helm"};
         hero.setHelmName(tab);
     }
+
+    @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83D\uDC79");
+    }
 }

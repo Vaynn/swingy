@@ -39,6 +39,8 @@ public class Hero {
 
     private String gif = "";
 
+    private String unicode = "";
+
     private Coordinates coordinates = new Coordinates(0, 0);
 
     private WorldMap worldMap;
@@ -93,6 +95,10 @@ public class Hero {
 
     public String getGif() {
         return gif;
+    }
+
+    public String getUnicode() {
+        return unicode;
     }
 
     public Coordinates getCoordinates() {
@@ -171,6 +177,10 @@ public class Hero {
 
     public void setGif(String gif) {
         this.gif = gif;
+    }
+
+    public void setUnicode(String unicode) {
+        this.unicode = unicode;
     }
 
     public void setCoordinates(Coordinates coordinates) {

@@ -1,11 +1,9 @@
 package com.yvmartor.swingy.views.gui;
 
 import com.yvmartor.swingy.models.map.WorldMap;
-import com.yvmartor.swingy.models.scenario.question.Question;
 import com.yvmartor.swingy.models.villains.Villain;
 
 import javax.swing.*;
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 
 public class GUIFightOrRunView {

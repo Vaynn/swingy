@@ -1,9 +1,5 @@
 package com.yvmartor.swingy.models.tools;
 
-import com.yvmartor.swingy.models.hero.HeroBuilder;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class Tools {

@@ -1,7 +1,7 @@
 package com.yvmartor.swingy.views.gui;
 
 import com.yvmartor.swingy.Swingy;
-import com.yvmartor.swingy.models.hero.Hero;
+import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.villains.Villain;
 
 import javax.imageio.ImageIO;
@@ -39,7 +39,7 @@ public class VillainCard extends JPanel {
 
             this.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("VILLAIN CARD: IMPOSSIBLE TO FIND THE PICTURE");;
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
@@ -63,7 +63,7 @@ public class VillainCard extends JPanel {
 
             this.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("GAME OVER MINI CARD: IMPOSSIBLE TO FIND THE PICTURE");
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
@@ -83,7 +83,7 @@ public class VillainCard extends JPanel {
 
             this.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("WIN THE FIGHT MINI CARD: IMPOSSIBLE TO FIND THE PICTURE");
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);
@@ -102,7 +102,7 @@ public class VillainCard extends JPanel {
 
             this.add(label1);
         } catch (IOException e){
-            System.err.println(e);
+            ConsoleStringColor.error("ARTEFACT MINI CARD: IMPOSSIBLE TO FIND THE PICTURE");
         }
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
         container.setBackground(Color.BLACK);

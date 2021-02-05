@@ -1,7 +1,5 @@
 package com.yvmartor.swingy.views.gui;
 
-import com.yvmartor.swingy.models.hero.Hero;
-import com.yvmartor.swingy.models.hero.HeroBuilder;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.villains.Villain;
 

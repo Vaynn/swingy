@@ -1,8 +1,5 @@
 package com.yvmartor.swingy.models.scenario.question;
 
-import org.hibernate.validator.constraints.Range;
-import org.hibernate.validator.constraints.ScriptAssert;
-
 import java.util.ArrayList;
 
 public class Question {
@@ -27,7 +24,6 @@ public class Question {
         return options;
     }
 
-    @Range(min = MIN_RANGE, max = MAX_RANGE, message = "Error: you must choose between " + MIN_RANGE + "and " + MAX_RANGE + ".\n")
     public int getResponse() {
         return response;
     }

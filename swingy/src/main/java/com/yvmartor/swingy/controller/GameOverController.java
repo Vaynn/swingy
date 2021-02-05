@@ -8,7 +8,6 @@ import com.yvmartor.swingy.models.scenario.direction.DirectionBuilder;
 import com.yvmartor.swingy.models.scenario.game_opening.GameOpening;
 import com.yvmartor.swingy.models.scenario.game_opening.GameOpeningBuilder;
 import com.yvmartor.swingy.models.scenario.game_over.GameOver;
-import com.yvmartor.swingy.models.scenario.select_hero.SelectHero;
 import com.yvmartor.swingy.views.console.ConsoleDirectionView;
 import com.yvmartor.swingy.views.console.ConsoleGameOpeningView;
 import com.yvmartor.swingy.views.console.ConsoleGameOverView;
@@ -128,7 +127,10 @@ public class GameOverController {
                 try {
                     controller.updateView();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+                    ConsoleStringColor.error(
+                            "AN ERROR OCCURED, GAME OPENING VIEW CAN'T BE DISPLAY. " +
+                                    "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                    System.exit(-1);
                 }
             }
         });

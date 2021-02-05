@@ -92,7 +92,8 @@ public class GameOpeningController {
                     updateConsoleView();
                 }
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                ConsoleStringColor.error("SAVED GAME IMPOSSIBLE TO LOAD: Database corruption");
+                System.exit(-1);
             }
         }
     }
@@ -104,12 +105,12 @@ public class GameOpeningController {
             gUIView.printGameOpening(myFrame, model.getTitle(), model.getOptions(), model.getImage());
         } catch (IOException e) {
             ConsoleStringColor.error(
-                    "AN ERROR OCCURED,GAME OPENING VIEW CAN'T BE DISPLAY. FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                    "AN ERROR OCCURED, GAME OPENING VIEW CAN'T BE DISPLAY. FORGIVENESS FOR THE DESAGREMENT GENERATED");
             System.exit(-1);
         }
         myFrame.setVisible(true);
         //NEW HERO
-        gUIView.getNewHero().addActionListener(new ActionListener() {
+        gUIView.getAction().get(0).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<Hero> heroList = new HeroListBuilder().heroListBuilder();
@@ -119,13 +120,16 @@ public class GameOpeningController {
                 try {
                     controller.updateGUIView();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+                    ConsoleStringColor.error(
+                            "AN ERROR OCCURED, SELECT HERO VIEW CAN'T BE DISPLAY. " +
+                                    "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                    System.exit(-1);
                 }
             }
         });
 
         //CONTINUE HERO
-        JButton continue_hero = gUIView.getExistingHero();
+        JButton continue_hero = gUIView.getAction().get(1);
         ArrayList<Hero> herolist = new ArrayList<Hero>();
         try {
             herolist = Database.getAllHeroes();
@@ -142,13 +146,17 @@ public class GameOpeningController {
                         try {
                             controller.updateGUIView();
                         } catch (IOException ioException) {
-                            ioException.printStackTrace();
+                            ConsoleStringColor.error(
+                                    "AN ERROR OCCURED, SELECT HERO VIEW CAN'T BE DISPLAY. " +
+                                            "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                            System.exit(-1);
                         }
                     }
                 });
             }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            ConsoleStringColor.error("SAVED GAME IMPOSSIBLE TO LOAD: Database corruption");
+            System.exit(-1);
         }
     }
 

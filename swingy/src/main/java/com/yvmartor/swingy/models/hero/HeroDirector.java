@@ -30,6 +30,7 @@ public class HeroDirector {
         heroBuilder.buildWeaponName();
         heroBuilder.buildArmorName();
         heroBuilder.buildHelmName();
+        heroBuilder.buildUnicode();
     }
 
 }

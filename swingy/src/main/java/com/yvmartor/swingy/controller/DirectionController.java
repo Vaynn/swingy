@@ -1,6 +1,5 @@
 package com.yvmartor.swingy.controller;
 
-import com.yvmartor.swingy.database.Database;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
@@ -21,12 +20,11 @@ import com.yvmartor.swingy.views.gui.GUIWinnerView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.yvmartor.swingy.models.tools.Tools.*;
+import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
+import static com.yvmartor.swingy.models.tools.Tools.VICTORY;
 
 public class DirectionController {
     private JFrame frame;

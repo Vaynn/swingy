@@ -89,6 +89,11 @@ public class MagicianBuilder extends HeroBuilder {
     }
 
     @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83E\uDE84");
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/magician.jpg");
     }

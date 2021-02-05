@@ -1,17 +1,11 @@
 package com.yvmartor.swingy.views.gui;
 
 import com.yvmartor.swingy.Swingy;
-import com.yvmartor.swingy.models.hero.ChickenHeroBuilder;
-import com.yvmartor.swingy.models.hero.Hero;
-import com.yvmartor.swingy.models.hero.HeroBuilder;
-import com.yvmartor.swingy.models.hero.HeroDirector;
-
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -20,41 +14,50 @@ public class GUIGameOpeningView extends JFrame {
 
     JPanel container = new JPanel();
     JFrame frame;
-    private JButton newHero;
-    private JButton existingHero;
+    ArrayList<JButton> action = new ArrayList<JButton>();
 
     public void printGameOpening(JFrame myFrame, String title, ArrayList<String> options, String image) throws IOException{
         frame = myFrame;
+
+        container.setLayout(new BorderLayout(5, 5));
         container.setBackground(Color.BLACK);
-        container.setLayout(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.gridx = 2;
-        constraints.gridy = 2;
-        constraints.gridwidth = 3;
-        constraints.gridheight = 1;
-        constraints.insets = new Insets(0, 0, 10, 0);
+        container.setBorder(new EmptyBorder(0, 0, 300, 0));
+
         InputStream resourceAsStream = Swingy.class.getResourceAsStream(image);
         Image landscape = ImageIO.read(resourceAsStream);
         JLabel label1 = new JLabel(new ImageIcon(landscape));
-        container.add(label1, constraints);
-        constraints.gridx = 4;
-        constraints.gridy = 0;
-        constraints.gridwidth = 1;
-        JLabel gameTitle = new JLabel(title);
-        gameTitle.setForeground(Color.cyan);
-        Font gameTitleFont = new Font("Courier", Font.ITALIC, 70);
-        gameTitle.setFont(gameTitleFont);
-        container.add(gameTitle, constraints);
-        constraints.gridx = 2;
-        constraints.gridy = 5;
-        constraints.gridwidth = 2;
+        container.add(label1, BorderLayout.CENTER);
 
-        newHero = new JButton(options.get(0));
-        container.add(newHero, constraints);
-        constraints.gridx = 4;
-        constraints.gridy = 5;
-        existingHero = new JButton(options.get(1));
-        container.add(existingHero, constraints);
+        JLabel gameTitle = new JLabel(title);
+        gameTitle.setText(title);
+        gameTitle.setForeground(Color.cyan);
+        Font gameTitleFont = new Font("Courier", Font.BOLD, 50);
+        gameTitle.setFont(gameTitleFont);
+        gameTitle.setHorizontalAlignment(JLabel.CENTER);
+        gameTitle.setVerticalAlignment(JLabel.CENTER);
+        gameTitle.setBorder(new EmptyBorder(20, 0, 50, 0));
+        container.add(gameTitle, BorderLayout.NORTH);
+
+        JPanel actionButtons = new JPanel(new GridBagLayout());
+        actionButtons.setBackground(Color.BLACK);
+        actionButtons.setSize(100,100);
+        GridBagConstraints c = new GridBagConstraints();
+
+        for (int i = 0; i < options.size(); i++) {
+            action.add(new JButton(options.get(i)));
+        }
+        //New Hero
+        c.gridx = 2;
+        c.gridy = 1;
+        actionButtons.add(action.get(1), c);
+
+        //CONTINUE HERO
+        c.gridx = 0;
+        c.gridy = 1;
+        actionButtons.add(action.get(0), c);
+
+        container.add(actionButtons, BorderLayout.SOUTH);
+
         JPanel contentPane = (JPanel) frame.getContentPane();
         contentPane.removeAll();
         contentPane.add(container);
@@ -62,11 +65,7 @@ public class GUIGameOpeningView extends JFrame {
         contentPane.repaint();
     }
 
-    public JButton getNewHero() {
-        return newHero;
-    }
-
-    public JButton getExistingHero() {
-        return existingHero;
+    public ArrayList<JButton> getAction() {
+        return action;
     }
 }

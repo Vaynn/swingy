@@ -33,7 +33,6 @@ public class GUIDidIRunController {
         JFrame mainFrame = model.getMainFrame();
 
         int can_you_run = Tools.generateRandomInt(LUCK, 779);
-        System.out.println(can_you_run);
         ArrayList<JButton> continue_button;
 
         //Managed to run

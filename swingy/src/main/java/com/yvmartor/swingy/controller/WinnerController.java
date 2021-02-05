@@ -48,14 +48,16 @@ public class WinnerController {
                 int hero_idx = Database.createHero(model.getWorldMap().getHero());
                 model.getWorldMap().getHero().setIdx(hero_idx);
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                ConsoleStringColor.error("IMPOSSIBLE TO SAVE THE GAME: Database corruption");
+                System.exit(-1);
             }
         }
         else {
             try {
                 Database.updateHero(model.getWorldMap().getHero());
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                ConsoleStringColor.error("IMPOSSIBLE TO SAVE THE GAME: Database corruption");
+                System.exit(-1);
             }
         }
 
@@ -97,7 +99,10 @@ public class WinnerController {
             try {
                 controller.updateView();
             } catch (IOException ioException) {
-                ioException.printStackTrace();
+                ConsoleStringColor.error(
+                        "AN ERROR OCCURED, GAME OPENING VIEW CAN'T BE DISPLAY. " +
+                                "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                System.exit(-1);
             }
         }
         //EXIT
@@ -116,14 +121,16 @@ public class WinnerController {
                 int hero_idx = Database.createHero(model.getWorldMap().getHero());
                 model.getWorldMap().getHero().setIdx(hero_idx);
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                ConsoleStringColor.error("IMPOSSIBLE TO SAVE THE GAME: Database corruption");
+                System.exit(-1);
             }
         }
         else {
             try {
                 Database.updateHero(model.getWorldMap().getHero());
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                ConsoleStringColor.error("IMPOSSIBLE TO SAVE THE GAME: Database corruption");
+                System.exit(-1);
             }
         }
         ArrayList<JButton> winner_buttons = gUIview.getOptions();
@@ -168,7 +175,10 @@ public class WinnerController {
                 try {
                     controller.updateView();
                 } catch (IOException ioException) {
-                    ioException.printStackTrace();
+                    ConsoleStringColor.error(
+                            "AN ERROR OCCURED, GAME OPENING VIEW CAN'T BE DISPLAY. " +
+                                    "FORGIVENESS FOR THE DESAGREMENT GENERATED");
+                    System.exit(-1);
                 }
             }
         });

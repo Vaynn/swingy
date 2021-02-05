@@ -18,8 +18,6 @@ public class Database {
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
-                System.out.println("The driver name is " + meta.getDriverName());
-                System.out.println("A new database has been created.");
             }
 
         } catch (SQLException e) {
@@ -73,7 +71,6 @@ public class Database {
             stmt.execute(armor);
             stmt.execute(helm);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
             ConsoleStringColor.error("An error occured impossible to create database tables.");
         }
     }
@@ -384,7 +381,7 @@ public class Database {
     }
 
     private static Armor getArmor(int id) throws SQLException{
-        String query = "SELECT name, points FROM weapons WHERE owner = id";
+        String query = "SELECT name, points FROM armors WHERE owner = id";
         Armor armor = null;
 
         try (Connection conn = DriverManager.getConnection(url);
@@ -409,7 +406,7 @@ public class Database {
     }
 
     private static Helm getHelm(int id) throws SQLException{
-        String query = "SELECT name, points FROM weapons WHERE owner = id";
+        String query = "SELECT name, points FROM helms WHERE owner = id";
         Helm helm = null;
 
         try (Connection conn = DriverManager.getConnection(url);

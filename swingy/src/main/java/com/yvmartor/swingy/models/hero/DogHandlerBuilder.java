@@ -89,6 +89,11 @@ public class DogHandlerBuilder extends HeroBuilder {
     }
 
     @Override
+    public void buildUnicode() {
+        hero.setUnicode("\uD83D\uDC29");
+    }
+
+    @Override
     public void buildImage() {
         hero.setImage("/images/dog_handler.jpg");
     }

@@ -1,9 +1,6 @@
 package com.yvmartor.swingy.models.scenario.game_over;
 
 import com.yvmartor.swingy.models.map.WorldMap;
-import com.yvmartor.swingy.models.scenario.question.Question;
-
-import java.util.ArrayList;
 
 public class GameOver {
     private WorldMap worldMap;

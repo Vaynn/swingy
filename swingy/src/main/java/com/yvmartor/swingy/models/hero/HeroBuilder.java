@@ -29,5 +29,6 @@ public abstract class HeroBuilder {
     public abstract void buildWeaponName();
     public abstract void buildArmorName();
     public abstract void buildHelmName();
+    public abstract void buildUnicode();
 
 }
