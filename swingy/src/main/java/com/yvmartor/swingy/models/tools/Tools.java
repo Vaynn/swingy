@@ -1,5 +1,9 @@
 package com.yvmartor.swingy.models.tools;
 
+import com.yvmartor.swingy.models.hero.HeroBuilder;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Tools {
@@ -24,6 +28,12 @@ public class Tools {
             "RETRY",
             "SELECT A NEW HERO",
             "QUIT"
+    };
+
+    public static final String[] WINNER_TAB = {
+        "CONTINUE TO THE NEXT LEVEL",
+        "SELECT A NEW CHARACTER",
+        "QUIT"
     };
 
     public static int generateRandomInt(int min, int max){

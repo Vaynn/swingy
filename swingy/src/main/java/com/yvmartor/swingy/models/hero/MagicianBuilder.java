@@ -4,6 +4,11 @@ import com.yvmartor.swingy.models.artefacts.*;
 
 public class MagicianBuilder extends HeroBuilder {
     @Override
+    public void buildHeroIdx() {
+        hero.setIdx(-1);
+    }
+
+    @Override
     public void buildHeroClass() {
         hero.setHeroClass("Magician");
     }

@@ -1,5 +1,6 @@
 package com.yvmartor.swingy.controller;
 
+import com.yvmartor.swingy.database.Database;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.map.WorldMap;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
@@ -12,13 +13,16 @@ import com.yvmartor.swingy.models.villains.Villain;
 import com.yvmartor.swingy.views.console.ConsoleDirectionView;
 import com.yvmartor.swingy.views.console.ConsoleFightOrRunView;
 import com.yvmartor.swingy.views.console.ConsoleGameOverView;
+import com.yvmartor.swingy.views.console.ConsoleWinnerView;
 import com.yvmartor.swingy.views.gui.GUIDirectionView;
 import com.yvmartor.swingy.views.gui.GUIFightOrRunView;
+import com.yvmartor.swingy.views.gui.GUIWinnerView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -52,8 +56,11 @@ public class DirectionController {
 
         while (true) {
             consoleView.printGameAdventure(hero, model.getOptions());
-            //TODO Check user input
             scanner = new Scanner(System.in);
+            while (!scanner.hasNext("[1-" + model.getOptions().length + "]")) {
+                ConsoleStringColor.error("You must choice a number between 1-" + model.getOptions().length + ".");
+                scanner = new Scanner(System.in);
+            }
             choice = scanner.nextInt();
 
             worldMap.updateHeroCoordinates(choice);
@@ -81,7 +88,7 @@ public class DirectionController {
         }
         //GAME OVER
         if (destiny == HERO_DEATH){
-            GameOver model = new GameOver(worldMap);
+            GameOver model = new GameOver(worldMap, "GAME OVER!\n What do you want to do ?\n");
             ConsoleGameOverView view = new ConsoleGameOverView();
             GameOverController controller = new GameOverController(model, null, view, null);
             controller.updateConsoleView();
@@ -89,8 +96,13 @@ public class DirectionController {
 
         //VICTORY
         if (destiny == VICTORY){
-            //TODO DB SAVE + ASK CONTINUE OR NOT.
-            System.out.println("VICTORY");
+            GameOver model = new GameOver(worldMap,
+                    "WINNER\n" +
+                            "Congratulations, your progression has been saved.\n\n" +
+                            "What do you want to do ?\n");
+            ConsoleWinnerView view = new ConsoleWinnerView();
+            WinnerController controller = new WinnerController(model, view, null, null);
+            controller.updateConsoleView();
         }
     }
 
@@ -103,7 +115,16 @@ public class DirectionController {
                 public void actionPerformed(ActionEvent e) {
                     worldMap.updateHeroCoordinates(1);
                     Villain enemy = worldMap.isHeroMeetVilain();
-                    if (enemy != null){
+                    if (worldMap.isHeroReachTheEdge()){
+                        GameOver model = new GameOver(worldMap,
+                    "<html>WINNER<br>" +
+                            "Congratulations, your progression has been saved.<br><br>" +
+                            "What do you want to do ?</html>");
+                        GUIWinnerView view = new GUIWinnerView(gUIView.getMainFrame());
+                        WinnerController controller = new WinnerController(model, null, view, gUIView.getMainFrame());
+                        controller.updateGUIView();
+                    }
+                    else if (enemy != null){
                         launchFightOrRunController(enemy);
                     }
                     gUIView.displayMapFrame(worldMap.getHero());
@@ -115,7 +136,16 @@ public class DirectionController {
                 public void actionPerformed(ActionEvent e) {
                     worldMap.updateHeroCoordinates(2);
                     Villain enemy = worldMap.isHeroMeetVilain();
-                    if (enemy != null){
+                    if (worldMap.isHeroReachTheEdge()){
+                        GameOver model = new GameOver(worldMap,
+                    "<html>WINNER<br>" +
+                            "Congratulations, your progression has been saved.<br><br>" +
+                            "What do you want to do ?</html>");
+                        GUIWinnerView view = new GUIWinnerView(gUIView.getMainFrame());
+                        WinnerController controller = new WinnerController(model, null, view, gUIView.getMainFrame());
+                        controller.updateGUIView();
+                    }
+                    else if (enemy != null){
                         launchFightOrRunController(enemy);
                     }
                     gUIView.displayMapFrame(worldMap.getHero());
@@ -127,7 +157,16 @@ public class DirectionController {
             public void actionPerformed(ActionEvent e) {
                 worldMap.updateHeroCoordinates(3);
                 Villain enemy = worldMap.isHeroMeetVilain();
-                if (enemy != null){
+                if (worldMap.isHeroReachTheEdge()){
+                    GameOver model = new GameOver(worldMap,
+                    "<html>WINNER<br>" +
+                            "Congratulations, your progression has been saved.<br><br>" +
+                            "What do you want to do ?</html>");
+                    GUIWinnerView view = new GUIWinnerView(gUIView.getMainFrame());
+                    WinnerController controller = new WinnerController(model, null, view, gUIView.getMainFrame());
+                    controller.updateGUIView();
+                }
+                else if (enemy != null){
                     launchFightOrRunController(enemy);
                 }
                 gUIView.displayMapFrame(worldMap.getHero());
@@ -139,7 +178,16 @@ public class DirectionController {
             public void actionPerformed(ActionEvent e) {
                 worldMap.updateHeroCoordinates(4);
                 Villain enemy = worldMap.isHeroMeetVilain();
-                if (enemy != null){
+                if (worldMap.isHeroReachTheEdge()){
+                    GameOver model = new GameOver(worldMap,
+                    "<html>WINNER<br>" +
+                            "Congratulations, your progression has been saved.<br><br>" +
+                            "What do you want to do ?</html>");
+                    GUIWinnerView view = new GUIWinnerView(gUIView.getMainFrame());
+                    WinnerController controller = new WinnerController(model, null, view, gUIView.getMainFrame());
+                    controller.updateGUIView();
+                }
+                else if (enemy != null){
                     launchFightOrRunController(enemy);
                 }
                 gUIView.displayMapFrame(worldMap.getHero());

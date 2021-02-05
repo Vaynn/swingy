@@ -49,8 +49,8 @@ public class SelectHeroController {
     public void updateConsoleView(){
         consoleView.printSelectHeroView(model.getTitle(), model.getHeroesList());
         userChoice = new Scanner(System.in);
-        while (!userChoice.hasNext("[1-7]")) {
-            ConsoleStringColor.error("You must choice a number between 1-7.");
+        while (!userChoice.hasNext("[1-" + model.getHeroesList().size() + "]")) {
+            ConsoleStringColor.error("You must choice a number between 1-" + model.getHeroesList().size() + ".");
             userChoice = new Scanner(System.in);
         }
         choice = userChoice.nextInt();

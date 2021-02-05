@@ -12,6 +12,7 @@ public abstract class HeroBuilder {
         hero = new Hero();
     }
 
+    public abstract void buildHeroIdx();
     public abstract void buildHeroClass();
     public abstract void buildName();
     public abstract void buildXp();

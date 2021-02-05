@@ -1,5 +1,6 @@
 package com.yvmartor.swingy.controller;
 
+import com.yvmartor.swingy.database.Database;
 import com.yvmartor.swingy.models.hero.Hero;
 import com.yvmartor.swingy.models.hero.HeroListBuilder;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
@@ -16,6 +17,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -52,9 +54,14 @@ public class GameOpeningController {
 
     public void updateConsoleView(){
         consoleView.printGameOpening(model.getTitle(), model.getOptions());
-        //TODO Check user input
         userChoice = new Scanner(System.in);
+        while (!userChoice.hasNext("[1-" + model.getOptions().size() + "]")) {
+            ConsoleStringColor.error("You must choice a number between 1-" + model.getOptions().size() + ".");
+            userChoice = new Scanner(System.in);
+        }
         choice = userChoice.nextInt();
+
+        //NEW HERO
         if (choice == 1) {
             ArrayList<Hero> heroList = new HeroListBuilder().heroListBuilder();
             SelectHero selectHeroModel = getSelectHeroModel(heroList);
@@ -66,13 +73,31 @@ public class GameOpeningController {
             );
             controller.updateConsoleView();
         }
-        else if (choice == 2)
-            System.out.println("a=2");
-        else
-            System.out.println("Errror");
+        //CONTINUE HERO
+        else if (choice == 2) {
+            try {
+                ArrayList<Hero> heroList = Database.getAllHeroes();
+                if (heroList.size() > 0) {
+                    SelectHero selectHeroModel = getSelectHeroModel(heroList);
+                    ConsoleSelectHeroView consoleSelectHeroView = new ConsoleSelectHeroView();
+                    SelectHeroController controller = new SelectHeroController(
+                            selectHeroModel,
+                            null, consoleSelectHeroView,
+                            null
+                    );
+                    controller.updateConsoleView();
+                }
+                else{
+                    ConsoleStringColor.error("No Saved Game.");
+                    updateConsoleView();
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
     }
 
-    public void updateGUIView(){
+    public void updateGUIView() {
         CreateMainFrame frame = new CreateMainFrame();
         JFrame myFrame = frame.getMyFrame();
         try {
@@ -83,6 +108,7 @@ public class GameOpeningController {
             System.exit(-1);
         }
         myFrame.setVisible(true);
+        //NEW HERO
         gUIView.getNewHero().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,6 +123,33 @@ public class GameOpeningController {
                 }
             }
         });
+
+        //CONTINUE HERO
+        JButton continue_hero = gUIView.getExistingHero();
+        ArrayList<Hero> herolist = new ArrayList<Hero>();
+        try {
+            herolist = Database.getAllHeroes();
+            if (herolist.size() == 0) {
+                continue_hero.setEnabled(false);
+            } else {
+                ArrayList<Hero> finalHerolist = herolist;
+                continue_hero.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        SelectHero selectHeroModel = getSelectHeroModel(finalHerolist);
+                        GUISelectHeroView guiSelectHeroView = new GUISelectHeroView();
+                        SelectHeroController controller = new SelectHeroController(selectHeroModel, myFrame, null, guiSelectHeroView);
+                        try {
+                            controller.updateGUIView();
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+                    }
+                });
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public void updateView() throws IOException {

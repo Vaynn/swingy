@@ -45,10 +45,12 @@ public class FightOrRunController{
         WorldMap worldMap = model.getHero().getWorldMap();
 
         consoleView.printFightOrRun(hero, villain, model.getQuestion());
-        //TODO Check user input
         fight_choice = new Scanner(System.in);
-        model.getQuestion().setResponse(fight_choice.nextInt());
-        int resp = model.getQuestion().getResponse();
+        while (!fight_choice.hasNext("[1-" + model.getQuestion().getOptions().size() + "]")) {
+            ConsoleStringColor.error("You must choice a number between 1-" + model.getQuestion().getOptions().size() + ".");
+            fight_choice = new Scanner(System.in);
+        }
+        int resp = fight_choice.nextInt();
         if (resp == FIGHT){
             return fight(worldMap, villain, hero);
         }
@@ -106,13 +108,16 @@ public class FightOrRunController{
             if (villainArtefact.getName().compareTo("None") != 0) {
                 Artefact heroArtefact = worldMap.getHeroArtefact(villainArtefact, hero);
                 consoleView.printKeepArtefactAsk(villain, heroArtefact);
-                //TODO Check user input
                 artefact_choice = new Scanner(System.in);
+                while (!artefact_choice.hasNext("[1-2]")) {
+                    ConsoleStringColor.error("You must choice a number between 1-2.");
+                    artefact_choice = new Scanner(System.in);
+                }
                 if (artefact_choice.nextInt() == 1) {
                     worldMap.updateArtefact(villainArtefact);
                     consoleView.printKeepArtefactChoice(true);
                 }
-                else
+                else if (artefact_choice.nextInt() == 2)
                     consoleView.printKeepArtefactChoice(false);
 
             }

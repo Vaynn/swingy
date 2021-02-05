@@ -21,6 +21,7 @@ public class GUIGameOpeningView extends JFrame {
     JPanel container = new JPanel();
     JFrame frame;
     private JButton newHero;
+    private JButton existingHero;
 
     public void printGameOpening(JFrame myFrame, String title, ArrayList<String> options, String image) throws IOException{
         frame = myFrame;
@@ -52,7 +53,7 @@ public class GUIGameOpeningView extends JFrame {
         container.add(newHero, constraints);
         constraints.gridx = 4;
         constraints.gridy = 5;
-        JButton existingHero = new JButton(options.get(1));
+        existingHero = new JButton(options.get(1));
         container.add(existingHero, constraints);
         JPanel contentPane = (JPanel) frame.getContentPane();
         contentPane.removeAll();
@@ -63,5 +64,9 @@ public class GUIGameOpeningView extends JFrame {
 
     public JButton getNewHero() {
         return newHero;
+    }
+
+    public JButton getExistingHero() {
+        return existingHero;
     }
 }

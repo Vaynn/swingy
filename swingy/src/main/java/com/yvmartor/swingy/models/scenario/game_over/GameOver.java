@@ -9,9 +9,9 @@ public class GameOver {
     private WorldMap worldMap;
     private String question;
 
-    public GameOver(WorldMap worldMap){
+    public GameOver(WorldMap worldMap, String question){
         this.worldMap = worldMap;
-        this.question = "GAME OVER!\n What do you want to do ?\n";
+        this.question = question;
     }
 
     public WorldMap getWorldMap() {

@@ -13,6 +13,7 @@ public class HeroDirector {
 
     public void constructHero(){
         heroBuilder.createNewHero();
+        heroBuilder.buildHeroIdx();
         heroBuilder.buildHeroClass();
         heroBuilder.buildName();
         heroBuilder.buildXp();

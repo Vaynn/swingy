@@ -51,7 +51,7 @@ public class GUIFightTellingController {
             continue_button.get(0).addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    GameOver model = new GameOver(worldMap);
+                    GameOver model = new GameOver(worldMap, "<html> GAME OVER!<br> What do you want to do ?<br></html>");
                     GUIGameOverView view = new GUIGameOverView(mainFrame);
                     GameOverController controller = new GameOverController(model, mainFrame, null, view);
                     controller.updateGUIView();

@@ -8,6 +8,7 @@ import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
 import static com.yvmartor.swingy.models.tools.Tools.VILLAIN_DEATH;
 
 public class Hero {
+    private int idx = 0;
     private String heroClass = "";
     private String name = "";
     private double xp = 0;
@@ -41,6 +42,10 @@ public class Hero {
     private Coordinates coordinates = new Coordinates(0, 0);
 
     private WorldMap worldMap;
+
+    public int getIdx() {
+        return idx;
+    }
 
     public String getHeroClass() {
         return heroClass;
@@ -108,6 +113,10 @@ public class Hero {
 
     public WorldMap getWorldMap() {
         return worldMap;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
     }
 
     public void setHeroClass(String heroClass) {

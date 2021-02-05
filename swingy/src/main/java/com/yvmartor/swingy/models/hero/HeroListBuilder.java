@@ -1,6 +1,7 @@
 package com.yvmartor.swingy.models.hero;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class HeroListBuilder {
 

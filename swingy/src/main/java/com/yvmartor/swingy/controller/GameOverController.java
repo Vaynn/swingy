@@ -88,6 +88,7 @@ public class GameOverController {
         GUIView.printGameOver(model.getWorldMap(), model.getQuestion());
         ArrayList<JButton> game_over_buttons = GUIView.getOptions();
 
+        //RETRY
         game_over_buttons.get(0).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -103,6 +104,8 @@ public class GameOverController {
                 controller.updateGUIView();
             }
         });
+
+        //BACK TO THE MENU
         game_over_buttons.get(1).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,6 +132,8 @@ public class GameOverController {
                 }
             }
         });
+
+        //QUIT
         game_over_buttons.get(2).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

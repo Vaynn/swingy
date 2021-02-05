@@ -1,6 +1,7 @@
 package com.yvmartor.swingy;
 
 import com.yvmartor.swingy.controller.GameOpeningController;
+import com.yvmartor.swingy.database.Database;
 import com.yvmartor.swingy.models.scenario.ConsoleStringColor;
 import com.yvmartor.swingy.models.scenario.game_opening.GameOpening;
 import com.yvmartor.swingy.models.scenario.game_opening.GameOpeningBuilder;
@@ -17,6 +18,8 @@ public class Swingy {
         if (args.length == 1){
             String mode = args[0];
             if (mode.compareTo("console") == 0 || mode.compareTo("gui") == 0) {
+                Database.createNewDatabase("swingy.db");
+                Database.createNewTable();
 
                 //Start the menu of the game
                 ArrayList<String> options = new ArrayList<String>();
