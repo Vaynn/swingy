@@ -83,7 +83,6 @@ public class GUIDirectionView {
             panel.add(map);
         }
         JPanel contentPane = (JPanel) mapFrame.getContentPane();
-        mapFrame.setLocation(mainFrame.getX() + mainFrame.getWidth(), mainFrame.getY());
         mapFrame.setVisible(true);
         contentPane.removeAll();
         contentPane.add(panel);

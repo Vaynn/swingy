@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Database {
-    private static final String url = "jdbc:sqlite:sqlite/swingy.db";
+    private static final String url = "jdbc:sqlite:swingy.db";
 
     public static void createNewDatabase(String fileName) {
 
-        String url = "jdbc:sqlite:sqlite/" + fileName;
+        String url = "jdbc:sqlite:" + fileName;
 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
