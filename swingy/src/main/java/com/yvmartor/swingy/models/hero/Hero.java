@@ -45,6 +45,28 @@ public class Hero {
 
     private WorldMap worldMap;
 
+    public void copy(Hero hero){
+        setIdx(hero.getIdx());
+        setHeroClass(hero.getHeroClass());
+        setName(hero.getName());
+        setXp(hero.getXp());
+        setLevel(hero.getLevel());
+        setAttak(hero.getAttak());
+        setDefense(hero.getDefense());
+        setHitPoints(hero.getHitPoints());
+        setWeapon(hero.getWeapon());
+        setArmor(hero.getArmor());
+        setHelm(hero.getHelm());
+        setWeaponName(hero.getWeaponName());
+        setArmorName(hero.getArmorName());
+        setHelmName(hero.getHelmName());
+        setImage(hero.getImage());
+        setGif(hero.getGif());
+        setUnicode(hero.getUnicode());
+        setCoordinates(hero.getCoordinates());
+        setWorldMap(hero.getWorldMap());
+    }
+
     public int getIdx() {
         return idx;
     }
@@ -197,6 +219,10 @@ public class Hero {
 
     public void setHelmName(String[] helmName) {
         this.helmName = helmName;
+    }
+
+    public void setWorldMap(WorldMap worldMap) {
+        this.worldMap = worldMap;
     }
 
     public void updateCoordinates(int userChoice) {

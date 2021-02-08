@@ -70,7 +70,8 @@ public class WinnerController {
 
         //CONTINUE
         if (resp == 1){
-            Hero hero = model.getWorldMap().getHero();
+            Hero hero = new Hero();
+            hero.copy(model.getWorldMap().getHero());
             model.setWorldMap(null);
             WorldMap worldMap= new WorldMap();
             hero.registerWorldMap(worldMap);
@@ -140,12 +141,13 @@ public class WinnerController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 model.getWorldMap().getMapFrame().dispose();
-                Hero hero = model.getWorldMap().getHero();
+                Hero hero = new Hero();
+                hero.copy(model.getWorldMap().getHero());
                 model.setWorldMap(null);
-                WorldMap worldMap= new WorldMap();
-                hero.registerWorldMap(worldMap);
-                createAndRegisterVillains(worldMap);
-                Direction model = new DirectionBuilder().hero(hero).options(DIRECTIONS_TAB).worldMap(worldMap).build();
+                WorldMap newWorldMap= new WorldMap();
+                hero.registerWorldMap(newWorldMap);
+                createAndRegisterVillains(newWorldMap);
+                Direction model = new DirectionBuilder().hero(hero).options(DIRECTIONS_TAB).worldMap(newWorldMap).build();
                 GUIDirectionView view = new GUIDirectionView(mainFrame);
                 DirectionController controller = new DirectionController(model, mainFrame, null, view);
                 controller.updateGUIView();

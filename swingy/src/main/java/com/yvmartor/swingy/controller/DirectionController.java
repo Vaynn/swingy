@@ -23,8 +23,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.yvmartor.swingy.models.tools.Tools.HERO_DEATH;
-import static com.yvmartor.swingy.models.tools.Tools.VICTORY;
+import static com.yvmartor.swingy.models.tools.Tools.*;
 
 public class DirectionController {
     private JFrame frame;
@@ -78,7 +77,7 @@ public class DirectionController {
                     break;
                 }
             }
-            if (worldMap.isHeroReachTheEdge() == true){
+            if (worldMap.isHeroReachTheEdge(CONSOLE_MODE)){
                 destiny = VICTORY;
                 break;
             }
@@ -113,7 +112,7 @@ public class DirectionController {
                 public void actionPerformed(ActionEvent e) {
                     worldMap.updateHeroCoordinates(1);
                     Villain enemy = worldMap.isHeroMeetVilain();
-                    if (worldMap.isHeroReachTheEdge()){
+                    if (worldMap.isHeroReachTheEdge(GUI_MODE)){
                         GameOver model = new GameOver(worldMap,
                     "<html>WINNER<br>" +
                             "Congratulations, your progression has been saved.<br><br>" +
@@ -134,7 +133,7 @@ public class DirectionController {
                 public void actionPerformed(ActionEvent e) {
                     worldMap.updateHeroCoordinates(2);
                     Villain enemy = worldMap.isHeroMeetVilain();
-                    if (worldMap.isHeroReachTheEdge()){
+                    if (worldMap.isHeroReachTheEdge(GUI_MODE)){
                         GameOver model = new GameOver(worldMap,
                     "<html>WINNER<br>" +
                             "Congratulations, your progression has been saved.<br><br>" +
@@ -155,7 +154,7 @@ public class DirectionController {
             public void actionPerformed(ActionEvent e) {
                 worldMap.updateHeroCoordinates(3);
                 Villain enemy = worldMap.isHeroMeetVilain();
-                if (worldMap.isHeroReachTheEdge()){
+                if (worldMap.isHeroReachTheEdge(GUI_MODE)){
                     GameOver model = new GameOver(worldMap,
                     "<html>WINNER<br>" +
                             "Congratulations, your progression has been saved.<br><br>" +
@@ -176,7 +175,7 @@ public class DirectionController {
             public void actionPerformed(ActionEvent e) {
                 worldMap.updateHeroCoordinates(4);
                 Villain enemy = worldMap.isHeroMeetVilain();
-                if (worldMap.isHeroReachTheEdge()){
+                if (worldMap.isHeroReachTheEdge(GUI_MODE)){
                     GameOver model = new GameOver(worldMap,
                     "<html>WINNER<br>" +
                             "Congratulations, your progression has been saved.<br><br>" +

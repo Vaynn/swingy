@@ -17,7 +17,7 @@ public class WorldMap {
 
     private int dimension;
     private Hero hero;
-    private Hero retryHero;
+    private Hero retryHero = new Hero();
     private ArrayList<Villain> villainList = new ArrayList<Villain>();
     private ArrayList<int[]> usedCoord = new ArrayList<int[]>();
     private JFrame mapFrame = null;
@@ -27,7 +27,7 @@ public class WorldMap {
     //register hero on the center of the map
     public void registerHero(Hero hero){
         this.hero = hero;
-        this.retryHero = hero;
+        this.retryHero.copy(hero);
         mapDimensionProvider();
         this.hero.getCoordinates().setX((int)round((double)dimension/2));
         this.hero.getCoordinates().setY((int)round((double)dimension/2));
@@ -120,9 +120,11 @@ public class WorldMap {
         return null;
     }
 
-    public boolean isHeroReachTheEdge(){
+    public boolean isHeroReachTheEdge(int mode){
         int[] coor = hero.getCoordinates().getCoordinates();
-        if (coor[0] == 0 || coor[1] == 0 || coor[0] == dimension - 1 || coor[1] == dimension - 1)
+        if (mode == CONSOLE_MODE && (coor[0] == 0 || coor[1] == 0 || coor[0] == dimension - 1 || coor[1] == dimension - 1))
+            return true;
+        else if (mode == GUI_MODE && (coor[0] == 1 || coor[1] == 1 || coor[0] == dimension || coor[1] == dimension))
             return true;
         return false;
     }
@@ -237,5 +239,9 @@ public class WorldMap {
 
     public Hero getRetryHero() {
         return retryHero;
+    }
+
+    public void setRetryHero(Hero retryHero) {
+        this.retryHero = retryHero;
     }
 }

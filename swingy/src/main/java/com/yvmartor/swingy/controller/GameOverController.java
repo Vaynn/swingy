@@ -47,7 +47,8 @@ public class GameOverController {
         }
         int resp = scanner.nextInt();
         if (resp == 1){
-            Hero retry = model.getWorldMap().getRetryHero();
+            Hero retry = new Hero();
+            retry.copy(model.getWorldMap().getRetryHero());
             model.setWorldMap(null);
             WorldMap worldMap= new WorldMap();
             retry.registerWorldMap(worldMap);
@@ -91,13 +92,14 @@ public class GameOverController {
         game_over_buttons.get(0).addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Hero retry = model.getWorldMap().getRetryHero();
+                Hero retry = new Hero();
+                retry.copy(model.getWorldMap().getRetryHero());
                 model.getWorldMap().getMapFrame().dispose();
                 model.setWorldMap(null);
-                WorldMap worldMap= new WorldMap();
-                retry.registerWorldMap(worldMap);
-                createAndRegisterVillains(worldMap);
-                Direction model = new DirectionBuilder().hero(retry).options(DIRECTIONS_TAB).worldMap(worldMap).build();
+                WorldMap newWorldMap= new WorldMap();
+                retry.registerWorldMap(newWorldMap);
+                createAndRegisterVillains(newWorldMap);
+                Direction model = new DirectionBuilder().hero(retry).options(DIRECTIONS_TAB).worldMap(newWorldMap).build();
                 GUIDirectionView view = new GUIDirectionView(mainFrame);
                 DirectionController controller = new DirectionController(model, mainFrame, null, view);
                 controller.updateGUIView();

@@ -3,6 +3,8 @@ package com.yvmartor.swingy.models.tools;
 import java.util.Random;
 
 public class Tools {
+    public static final int GUI_MODE = 23;
+    public static final int CONSOLE_MODE = 24;
     public static final int ERROR = -3;
     public static final int VILLAIN_DEATH = -6;
     public static final int HERO_DEATH = -1;
