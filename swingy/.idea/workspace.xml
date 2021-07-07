@@ -24,24 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ff0d8962-85f8-44ab-960c-5066078ac44d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/GUIDirectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yvmartor/swingy/views/gui/GUIDirectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._armor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._dog_handler.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._helm.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._mage.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._perso.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._saboteur.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._trophee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/._weapon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/database/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/GUIDirectionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yvmartor/swingy/views/gui/GUIDirectionView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-swingy-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sqlite/swingy.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/swingy-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +93,11 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn install" />
-      <command value="mvn clean" />
       <command value="mvn clean package" />
+      <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.swingy-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="Application.Swingy">
     <configuration name="Swingy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yvmartor.swingy.Swingy" />
       <module name="swingy" />
@@ -135,8 +117,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.swingy-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Swingy" />
+        <item itemvalue="JAR Application.swingy-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
