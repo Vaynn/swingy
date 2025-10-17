@@ -1,5 +1,3 @@
-# 🧙‍♂️ Swingy – Java RPG Game
-
 # 🧙‍♂️ Swingy – RPG en Java
 
 ## 🎮 Description  
