@@ -1,15 +1,16 @@
 # 🧙‍♂️ Swingy – Java RPG Game
 
-## 🎮 Description
+# 🧙‍♂️ Swingy – RPG en Java
 
-**Swingy** is the second project in the Java module at 42.  
-The goal is to build a text-based RPG game with a graphical interface using the **Swing** framework.
+## 🎮 Description  
+**Swingy** est un jeu de rôle textuel développé en Java avec une interface graphique via le framework **Swing**.  
+Ce projet, réalisé dans le cadre de ma formation à l’école 42, m’a permis d’explorer le développement d’applications GUI tout en appliquant les principes de la programmation orientée objet.
 
-Through this project, I learned how to:
-- Develop GUI applications in Java
-- Structure a game with multiple states (menu, map, combat, victory…)
-- Implement both **console** and **graphical** modes
-- Manage character stats, equipment, and progression
+🧩 Objectifs :
+- Créer un RPG textuel avec une interface graphique (Swing)
+- Implémenter deux modes de jeu : **console** et **graphique**
+- Gérer la logique de combat, les statistiques de personnages, les équipements et la progression
+- Structurer un projet Java avec Maven et une base de données SQLite
 
 <p float="left">
 <img src="menu.png" alt="drawing" width="250"/>
@@ -23,38 +24,46 @@ Through this project, I learned how to:
 
 ---
 
-## 🛠️ Technologies
+## 🛠️ Stack technique
 
 - **Java 15.0.2**
 - **Apache Maven 3.8.1**
-- **Swing** (Java GUI framework)
-- **SQLite JDBC 3.3**
+- **Swing** – interface graphique
+- **SQLite JDBC 3.3** – persistance des données
 
 ---
 
-## ⚙️ Build Instructions
+## 🚀 Lancer le projet
 
-```bash
+### 🔧 Compilation
+
+```
 $ cd swingy
 $ mvn clean package
 
+```
+
 ## 🚀 How to Play
 
-Navigate to the `target` directory and launch the game in your preferred mode:
+Naviguez jusqu'au dossier target et lancer le jeu dans votre mode préféré:
 
 ### ▶️ Console Mode
 
-```bash
+```
 $ java -jar swingy-1.0.jar console
+
+```
 
 ### 🖥️ GUI Mode
 
-```bash
+```
 $ java -jar swingy-1.0.jar gui
+
+```
 
 ## 🧠 What I Learned
 
-- Building a modular Java application with Maven  
-- Creating and managing GUI components with Swing  
-- Handling user input and game logic  
-- Persisting data with SQLite
+- Construire une application Java modulaire avec Maven 
+- Créer et gérer des composant GUI sous SWING 
+- Gérer les entrées utilisateurs et la logique de jeu
+- La persitance des datas avec SQLITE
