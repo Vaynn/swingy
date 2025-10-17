@@ -40,28 +40,25 @@ Ce projet, réalisé dans le cadre de ma formation à l’école 42, m’a permi
 ```
 $ cd swingy
 $ mvn clean package
-
 ```
 
-## 🚀 How to Play
+## 🚀 Comment Jouer
 
 Naviguez jusqu'au dossier target et lancer le jeu dans votre mode préféré:
 
-### ▶️ Console Mode
+### ▶️ Mode Console
 
 ```
 $ java -jar swingy-1.0.jar console
-
 ```
 
-### 🖥️ GUI Mode
+### 🖥️ Mode GUI
 
 ```
 $ java -jar swingy-1.0.jar gui
-
 ```
 
-## 🧠 What I Learned
+## 🧠 Ce que j'ai appris
 
 - Construire une application Java modulaire avec Maven 
 - Créer et gérer des composant GUI sous SWING 
